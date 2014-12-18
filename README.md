@@ -1,4 +1,4 @@
-vegetable-shop
+Vegetable-Shop
 ============
 
 The MIT License (MIT)
