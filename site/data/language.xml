@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-	<language name="English" short="en">
-		<constant name="site_title">Site title</constant>
+	<language name="Hebrew" short="he" rtl="yes" default="yes">
+		<constant name="site_title">Vegetable shop</constant>
+
+		<!-- Navigation Header -->
+		<constant name="search_button">חפש</constant>
+		<constant name="contact">צור קשר</constant>
+		<constant name="help">עזרה</constant>
+		<constant name="welcome_guest">שלום אורח,</constant>
+		<constant name="log_sign">היכנס / הרשם</constant>
+		<!-- Nav links -->
+		<constant name="fruits">פירות</constant>
+		<constant name="vegetables">ירקות</constant>
+		<constant name="dried_fruit">פירות יבשים</constant>
+		<constant name="deals">מבצעים</constant>
 	</language>
 </document>
