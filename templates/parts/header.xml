@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<header>
+		<div class="wrap white">
+			<div class="inner_wrap">
+				<nav class="upper">
+					<form>
+					        <label><input type="search" name="query" placeholder="הכנס מילה לחיפוש"/></label>
+					        <button type="submit"><cms:text constant="search_button"/></button>
+					</form>
+
+					 <a
+						class="section == 'contact' ? 'active' : false"
+						href="url_Make('', 'cotnact')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="contact"/>
+					</a>
+
+					 <a
+						class="section == 'help' ? 'active' : false"
+						href="url_Make('', 'help')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="help"/>
+					</a>
+
+					<cms:guest>
+						<span><cms:text constant="welcome_guest"/></span>
+					</cms:guest>
+
+					 <a
+						class="section == 'log_sign' ? 'active' : false"
+						href="url_Make('', 'log_sign')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="log_sign"/>
+					</a>					
+				</nav>
+			</div>
+		</div>
+			<div class="wrap grey">
+				<nav class="links">
+					 <a
+						class="section == 'fruits' ? 'active' : false"
+						href="url_Make('', 'fruits')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="fruits"/>
+					</a>
+					 <a
+						class="section == 'vegetables' ? 'active' : false"
+						href="url_Make('', 'vegetables')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="vegetables"/>
+					</a>
+					 <a
+						class="section == 'dried_fruit' ? 'active' : false"
+						href="url_Make('', 'dried_fruit')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="dried_fruit"/>
+					</a>
+					 <a
+						class="section == 'deals' ? 'active' : false"
+						href="url_Make('', 'deals')"
+						cms:eval="href"
+						cms:optional="class"
+					>
+						<cms:text constant="deals"/>
+					</a>
+				</nav>
+			</div>
+	</header>
+</document>

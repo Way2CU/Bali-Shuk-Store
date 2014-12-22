@@ -1,0 +1,19 @@
+/**
+* Content Style Sheet
+* Vegetable shop
+*
+* Copyright (c) 2014. by way2cu
+* Author: Khalid Sawalhi
+*/
+
+.inner_wrap {
+	display: block;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.wrap.white {
+	background-color: white;
+}
