@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<div class="item">
+		<h5><cms:var param="name" multilanguage="yes"/></h5>
+
+		<div
+			class="image"
+			style="'background-image: url('.$params['image'].');'"
+			cms:eval="style"
+			/>
+		<div class="price">
+			<cms:var param="price"/>
+			<cms:var param="currency"/>
+		</div>
+	</div>
+</document>
