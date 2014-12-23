@@ -15,5 +15,19 @@
 		<constant name="vegetables">ירקות</constant>
 		<constant name="dried_fruit">פירות יבשים</constant>
 		<constant name="deals">מבצעים</constant>
+
+
+
+		<!-- Footer -->
+		<constant name="safe_turn">קניה בטוחה</constant>
+		<!-- Nav Footer -->
+		<constant name="terms_use">תנאי שימוש</constant>
+		<constant name="security_settings">תנאי שימוש</constant>
+		<constant name="faq">FAQ</constant>
+		<constant name="payment_methods_security">שיטות תשלום ואבטחה</constant>
+		<constant name="copyright_text">עוצב ופותח ע"י חברת </constant>
+		<constant name="way2cu">WAY2CU</constant>
+
+		<constant name="recommended_title">המומלצים שלנו</constant>
 	</language>
 </document>
