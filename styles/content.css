@@ -6,6 +6,10 @@
 * Author: Khalid Sawalhi
 */
 
+body {
+	background-color: #f8f5ee;
+}
+
 .inner_wrap {
 	display: block;
 	max-width: 1200px;
@@ -16,4 +20,53 @@
 
 .wrap.white {
 	background-color: white;
+}
+
+div.shopping {
+	display: block;
+	width: 70vw;
+	margin-right: auto;
+}
+
+div.shopping > h3:nth-of-type(1) {
+	text-align: center;
+	color: white;
+	background-color: #095965;
+	padding:10px;
+	font-weight: normal;
+}
+
+div.shopping div.item {
+	display: inline-block;
+	vertical-align: top;
+	width: 10vw;
+	margin: 10px 15px 30px 15px;
+}
+
+div.shopping div.item {
+	margin-right: 0px;
+}
+
+div.shopping div.item > h5 {
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: white;
+	text-align: center;
+	font-weight: normal;
+}
+
+div.shopping div.item div.image {
+	height: 150px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: auto 100%;
+	background-color: white;
+}
+
+div.shopping div.item div.price {
+	background-color: #e8dcc5;
+	text-align: center;
+	padding: 10px 0px;
+	color: #33485d;
 }
