@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<footer>
+		<nav class="footer">
+		<a
+		 href=""
+		 eval="href"
+		>
+			<cms:text constant="terms_use"/>
+		</a>
+		<a
+		 href=""
+		 eval="href"
+		>
+			<cms:text constant="security_settings"/>
+		</a>
+		<a
+		 href=""
+		 eval="href"
+		>
+			<cms:text constant="faq"/>
+		</a>
+		<a
+		 href=""
+		 eval="href"
+		>
+			<cms:text constant="contact"/>
+		</a>
+		<a
+		 href=""
+		 eval="href"
+		>
+			<cms:text constant="help"/>
+		</a>	
+		</nav>
+
+		<div class="right_container">
+			<span><cms:text constant="payment_methods_security"/></span>
+			<span>
+				<img
+				src="_BASEURL.'/site/images/visa.svg'"
+				alt="visa"
+				cms:eval="src"
+			/>
+			</span>
+			<span>
+				<img
+				src="_BASEURL.'/site/images/master-card.svg'"
+				alt="master-card"
+				cms:eval="src"
+			/>
+			</span>
+			<span>
+				<img
+				src="_BASEURL.'/site/images/diners-club.svg'"
+				alt="diners-club"
+				cms:eval="src"
+			/>
+			</span>
+			<span>
+				<img
+				src="_BASEURL.'/site/images/american-express.svg'"
+				alt="american-express"
+				cms:eval="src"
+			/>
+			</span>
+			<span>
+				<cms:text constant="safe_turn"/>
+			</span>
+
+		</div>
+		<div class="copyright">
+				<cms:text constant="copyright_text"/>
+			<a
+				 href="http://www.way2cu.com"
+				 eval="href" 
+			>
+			<cms:text constant="way2cu"/>
+		</a>
+		</div>
+	</footer>
+</document>
