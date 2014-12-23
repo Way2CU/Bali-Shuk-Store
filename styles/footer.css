@@ -1,0 +1,101 @@
+/**
+	* Footer Style Sheet
+	* Vegetable shop
+	*
+	* Copyright (c) 214. by Way2cu
+	* Author: Khalid Sawalhi
+*/
+
+ 
+footer {
+	position: relative;
+	height: 330px;
+	background :linear-gradient(0deg, rgba(0,59, 67, 1) 0%, rgba(10, 90,102, 1) 100%);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: auto 100%;
+}
+
+footer nav.footer {
+	position: absolute;
+	left: 20px;
+	top: 130px;
+}
+
+footer nav.footer a {
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	font-size: 1.2rem;
+	transition: 0.5s all;
+}
+
+footer nav.footer a:hover {
+	color: #e8dcc5;
+}
+
+footer div.right_container {
+	position: absolute;
+	top: 90px;
+	background-color: white;
+	padding: 10px;
+	right: 20px;
+}
+
+footer div.right_container span {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 10px 5px;
+}
+
+footer div.right_container span:nth-of-type(1) {
+	display: block;
+}
+
+footer div.right_container span:last-child {
+	background-image: url(../images/ssl.png);
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: auto 35px;
+	padding: 15px 10px;
+	background-color: #ebeff0;
+	border:1px solid #7e8b8c;
+	width: 140px;
+	text-align: left;
+	font-size: 1.2rem;
+}
+
+footer div.copyright {
+	display: block;
+	position: absolute;
+	bottom: 20px;
+	width: 230px;
+	left: 50%;
+	margin-left: -115px;
+	color: white;
+	text-align: center;
+	background-image: url(../images/waycu-black.svg);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 50px 50px;
+	padding: 20px 0px;
+	padding-left: 50px;
+	direction: rtl;
+}
+
+footer div.copyright a {
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	color: white;
+	padding:0px 5px;
+	transition:0.3s all;
+	direction: ltr;
+}
+
+footer div.copyright a:hover {
+	color: #7e8b8c;
+}
