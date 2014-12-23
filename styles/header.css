@@ -141,7 +141,7 @@ header div.wrap.grey {
 header div.wrap.grey nav.links a {
 	display: inline-block;
 	vertical-align: top;
-	width:25vw;
+	width: 24.776vw;
 	border-bottom: 5px solid #bcc2c6;
 	text-align: center;
 	text-decoration: none;
@@ -162,6 +162,7 @@ header div.wrap.grey nav.links a:before {
 	background-color: #bcc2c6;	
 }
 
-header div.wrap.grey nav.links a:hover {
+header div.wrap.grey nav.links a:hover , header div.wrap.grey nav.links a.active {
 	border-bottom-color: #005fa3;
 }
+
