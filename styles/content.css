@@ -22,6 +22,33 @@ body {
 	background-color: white;
 }
 
+.one_half {
+	position: relative;
+	display: inline-block;
+	width: 540px;
+	padding-left: 30px;
+	padding-right: 30px;
+	vertical-align: top;
+}
+
+.one_third {
+	position: relative;
+	display: inline-block;
+	width: 360px;
+	padding-left: 20px;
+	padding-right: 20px;
+	vertical-align: top;
+}
+
+.two_third {
+	position: relative;
+	display: inline-block;
+	width: 760px;
+	padding-left: 20px;
+	padding-right: 20px;
+	vertical-align: top;
+}
+
 div.banner_container {
 	text-align: center;
 	border-bottom: 1px solid  #33485d;
@@ -83,4 +110,17 @@ div.shopping div.item div.price {
 	text-align: center;
 	padding: 10px 0px;
 	color: #33485d;
+}
+
+div.wrap div.inner_wrap > h1:nth-of-type(1) {
+	margin: 0px auto;
+	padding: 30px 0px;
+	color: #3397da;
+	font-size: 3.8rem;
+	text-align: center;
+}
+
+div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) {
+	background-color: white;
+	text-align: center;
 }
