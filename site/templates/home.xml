@@ -10,7 +10,13 @@
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
 			<cms:template file="parts/header.xml"/>
-
+			<div class="banner_container">
+				<img
+					src="_BASEURL.'/site/images/photo-frame.svg'"
+					alt="photo-frame"
+					cms:eval="src"
+				/>
+			</div>
 			<div class="shopping">
 				<h3><cms:text constant="recommended_title"/></h3>
 				<cms:module
