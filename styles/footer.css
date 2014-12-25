@@ -53,6 +53,7 @@ footer div.right_container span {
 
 footer div.right_container span:nth-of-type(1) {
 	display: block;
+	font-size: 1.3rem;
 }
 
 footer div.right_container span:last-child {

@@ -22,6 +22,19 @@ body {
 	background-color: white;
 }
 
+div.banner_container {
+	text-align: center;
+	border-bottom: 1px solid  #33485d;
+}
+
+div.banner_container img {
+	display: block;
+	width: 800px;
+	height: 400px;
+	margin:0px auto;
+	padding: 30px 0px;
+}
+
 div.shopping {
 	display: block;
 	width: 70vw;
@@ -48,6 +61,7 @@ div.shopping div.item {
 }
 
 div.shopping div.item > h5 {
+	min-height: 50px;
 	margin: 0px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -60,7 +74,7 @@ div.shopping div.item div.image {
 	height: 150px;
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-size: auto 100%;
+	background-size: 100% auto;
 	background-color: white;
 }
 
