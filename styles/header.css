@@ -141,7 +141,9 @@ header div.wrap.grey {
 header div.wrap.grey nav.links a {
 	display: inline-block;
 	vertical-align: top;
-	width: 24.776vw;
+	width: calc(25% - 2px);
+	border-left: 1px solid #bcc2c6;
+	border-right: 1px solid #bcc2c6;
 	border-bottom: 5px solid #bcc2c6;
 	text-align: center;
 	text-decoration: none;
