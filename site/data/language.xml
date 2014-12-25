@@ -29,5 +29,8 @@
 		<constant name="way2cu">WAY2CU</constant>
 
 		<constant name="recommended_title">המומלצים שלנו</constant>
+
+		<!-- Contact Page -->
+		<constant name="more_information_fill_form">למידע נוסף מלאו פרטים ונחזור אליכם בהקדם:</constant>
 	</language>
 </document>
