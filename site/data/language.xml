@@ -22,7 +22,7 @@
 		<constant name="safe_turn">קניה בטוחה</constant>
 		<!-- Nav Footer -->
 		<constant name="terms_use">תנאי שימוש</constant>
-		<constant name="security_settings">תנאי שימוש</constant>
+		<constant name="security_settings">הגדרות אבטחה</constant>
 		<constant name="faq">FAQ</constant>
 		<constant name="payment_methods_security">שיטות תשלום ואבטחה</constant>
 		<constant name="copyright_text">עוצב ופותח ע"י חברת </constant>
@@ -33,5 +33,8 @@
 		<!-- Contact Page -->
 		<constant name="more_information_fill_form">למידע נוסף מלאו פרטים ונחזור אליכם בהקדם:</constant>
 		<constant name="send">שלח טופס</constant>
+
+		<!-- FAQ -->
+		<constant name="asked_questions">תשובות לשאלות נפוצות</constant>
 	</language>
 </document>
