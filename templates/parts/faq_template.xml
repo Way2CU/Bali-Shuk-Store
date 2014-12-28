@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/template.dtd">
+<document>
+        <dt
+                class="(isset($_REQUEST['id']) and $_REQUEST['id'] == $params['id']) ? 'expanded' : ''"
+                eval="class"
+                >
+                <cms:var name="$params['question'][$language]"/>
+        </dt>
+        <dd
+                style="(isset($_REQUEST['id']) and $_REQUEST['id'] == $params['id']) ? 'display: block;' : 'display: none;'"
+                eval="style"
+                >
+                <cms:var name="$params['answer'][$language]"/></dd>
+</document>
