@@ -4,32 +4,32 @@
 	<footer>
 		<nav class="footer">
 		<a
-		 href=""
-		 eval="href"
+			href="url_Make('', 'terms_use')"
+			cms:eval="href"
 		>
 			<cms:text constant="terms_use"/>
 		</a>
 		<a
-		 href=""
-		 eval="href"
+			href="url_Make('', 'security')"
+			cms:eval="href"
 		>
 			<cms:text constant="security_settings"/>
 		</a>
 		<a
-		 href=""
-		 eval="href"
+			href="url_Make('', 'faq')"
+			cms:eval="href"
 		>
 			<cms:text constant="faq"/>
 		</a>
 		<a
-		 href=""
-		 eval="href"
+			href="url_Make('', 'contact')"
+			cms:eval="href"
 		>
 			<cms:text constant="contact"/>
 		</a>
 		<a
-		 href=""
-		 eval="href"
+			href="url_Make('', 'help')"
+			cms:eval="href"
 		>
 			<cms:text constant="help"/>
 		</a>	
