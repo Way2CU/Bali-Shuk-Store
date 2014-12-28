@@ -32,5 +32,6 @@
 
 		<!-- Contact Page -->
 		<constant name="more_information_fill_form">למידע נוסף מלאו פרטים ונחזור אליכם בהקדם:</constant>
+		<constant name="send">שלח טופס</constant>
 	</language>
 </document>
