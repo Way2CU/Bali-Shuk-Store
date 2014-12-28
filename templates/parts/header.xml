@@ -12,7 +12,7 @@
 
 					 <a
 						class="section == 'contact' ? 'active' : false"
-						href="url_Make('', 'cotnact')"
+						href="url_Make('', 'contact')"
 						cms:eval="href"
 						cms:optional="class"
 					>
