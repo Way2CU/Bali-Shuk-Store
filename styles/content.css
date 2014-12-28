@@ -190,3 +190,99 @@ div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form div.controls bu
 	background-color: #bbc2cb;
 	border-color: #bbc2cb;;
 }
+
+div.wrap.terms div.inner_wrap div.article , div.wrap.help div.inner_wrap div.article {
+	padding-bottom: 30px;
+	text-align: right;
+}
+
+
+div#faq dl {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+div#faq dl dt {
+	display: block;
+	padding-top: 20px;
+	font-size: 1.2rem;
+	text-align: right;
+	padding-bottom: 20px;
+	border-top: 1px solid #bcc2c6;
+	position: relative;
+}
+
+div#faq dl dt:nth-of-type(1) {
+	border-top: 0px;
+}
+
+div#faq dl dd {
+	max-width: 900px;
+	margin: 0px;
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+div#faq dl dt:after {
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	float: right;
+	margin-left: 10px;
+	position: relative;
+	top: 0px;
+	content: ' ';
+	border-radius: 2px;
+	background-image: url(../images/faq-icons-sprite.svg);
+	background-size: 20px 20px;
+	background-position: 0px 0px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	transition: all 0.3s;
+}
+
+div#faq dl dt.expanded:after {
+	background-position: 0px -21px;
+}
+
+
+div.wrap.security div.inner_wrap div.article {
+	width: 900px;
+	margin:0px auto;
+	text-align: right;
+	line-height: 1.5;
+}
+
+div.wrap.security div.inner_wrap div.article p {
+	margin:0px;
+	position: relative;
+	padding-right: 40px;
+}
+
+div.wrap.security div.inner_wrap div.article p:nth-of-type(odd) {
+	font-size: 1.3rem;
+	color: #ff7e11;
+}
+
+div.wrap.security div.inner_wrap div.article p:nth-of-type(odd):before {
+	width: 30px;
+	height: 30px;
+	content: '';
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-image: url(../images/checkmark.svg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 30px 30px;
+}
+
+div.wrap.security div.inner_wrap div.article p:nth-of-type(even) {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom:1px solid black;
+}
+
+div.wrap.security div.inner_wrap div.article p:last-child {
+	border: none;
+}
