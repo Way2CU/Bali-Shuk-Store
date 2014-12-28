@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" cms:eval="lang">
+		<head>
+			<title><cms:text constant="site_title"/></title>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
+			<cms:template file="parts/header.xml"/>
+			<div class="wrap security">
+				<div class="inner_wrap">
+					<h1><cms:text constant="security_settings"/></h1>
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="security"
+						template="parts/article_no_h1.xml"
+					/>
+				</div>
+			</div>
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>
