@@ -13,8 +13,11 @@
 		<!-- Nav links -->
 		<constant name="fruits">פירות</constant>
 		<constant name="vegetables">ירקות</constant>
+		<constant name="deli">מעדניה</constant>
 		<constant name="dried_fruit">פירות יבשים</constant>
 		<constant name="deals">מבצעים</constant>
+		<constant name="vegetable_herbs">ירק ועשבי תיבול</constant>
+		<constant name="sprouts_mushrooms">נבטים ופטריות</constant>
 
 
 
