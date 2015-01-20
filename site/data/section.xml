@@ -19,4 +19,17 @@
 	<section name="security">
 		<language name="all" file="security.xml" />
 	</section>
+	<section name="vegetables">
+			<language name="all">
+				<action name="_default" file="vegetables.xml"/>
+				<action name="sprouts_mushrooms" file="sprouts_mushrooms.xml"/>
+				<action name="vegetable_herbs" file="vegetable_herbs.xml"/>
+			</language>
+		</section>
+		<section name="deli">
+			<language name="all">
+				<action name="_default" file="deli.xml"/>
+				<action name="dried_fruit" file="dried_fruit.xml"/>
+			</language>
+		</section>
 </document>
