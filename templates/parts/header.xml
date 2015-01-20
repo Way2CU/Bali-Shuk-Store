@@ -39,7 +39,7 @@
 						cms:optional="class"
 					>
 						<cms:text constant="log_sign"/>
-					</a>					
+					</a>
 				</nav>
 			</div>
 		</div>
@@ -53,22 +53,54 @@
 					>
 						<cms:text constant="fruits"/>
 					</a>
-					 <a
-						class="section == 'vegetables' ? 'active' : false"
-						href="url_Make('', 'vegetables')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="vegetables"/>
-					</a>
-					 <a
-						class="section == 'dried_fruit' ? 'active' : false"
-						href="url_Make('', 'dried_fruit')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="dried_fruit"/>
-					</a>
+					<section>
+							<a
+								class="section == 'vegetables' ? 'active' : false"
+								href="url_Make('', 'vegetables')"
+								cms:eval="href"
+								cms:optional="class"
+								>
+								<cms:text constant="vegetables"/>
+							</a>
+							<nav id="dropdown">
+								<a
+									class="($section == 'vegetables' and $action == 'vegetable_herbs') ? 'active' : false"
+									href="url_Make('vegetable_herbs', 'vegetables')"
+									cms:eval="href"
+									cms:optional="class"
+									>
+									<cms:text constant="vegetable_herbs"/>
+								</a>
+								<a
+									class="($section == 'vegetables' and $action == 'sprouts_mushrooms') ? 'active' : false"
+									href="url_Make('sprouts_mushrooms', 'vegetables')"
+									cms:eval="href"
+									cms:optional="class"
+									>
+									<cms:text constant="sprouts_mushrooms"/>
+								</a>
+							</nav>
+							</section>
+							<section>
+							 <a
+								class="section == 'deli' ? 'active' : false"
+								href="url_Make('', 'deli')"
+								cms:eval="href"
+								cms:optional="class"
+							>
+								<cms:text constant="deli"/>
+							</a>
+							<nav id="dropdown">
+								<a
+									class="($section == 'deli' and $action == 'dried_fruit') ? 'active' : false"
+									href="url_Make('dried_fruit', 'deli')"
+									cms:eval="href"
+									cms:optional="class"
+									>
+									<cms:text constant="dried_fruit"/>
+								</a>
+							</nav>
+							</section>
 					 <a
 						class="section == 'deals' ? 'active' : false"
 						href="url_Make('', 'deals')"
