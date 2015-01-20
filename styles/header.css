@@ -10,7 +10,7 @@ header {
 	position: relative;
 	min-height: 445px;
 
-	background: 
+	background:
 	url(../images/logo.svg),
 	url(../images/logo-shadow.png),
 	url(../images/header-background.jpg);
@@ -76,7 +76,7 @@ header div.wrap.white div.inner_wrap form button {
 	border-top-left-radius: 9px;
 	border-bottom-left-radius: 9px;
 	border-right: 0px;
-	background: 
+	background:
 	url(../images/search.svg),
 	linear-gradient(0deg,rgba(0, 59, 67, 1) 0%,rgba(10, 90, 102, 1)100%);
 	background-repeat: no-repeat;
@@ -138,12 +138,12 @@ header div.wrap.grey {
 	background-color: #ebeff0;
 }
 
-header div.wrap.grey nav.links a {
+header div.wrap.grey nav.links  > a {
 	display: inline-block;
 	vertical-align: top;
-	width: calc(25% - 2px);
-	border-left: 1px solid #bcc2c6;
-	border-right: 1px solid #bcc2c6;
+	width: calc(25% );
+	/* border-left: 1px solid #bcc2c6; */
+	/* border-right: 1px solid #bcc2c6; */
 	border-bottom: 5px solid #bcc2c6;
 	text-align: center;
 	text-decoration: none;
@@ -154,17 +154,101 @@ header div.wrap.grey nav.links a {
 	position: relative;
 }
 
-header div.wrap.grey nav.links a:before {
+header div.wrap.grey nav.links section {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(25% );
+	border-bottom: 5px solid #bcc2c6;
+	border:none;
+	padding: 0px;
+	color: #33485d;
+	transition: 0.5s all;
+	font-size: 1.2rem;
+	position: relative;
+}
+
+header div.wrap.grey nav.links > section  a {
+	display: block;
+	width: 100%;
+	border-left: 1px solid #bcc2c6;
+	border-right: 1px solid #bcc2c6;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px 0px;
+	color: #33485d;
+	transition: 0.5s all;
+	font-size: 1.2rem;
+	position: relative;
+}
+
+header div.wrap.grey nav.links > section  a:first-child {
+	border-bottom: 5px solid #bcc2c6;
+}
+
+header div.wrap.grey nav.links a:before , header div.wrap.grey nav.links > section > a:nth-of-type(1):before {
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 1px;
 	height: 100%;
 	content: '';
-	background-color: #bcc2c6;	
+	background-color: #bcc2c6;
 }
 
 header div.wrap.grey nav.links a:hover , header div.wrap.grey nav.links a.active {
 	border-bottom-color: #005fa3;
 }
 
+header div.wrap.grey nav.links a:first-child:hover {
+	color: #005fa3;
+}
+
+header div.wrap.grey nav.links > section > nav {
+	display: none;
+	font-size: 1rem;
+	transition: 0.3s all;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	z-index: 1;
+	background-color: #ebeff0;
+	border-bottom: 3px solid black;
+	width: 100%;
+}
+
+header div.wrap.grey nav.links > section:hover a:first-child {
+	border-bottom-color:transparent;
+}
+
+header div.wrap.grey nav.links > section:hover > nav {
+	display: block;
+	border-bottom-color: #25B89A;
+}
+
+header div.wrap.grey nav.links > section:hover:nth-of-type(2)  > nav {
+	border-bottom-color: #EFC319;
+}
+
+header div.wrap.grey nav.links nav#dropdown a {
+	border-top: 1px solid #bcc2c6;
+	border-bottom: 1px solid #bcc2c6;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+header div.wrap.grey nav.links nav#dropdown a:hover , header div.wrap.grey nav.links section > a:hover:nth-of-type(1) {
+	color: #25B89A;
+}
+
+header div.wrap.grey nav.links section:nth-of-type(2) nav#dropdown a:hover  , header div.wrap.grey nav.links section:nth-of-type(2) > a:hover:nth-of-type(1) {
+	color:#EFC319;
+}
+
+header div.wrap.grey nav.links nav#dropdown a:last-child {
+	border-bottom: none;
+}
+
+header div.wrap.grey nav.links a:hover:last-child {
+	color: #E64C3B;
+	border-bottom-color: #E64C3B;
+}
