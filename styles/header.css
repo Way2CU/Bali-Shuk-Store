@@ -77,15 +77,29 @@ header div.wrap.white div.inner_wrap form button {
 	border-bottom-left-radius: 9px;
 	border-right: 0px;
 	background:
-	url(../images/search.svg),
+
 	linear-gradient(0deg,rgba(0, 59, 67, 1) 0%,rgba(10, 90, 102, 1)100%);
 	background-repeat: no-repeat;
-	background-position: 0.5em center, center top;
-	background-size: 20px 20px , auto 100%;
+	background-position: center top;
+	background-size: auto 100%;
 	color: white;
 	transition: 0.5s all;
 	font-size: 1.2rem;
+	position: relative;
 	cursor: pointer;
+}
+
+header div.wrap.white div.inner_wrap form button:after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 0.5em;
+	top: 0.5em;
+	background-image: url(../images/search.svg);
+	background-position: center top;
+	background-size:20px 20px;
+	background-repeat: no-repeat;
 }
 
 header div.wrap.white div.inner_wrap form button:hover {
@@ -142,8 +156,7 @@ header div.wrap.grey nav.links  > a {
 	display: inline-block;
 	vertical-align: top;
 	width: calc(25% );
-	/* border-left: 1px solid #bcc2c6; */
-	/* border-right: 1px solid #bcc2c6; */
+
 	border-bottom: 5px solid #bcc2c6;
 	text-align: center;
 	text-decoration: none;
@@ -158,8 +171,7 @@ header div.wrap.grey nav.links section {
 	display: inline-block;
 	vertical-align: top;
 	width: calc(25% );
-	border-bottom: 5px solid #bcc2c6;
-	border:none;
+	border: none;
 	padding: 0px;
 	color: #33485d;
 	transition: 0.5s all;
@@ -170,8 +182,6 @@ header div.wrap.grey nav.links section {
 header div.wrap.grey nav.links > section  a {
 	display: block;
 	width: 100%;
-	border-left: 1px solid #bcc2c6;
-	border-right: 1px solid #bcc2c6;
 	text-align: center;
 	text-decoration: none;
 	padding: 10px 0px;
@@ -185,12 +195,12 @@ header div.wrap.grey nav.links > section  a:first-child {
 	border-bottom: 5px solid #bcc2c6;
 }
 
-header div.wrap.grey nav.links a:before , header div.wrap.grey nav.links > section > a:nth-of-type(1):before {
+header div.wrap.grey nav.links > a:before , header div.wrap.grey nav.links section > a:first-child:before {
 	position: absolute;
-	left: 0px;
+	right: 0px;
 	top: 0px;
 	width: 1px;
-	height: 100%;
+	height: 47px;
 	content: '';
 	background-color: #bcc2c6;
 }
