@@ -4,33 +4,31 @@
 	<language name="Hebrew" short="he" rtl="yes" default="yes">
 		<constant name="site_title">Vegetable shop</constant>
 
-		<!-- Navigation Header -->
-		<constant name="search_button">חפש</constant>
-		<constant name="contact">צור קשר</constant>
-		<constant name="help">עזרה</constant>
-		<constant name="welcome_guest">שלום אורח,</constant>
-		<constant name="log_sign">היכנס / הרשם</constant>
-		<!-- Nav links -->
-		<constant name="fruits">פירות</constant>
-		<constant name="vegetables">ירקות</constant>
-		<constant name="deli">מעדניה</constant>
-		<constant name="dried_fruit">פירות יבשים</constant>
-		<constant name="deals">מבצעים</constant>
-		<constant name="vegetable_herbs">ירק ועשבי תיבול</constant>
-		<constant name="sprouts_mushrooms">נבטים ופטריות</constant>
+		<constant name="title_cart">עגלת קניות</constant>
+		<constant name="label_total_cost">סה"כ לתשלום:</constant>
+		<constant name="label_total_count">סה"כ מוצרים:</constant>
+		<constant name="label_increase_amount">+</constant>
+		<constant name="label_decrease_amount">-</constant>
+		<constant name="currency">₪</constant>
 
+		<!-- Menu constants -->
+		<constant name="menu_home">Home</constant>
+		<constant name="menu_contact">צור קשר</constant>
+		<constant name="menu_help">עזרה</constant>
+		<constant name="menu_login">היכנס / הרשם</constant>
 
+		<constant name="placeholder_search">הכנס מילה לחיפוש</constant>
+		<constant name="label_search">חפש</constant>
+		<constant name="label_welcome">שלום אורח,</constant>
 
 		<!-- Footer -->
 		<constant name="safe_turn">קניה בטוחה</constant>
-		<!-- Nav Footer -->
 		<constant name="terms_use">תנאי שימוש</constant>
 		<constant name="security_settings">הגדרות אבטחה</constant>
 		<constant name="faq">FAQ</constant>
 		<constant name="payment_methods_security">שיטות תשלום ואבטחה</constant>
 		<constant name="copyright_text">עוצב ופותח ע"י חברת </constant>
-		<constant name="way2cu">WAY2CU</constant>
-
+		<constant name="way2cu">Way2CU</constant>
 		<constant name="recommended_title">המומלצים שלנו</constant>
 
 		<!-- Contact Page -->

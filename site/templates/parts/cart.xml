@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<div class="cart">
+		<h3><cms:text constant="title_cart"/></h3>
+		<ul/>
+
+		<div>
+			<div class="total_cost">
+				<cms:text constant="label_total_cost"/>
+				<cms:raw text="&amp;nbsp;"/>
+				<span/>
+			</div>
+			<div class="total_count">
+				<cms:text constant="label_total_count"/>
+				<cms:raw text="&amp;nbsp;"/>
+				<span/>
+			</div>
+
+			<button type="button" name="checkout">
+				<cms:text constant="checkout" module="shop"/>
+			</button>
+		</div>
+	</div>
+</document>

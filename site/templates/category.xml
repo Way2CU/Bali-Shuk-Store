@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../units/schema/language.dtd">
+<document>
+	<cms:var name="_DOCTYPE"/>
+	<html lang="$language" cms:eval="lang">
+		<head>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					id="$action"
+					template="parts/category_title.xml"
+					cms:eval="id"
+					/>
+				<cms:if condition="isset($_REQUEST['sub'])">
+					<cms:raw text=" - "/>
+					<cms:module
+						name="shop"
+						action="show_category"
+						id="$_REQUEST['sub']"
+						template="parts/category_title.xml"
+						cms:eval="id"
+						/>
+				</cms:if>
+			</title>
+
+			<cms:module
+				name="shop"
+				action="include_cart_scripts"
+				/>
+			<cms:module name="head_tag" action="print_tag"/>
+		</head>
+
+		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
+			<cms:template file="parts/header.xml"/>
+
+			<!-- Shopping cart -->
+			<cms:template file="parts/cart.xml"/>
+
+			<!-- Shopping items -->
+			<div class="shopping">
+				<cms:if condition="isset($_REQUEST['sub'])">
+					<h3>
+						<cms:module
+							name="shop"
+							action="show_category"
+							id="$_REQUEST['sub']"
+							template="parts/category_title.xml"
+							cms:eval="id"
+							/>
+					</h3>
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$_REQUEST['sub']"
+						template="parts/shop_item.xml"
+						cms:eval="category"
+						/>
+				</cms:if>
+				<cms:if condition="!isset($_REQUEST['sub'])">
+					<h3>
+						<cms:module
+							name="shop"
+							action="show_category"
+							id="$action"
+							template="parts/category_title.xml"
+							cms:eval="id"
+							/>
+					</h3>
+					<cms:module
+						name="shop"
+						action="show_item_list"
+						category="$action"
+						template="parts/shop_item.xml"
+						cms:eval="category"
+						/>
+				</cms:if>
+			</div>
+
+			<cms:template file="parts/footer.xml"/>
+		</body>
+	</html>
+</document>

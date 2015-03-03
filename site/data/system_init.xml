@@ -7,12 +7,13 @@
 	<module name="page_info" order="3" preload="yes"/>
 	<module name="language_menu" order="4" preload="yes"/>
 	<module name="captcha" order="0" preload="no"/>
-	<module name="shop" order="1" preload="no"/>
-	
-	<user 
-		fullname="Administrator" 
+	<module name="gallery" order="1" preload="no"/>
+	<module name="shop" order="2" preload="no"/>
+
+	<user
+		fullname="Administrator"
 		username="admin"
-		password="" 
-		level="10" 
+		password=""
+		level="10"
 	/>
 </document>

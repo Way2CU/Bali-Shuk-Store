@@ -6,9 +6,13 @@
 * Author: Khalid Sawalhi
 */
 
-body {
-	background-color: #f8f5ee;
-}
+/**
+ * Z-Index modification list:
+ * 1000 - Shopping cart
+ * 1001 - Categories menu
+ */
+
+@charset: 'utf8';
 
 .inner_wrap {
 	display: block;
@@ -64,35 +68,38 @@ div.banner_container img {
 
 div.shopping {
 	display: block;
-	width: 70vw;
+	width: calc(100vw - 550px);
+
 	margin-right: auto;
+	padding-bottom: 50px;
 }
 
-div.shopping > h3:nth-of-type(1) {
-	text-align: center;
-	color: white;
-	background-color: #095965;
+div.shopping h3 {
 	padding:10px;
+
+	border-radius: 0px 10px 10px 0px;
+	background-color: #095965;
+
+	color: white;
 	font-weight: normal;
+	text-align: center;
 }
 
 div.shopping div.item {
 	display: inline-block;
 	vertical-align: top;
 	width: 230px;
-	margin: 10px 15px 30px 15px;
-}
 
-div.shopping div.item {
-	margin-right: 0px;
+	margin: 10px;
+
+	border: 2px solid #f4eee2;
+	border-radius: 5px;
+	background-color: white;
 }
 
 div.shopping div.item > h5 {
-	min-height: 50px;
 	margin: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: white;
+	padding: 10px;
 	text-align: center;
 	font-weight: normal;
 }
@@ -100,9 +107,44 @@ div.shopping div.item > h5 {
 div.shopping div.item div.image {
 	height: 170px;
 	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: 100% auto;
-	background-color: white;
+	background-position: center center;
+}
+
+div.shopping div.item div.controls a {
+	display: inline-block;
+	vertical-align: top;
+	width: 2em;
+
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+
+	background-color: #7a9900;
+
+	color: white;
+	text-align: center;
+	text-decoration: none;
+}
+
+div.shopping div.item div.controls a:first-of-type {
+	border-radius: 0px 0px 5px 0px;
+}
+
+div.shopping div.item div.controls a:last-of-type {
+	border-radius: 0px 0px 0px 5px;
+}
+
+div.shopping div.item div.controls span {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 4em - 20px);
+	min-height: 1em;
+
+	padding: 10px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+
+	color: #7e8b8c;
+	text-align: center;
 }
 
 div.shopping div.item div.price {
@@ -320,4 +362,140 @@ div.wrap.security div.inner_wrap div.article p:nth-of-type(even) {
 
 div.wrap.security div.inner_wrap div.article p:last-child {
 	border: none;
+}
+
+/**
+ * Shopping cart
+ */
+div.cart {
+	float: right;
+	position: relative;
+	z-index: 1000;
+
+	margin-right: 20px;
+	margin-top: 20px;
+
+	border: 2px solid #f4eee2;
+	border-radius: 10px;
+	background-color: white;
+}
+
+div.cart.floating {
+	position: fixed;
+}
+
+div.cart h3 {
+	margin: 0px;
+	padding: 10px;
+	font-weight: normal;
+	text-align: center;
+}
+
+div.cart ul {
+	display: block;
+	min-width: 420px;
+	margin: 0px;
+	padding: 0px;
+
+	list-style-type: none;
+	list-style-image: none;
+}
+
+div.cart ul li {
+	display: block;
+	min-width: 400px;
+	padding: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	position: relative;
+}
+
+div.cart ul li:first-of-type {
+	margin-top: 0px;
+}
+
+div.cart ul li:last-of-type {
+	margin-bottom: 0px;
+}
+
+div.cart ul li:after {
+	position: absolute;
+	height: 1px;
+	width: 60%;
+	content: '';
+
+	left: 20%;
+	bottom: -3px;
+
+	background-color: #e8dcc5;
+}
+
+div.cart ul li:last-of-type:after {
+	content: none;
+}
+
+div.cart ul li:hover {
+	background-color: rgba(232, 220, 197, 0.3);
+}
+
+div.cart ul li span {
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+}
+
+div.cart ul li span.name {
+	padding-right: 40px;
+	width: calc(60% - 65px);
+}
+
+div.cart ul li span.count {
+	width: calc(15% - 25px);
+}
+
+div.cart ul li span.total {
+	width: calc(20% - 25px);
+}
+
+div.cart ul li a {
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+}
+
+div.cart > div {
+	padding: 10px;
+
+	border-radius: 0px 0px 10px 10px;
+	background-color: #e8dcc5;
+
+	text-align: center;
+}
+
+div.cart > div button {
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	border: 1px solid rgba(10, 90, 102, 1);
+	border-radius: 9px;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+
+	color: white;
+	font-size: 1.2rem;
+}
+
+div.cart > div button:active {
+	background-image: linear-gradient(180deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+}
+
+div.cart div.total_cost,
+div.cart div.total_count {
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+div.cart div.total_cost span:after {
+	content:  ' ₪';
 }

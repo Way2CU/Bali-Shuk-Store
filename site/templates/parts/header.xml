@@ -2,114 +2,115 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<header>
-		<div class="wrap white">
-			<div class="inner_wrap">
-				<nav class="upper">
-					<form>
-					        <label><input type="search" name="query" placeholder="הכנס מילה לחיפוש"/></label>
-					        <button type="submit"><cms:text constant="search_button"/></button>
-					</form>
+		<a
+			href="url_Make()"
+			class="logo"
+			cms:eval="href"
+			>
+			<img
+				src="_BASEURL.'/site/images/logo.svg'"
+				alt="site_title"
+				cms:eval="src"
+				cms:constant="alt"
+				/>
+		</a>
 
-					 <a
-						class="section == 'contact' ? 'active' : false"
-						href="url_Make('', 'contact')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="contact"/>
-					</a>
+		<div class="wrap">
+			<!-- Search form -->
+			<form
+				action="url_Make('', 'search')"
+				method="GET"
+				cms:eval="action"
+				>
+				<label>
+					<input
+						type="search"
+						name="query"
+						placeholder="placeholder_search"
+						cms:constant="placeholder"
+						/>
+				</label>
+				<button type="submit">
+					<cms:text constant="label_search"/>
+				</button>
+			</form>
 
-					 <a
-						class="section == 'help' ? 'active' : false"
-						href="url_Make('', 'help')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="help"/>
-					</a>
+			<!-- Main menu -->
+			<nav id="main">
+				<ul>
+					<li>
+						<a
+							href="url_Make()"
+							class="$section == 'home' ? 'active' : false"
+							cms:eval="href"
+							cms:optional="class"
+							>
+							<cms:text constant="menu_home"/>
+						</a>
+					</li>
+					<li>
+						<a
+							href="url_Make('', 'contact')"
+							class="$section == 'contact' ? 'active' : false"
+							cms:eval="href"
+							cms:optional="class"
+							>
+							<cms:text constant="menu_contact"/>
+						</a>
+					</li>
+					<li>
+						<a
+							class="$section == 'help' ? 'active' : false"
+							href="url_Make('', 'help')"
+							cms:eval="href"
+							cms:optional="class"
+							>
+							<cms:text constant="menu_help"/>
+						</a>
+					</li>
 
 					<cms:guest>
-						<span><cms:text constant="welcome_guest"/></span>
-					</cms:guest>
-
-					 <a
-						class="section == 'log_sign' ? 'active' : false"
-						href="url_Make('', 'log_sign')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="log_sign"/>
-					</a>
-				</nav>
-			</div>
-		</div>
-			<div class="wrap grey">
-				<nav class="links">
-					 <a
-						class="section == 'fruits' ? 'active' : false"
-						href="url_Make('', 'fruits')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="fruits"/>
-					</a>
-					<section>
+						<li class="user">
+							<span><cms:text constant="label_welcome"/></span>
 							<a
-								class="section == 'vegetables' ? 'active' : false"
-								href="url_Make('', 'vegetables')"
-								cms:eval="href"
-								cms:optional="class"
+								href="javascript: void(0);"
+								class="login"
 								>
-								<cms:text constant="vegetables"/>
+								<cms:text constant="menu_login"/>
 							</a>
-							<nav id="dropdown">
-								<a
-									class="($section == 'vegetables' and $action == 'vegetable_herbs') ? 'active' : false"
-									href="url_Make('vegetable_herbs', 'vegetables')"
-									cms:eval="href"
-									cms:optional="class"
-									>
-									<cms:text constant="vegetable_herbs"/>
-								</a>
-								<a
-									class="($section == 'vegetables' and $action == 'sprouts_mushrooms') ? 'active' : false"
-									href="url_Make('sprouts_mushrooms', 'vegetables')"
-									cms:eval="href"
-									cms:optional="class"
-									>
-									<cms:text constant="sprouts_mushrooms"/>
-								</a>
-							</nav>
-							</section>
-							<section>
-							 <a
-								class="section == 'deli' ? 'active' : false"
-								href="url_Make('', 'deli')"
-								cms:eval="href"
-								cms:optional="class"
-							>
-								<cms:text constant="deli"/>
-							</a>
-							<nav id="dropdown">
-								<a
-									class="($section == 'deli' and $action == 'dried_fruit') ? 'active' : false"
-									href="url_Make('dried_fruit', 'deli')"
-									cms:eval="href"
-									cms:optional="class"
-									>
-									<cms:text constant="dried_fruit"/>
-								</a>
-							</nav>
-							</section>
-					 <a
-						class="section == 'deals' ? 'active' : false"
-						href="url_Make('', 'deals')"
-						cms:eval="href"
-						cms:optional="class"
-					>
-						<cms:text constant="deals"/>
-					</a>
-				</nav>
-			</div>
+						</li>
+					</cms:guest>
+				</ul>
+			</nav>
+		</div>
+
+		<nav id="categories">
+			<ul>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="vegetables"
+					template="parts/category_menu_item_with_children.xml"
+					/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="fruits"
+					template="parts/category_menu_item.xml"
+					/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="deli"
+					template="parts/category_menu_item_with_children.xml"
+					/>
+				<cms:module
+					name="shop"
+					action="show_category"
+					text_id="sale"
+					template="parts/category_menu_item.xml"
+					/>
+			</ul>
+		</nav>
 	</header>
 </document>

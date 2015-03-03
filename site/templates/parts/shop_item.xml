@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<div class="item">
+	<div
+		class="item"
+		data-cid="$params['cid']"
+		cms:eval="data-cid"
+		>
 		<h5><cms:var param="name" multilanguage="yes"/></h5>
 
 		<div
 			class="image"
-			style="'background-image: url('.$params['image'].');'"
+			style="'background-image: url('.gallery::getGroupThumbnailById($params['gallery'], null, 170, Thumbnail::CONSTRAIN_BOTH).');'"
 			cms:eval="style"
 			/>
+
 		<div class="price">
 			<cms:var param="price"/>
-			<cms:var param="currency"/>
+			<cms:raw text="&amp;nbsp;"/>
+			<cms:text constant="currency"/>
+		</div>
+
+		<div class="controls">
+			<a
+				href="javascript: void(0);"
+				class="alter increase"
+				>
+				<cms:text constant="label_increase_amount"/>
+			</a>
+			<span>0</span>
+			<a
+				href="javascript: void(0);"
+				class="alter decrease"
+				>
+				<cms:text constant="label_decrease_amount"/>
+			</a>
 		</div>
 	</div>
 </document>

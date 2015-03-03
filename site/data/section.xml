@@ -19,6 +19,9 @@
 	<section name="security">
 		<language name="all" file="security.xml" />
 	</section>
+	<section name="category">
+		<language name="all" file="category.xml"/>
+	</section>
 	<section name="vegetables">
 			<language name="all">
 				<action name="_default" file="vegetables.xml"/>

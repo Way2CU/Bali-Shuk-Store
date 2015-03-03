@@ -5,18 +5,20 @@
 	<html lang="$language" cms:eval="lang">
 		<head>
 			<title><cms:text constant="site_title"/></title>
+			<cms:module
+				name="shop"
+				action="include_cart_scripts"
+			/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
 			<cms:template file="parts/header.xml"/>
-			<div class="banner_container">
-				<img
-					src="_BASEURL.'/site/images/photo-frame.svg'"
-					alt="photo-frame"
-					cms:eval="src"
-				/>
-			</div>
+
+			<!-- Shopping cart -->
+			<cms:template file="parts/cart.xml"/>
+
+			<!-- Shopping items -->
 			<div class="shopping">
 				<h3><cms:text constant="recommended_title"/></h3>
 				<cms:module
@@ -26,6 +28,7 @@
 					template="parts/shop_item.xml"
 					/>
 			</div>
+
 			<cms:template file="parts/footer.xml"/>
 		</body>
 	</html>

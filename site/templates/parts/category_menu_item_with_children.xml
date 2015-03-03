@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<li class="$params['text_id']" cms:eval="class">
+		<a
+			href="url_Make($params['id'], 'category')"
+			class="$action == $params['id'] ? 'active' : false"
+			cms:eval="href"
+			cms:optional="class"
+			>
+			<cms:var param="title" multilanguage="yes"/>
+		</a>
+
+		<ul>
+			<cms:children
+				parent_id="$params['id']"
+				template="parts/category_menu_item.xml"
+				cms:eval="parent_id"
+				/>
+		</ul>
+	</li>
+</document>
