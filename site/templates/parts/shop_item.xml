@@ -20,6 +20,14 @@
 			<cms:text constant="currency"/>
 		</div>
 
+		<div class="units">
+			<cms:value_list
+				definition="$params['size_definition']"
+				template="parts/shop_item_unit.xml"
+				cms:eval="definition"
+				/>
+		</div>
+
 		<div class="controls">
 			<a
 				href="javascript: void(0);"

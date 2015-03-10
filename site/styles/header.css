@@ -6,6 +6,12 @@
  * Authors: Mladen Mijatov, Khalid Sawalhi
  */
 
+/**
+ * Z-Index modification list:
+ * 1000 - Shopping cart
+ * 1001 - Categories menu
+ */
+
 header {
 	position: relative;
 	min-height: 450px;
@@ -51,7 +57,6 @@ header a.logo img {
 	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 }
-
 
 /**
  * Search bar

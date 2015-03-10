@@ -6,11 +6,6 @@
 		<ul/>
 
 		<div>
-			<div class="total_cost">
-				<cms:text constant="label_total_cost"/>
-				<cms:raw text="&amp;nbsp;"/>
-				<span/>
-			</div>
 			<div class="total_count">
 				<cms:text constant="label_total_count"/>
 				<cms:raw text="&amp;nbsp;"/>

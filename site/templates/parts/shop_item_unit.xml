@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<label>
+		<input
+			type="radio"
+			name="unit"
+			value="$params['value'][$language]"
+			cms:eval="value"
+			/>
+		<span><cms:var param="value" multilanguage="yes"/></span>
+	</label>
+</document>

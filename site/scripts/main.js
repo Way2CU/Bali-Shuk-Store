@@ -122,7 +122,6 @@ Site.on_load = function() {
 	Site.cart = new Caracal.Shop.Cart();
 	Site.cart
 		.ui.connect_checkout_button($('div.cart button[name=checkout]'))
-		.ui.add_total_cost_label($('div.cart div.total_cost span'))
 		.ui.add_total_count_label($('div.cart div.total_count span'))
 		.ui.add_item_list($('div.cart ul'))
 		.add_item_view(Site.ItemCountView)
