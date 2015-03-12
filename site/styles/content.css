@@ -79,6 +79,7 @@ div.shopping h3 {
 
 	border-radius: 0px 10px 10px 0px;
 	background-color: #095965;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
 
 	color: white;
 	font-weight: normal;
@@ -157,7 +158,7 @@ div.shopping div.item div.price {
 	text-align: center;
 }
 
-div.shopping div.item div.units {
+div.shopping div.item form.units {
 	padding-top: 5px;
 	padding-bottom: 10px;
 
@@ -167,16 +168,16 @@ div.shopping div.item div.units {
 	text-align: center;
 }
 
-div.shopping div.item div.units label {
+div.shopping div.item form.units label {
 	display: inline-block;
 	padding: 0px 10px;
 }
 
-div.shopping div.item div.units label input {
+div.shopping div.item form.units label input {
 	display: none;
 }
 
-div.shopping div.item div.units label span:before {
+div.shopping div.item form.units label span:before {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -195,7 +196,7 @@ div.shopping div.item div.units label span:before {
 	transition: background-color 0.3s;
 }
 
-div.shopping div.item div.units label input:checked + span:before {
+div.shopping div.item form.units label input:checked + span:before {
 	background-color: #656565;
 }
 
@@ -525,6 +526,7 @@ div.cart > div button {
 
 	border: 1px solid rgba(10, 90, 102, 1);
 	border-radius: 9px;
+	background-color: #095965;
 	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
 
 	color: white;
