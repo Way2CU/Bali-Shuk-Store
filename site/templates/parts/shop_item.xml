@@ -20,13 +20,14 @@
 			<cms:text constant="currency"/>
 		</div>
 
-		<div class="units">
+		<form class="units">
 			<cms:value_list
 				definition="$params['size_definition']"
+				select_first="1"
 				template="parts/shop_item_unit.xml"
 				cms:eval="definition"
 				/>
-		</div>
+		</form>
 
 		<div class="controls">
 			<a

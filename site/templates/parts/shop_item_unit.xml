@@ -6,7 +6,9 @@
 			type="radio"
 			name="unit"
 			value="$params['value'][$language]"
+			checked="$params['selected'] ? 'checked' : false"
 			cms:eval="value"
+			cms:optional="checked"
 			/>
 		<span><cms:var param="value" multilanguage="yes"/></span>
 	</label>
