@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<div class="cart">
+	<div
+		class="cart"
+		data-size-definition="SIZE_DEFINITION"
+		cms:eval="data-size-definition"
+		>
 		<h3><cms:text constant="title_cart"/></h3>
 		<ul/>
 
