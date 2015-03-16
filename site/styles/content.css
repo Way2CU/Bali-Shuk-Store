@@ -181,8 +181,7 @@ div.shopping div.item form.units label span:before {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	content: '';
-
+	content: ''; 
 	position: relative;
 	top: 2px;
 
@@ -485,23 +484,39 @@ div.cart ul li:hover {
 	background-color: rgba(232, 220, 197, 0.3);
 }
 
-div.cart ul li span {
-	display: inline-block;
-	vertical-align: top;
-	padding: 5px;
+div.cart ul li img {
+	border-radius: 3px;
+	vertical-align: middle;
 }
 
-div.cart ul li span.name {
-	padding-right: 40px;
-	width: calc(60% - 65px);
+div.cart ul li span {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px;
+	text-align: center;
 }
 
 div.cart ul li span.count {
-	width: calc(15% - 25px);
+	width: 50px;
 }
 
-div.cart ul li span.total {
-	width: calc(20% - 25px);
+div.cart ul li span.name {
+	width: 150px;
+	padding-right: 10px;
+	text-align: right;
+}
+
+div.cart ul li span.price {
+	width: 50px;
+}
+
+div.cart ul li span.price:before {
+	display: block;
+	content: attr(data-label);
+}
+
+div.cart ul li span.price:after {
+	content: ' ' attr(data-currency);
 }
 
 div.cart ul li a {
@@ -540,4 +555,99 @@ div.cart > div button:active {
 div.cart div.total_count {
 	margin-bottom: 10px;
 	text-align: right;
+}
+
+/**
+ * Dialogs
+ */
+div.dialog,
+div.dialog.error {
+	visibility: hidden;
+	opacity: 0;
+	top: 10% !important;
+
+	transform: translateY(-200px);
+
+	border-radius: 10px;
+	background-color: white;
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+	transition: all 0.5s;
+}
+
+div.dialog.visible {
+	visibility: visible;
+	opacity: 1;
+
+	margin-left: 0px;
+
+	transform: translateY(0);
+}
+
+div.dialog div.title {
+	border-radius: 10px 10px 0px 0px;
+	background-color: #095965;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+
+	color: white;
+	text-align: center;
+}
+
+div.dialog div.inner_content {
+	padding: 10px;
+	text-align: center;
+}
+
+div.dialog label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+div.dialog label input {
+	min-width: 80%;
+	padding: 10px;
+
+	border: 1px solid #909090;
+	border-radius: 3px;
+	box-shadow: inset 0px -3px 3px rgba(120, 120, 120, 0.2);
+
+	color: #909090;
+	transition: all 0.3s;
+}
+
+div.dialog label input:focus {
+	border-color: #095965;
+	color: #095965;
+}
+
+div.dialog div.captcha input {
+	width: calc(100% - 214px);
+	min-width: 30%;
+	margin-left: 10px;
+}
+
+div.dialog div.captcha img {
+	vertical-align: bottom;
+
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+}
+
+div.dialog input.invalid {
+	box-shadow: inset 0px 0px 4px 0px red;
+	border-color: red;
+}
+
+div.dialog div.inner_content a {
+	color: #3397DA;
+	text-decoration: none;
+}
+
+div.dialog div.inner_content a:hover {
+	text-decoration: underline;
+}
+
+div.dialog div.controls a {
+	border-radius: 5px;
 }
