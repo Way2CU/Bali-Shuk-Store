@@ -78,6 +78,12 @@
 								>
 								<cms:text constant="menu_login"/>
 							</a>
+							<a
+								href="javascript: void(0);"
+								class="sign-up"
+								>
+								<cms:text constant="menu_sign_up"/>
+							</a>
 						</li>
 					</cms:guest>
 				</ul>
