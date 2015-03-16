@@ -731,7 +731,12 @@ Site.ItemView = function(item) {
 
 		// create container
 		self.container = $('<li>').appendTo(item_list);
-		self.container.addClass('item');
+		self.container
+				.addClass('hidden')
+				.addClass('item');
+
+		// force reflow of this item
+		self.container[0].offsetHeight;
 
 		// create labels
 		self.label_count = $('<span>').appendTo(self.container);
@@ -774,6 +779,10 @@ Site.ItemView = function(item) {
 		self.image
 				.attr('alt', self.item.name[language_handler.current_language])
 				.attr('src', self.item.image);
+
+		// show item if hidden
+		if (self.container.hasClass('hidden'))
+			self.container.removeClass('hidden');
 	};
 
 	/**
@@ -790,6 +799,17 @@ Site.ItemView = function(item) {
 	 */
 	self.handle_remove = function() {
 		self.label.html(0);
+
+		// hide item and remove container
+		self.container.addClass('hidden');
+		setTimeout(self.handle_remove_animation, 600);
+	};
+
+	/**
+	 * Handle ending of remove animation.
+	 */
+	self.handle_remove_animation = function() {
+		self.container.remove();
 	};
 
 	// finalize object

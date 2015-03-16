@@ -435,6 +435,8 @@ div.cart ul {
 	margin: 0px;
 	padding: 0px;
 
+	overflow: hidden;
+
 	list-style-type: none;
 	list-style-image: none;
 }
@@ -442,19 +444,18 @@ div.cart ul {
 div.cart ul li {
 	display: block;
 	min-width: 400px;
+	max-height: 100px;
 	padding: 10px;
-	margin-top: 5px;
-	margin-bottom: 5px;
 
 	position: relative;
+
+	transition: all 0.5s;
 }
 
-div.cart ul li:first-of-type {
-	margin-top: 0px;
-}
-
-div.cart ul li:last-of-type {
-	margin-bottom: 0px;
+div.cart ul li.hidden {
+	max-height: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 div.cart ul li:after {
@@ -464,12 +465,18 @@ div.cart ul li:after {
 	content: '';
 
 	left: 20%;
-	bottom: -3px;
+	top: 0px;
 
 	background-color: #e8dcc5;
+
+	transition: all 0.5s;
 }
 
-div.cart ul li:last-of-type:after {
+div.cart ul li.hidden:after {
+	opacity: 0;
+}
+
+div.cart ul li:first-of-type:after {
 	content: none;
 }
 
@@ -478,6 +485,8 @@ div.cart ul li:hover {
 }
 
 div.cart ul li img {
+	width: 100px;
+	height: 100px;
 	border-radius: 3px;
 	vertical-align: middle;
 }
