@@ -14,14 +14,6 @@
 
 @charset: 'utf8';
 
-.inner_wrap {
-	display: block;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-}
-
 .wrap.white {
 	background-color: white;
 }
@@ -199,7 +191,7 @@ div.shopping div.item form.units label input:checked + span:before {
 	background-color: #656565;
 }
 
-div.wrap div.inner_wrap > h1:nth-of-type(1) {
+div.wrap > h1:nth-of-type(1) {
 	margin: 0px auto;
 	padding: 30px 0px;
 	color: #3397da;
@@ -207,7 +199,7 @@ div.wrap div.inner_wrap > h1:nth-of-type(1) {
 	text-align: center;
 }
 
-div.wrap.contact div.inner_wrap div.one_half div.article div {
+div.wrap.contact div.one_half div.article div {
 	margin: 15px 0px;
 	background-color: white;
 	width: 350px;
@@ -215,19 +207,19 @@ div.wrap.contact div.inner_wrap div.one_half div.article div {
 	position: relative;
 }
 
-div.wrap.contact div.inner_wrap div.one_half div.article div:nth-of-type(2):before {
+div.wrap.contact div.one_half div.article div:nth-of-type(2):before {
 	background-position: -90px -122px;
 }
 
-div.wrap.contact div.inner_wrap div.one_half div.article div:nth-of-type(3):before {
+div.wrap.contact div.one_half div.article div:nth-of-type(3):before {
 	background-position: -90px -226px;
 }
 
-div.wrap.contact div.inner_wrap div.one_half div.article div:nth-of-type(4):before {
+div.wrap.contact div.one_half div.article div:nth-of-type(4):before {
 	background-position: -90px -327px;
 }
 
-div.wrap.contact div.inner_wrap div.one_half div.article div:before {
+div.wrap.contact div.one_half div.article div:before {
 	position: absolute;
 	top: 0px;
 	right: 0px;
@@ -241,20 +233,20 @@ div.wrap.contact div.inner_wrap div.one_half div.article div:before {
 	content: '';
 }
 
-div.wrap.contact div.inner_wrap div.one_half div.article div span {
+div.wrap.contact div.one_half div.article div span {
 	display: block;
 	text-align: right;
 	font-size: 1.2rem;
 	padding-right: 100px;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) {
+div.wrap.contact div.one_half:nth-of-type(2) {
 	background-color: white;
 	padding-bottom: 30px;
 	margin-bottom: 30px;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) > span:nth-of-type(1) {
+div.wrap.contact div.one_half:nth-of-type(2) > span:nth-of-type(1) {
 	display: block;
 	padding: 30px 0px;
 	font-size: 1.5rem;
@@ -263,13 +255,13 @@ div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) > span:nth-of-type(1
 	text-align: center;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form label {
+div.wrap.contact div.one_half:nth-of-type(2) form label {
 	display: block;
 	margin: 15px 0px;
 	text-align: center;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form label input {
+div.wrap.contact div.one_half:nth-of-type(2) form label input {
 	padding: 15px;
 	border: 1px solid #94a4a5;
 	text-align: right;
@@ -279,11 +271,11 @@ div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form label input {
 	transition: 0.5s all;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form label input:focus {
+div.wrap.contact div.one_half:nth-of-type(2) form label input:focus {
 	border-color: #ebeff0;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form label span {
+div.wrap.contact div.one_half:nth-of-type(2) form label span {
 	display: inline-block;
 	vertical-align: middle;
 	width: 128px;
@@ -291,11 +283,11 @@ div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form label span {
 	font-size: 1.2rem;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form div.controls {
+div.wrap.contact div.one_half:nth-of-type(2) form div.controls {
 	text-align: center;
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form div.controls button {
+div.wrap.contact div.one_half:nth-of-type(2) form div.controls button {
 	display: block;
 	background-color: #ebeff0;
 	border: 1px solid #ebeff0;
@@ -308,12 +300,13 @@ div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form div.controls bu
 	margin-right: calc(178px);
 }
 
-div.wrap.contact div.inner_wrap div.one_half:nth-of-type(2) form div.controls button:hover {
+div.wrap.contact div.one_half:nth-of-type(2) form div.controls button:hover {
 	background-color: #bbc2cb;
 	border-color: #bbc2cb;;
 }
 
-div.wrap.terms div.inner_wrap div.article , div.wrap.help div.inner_wrap div.article {
+div.wrap.terms div.article,
+div.wrap.help div.article {
 	padding-bottom: 30px;
 	text-align: right;
 }
@@ -368,25 +361,25 @@ div#faq dl dt.expanded:after {
 }
 
 
-div.wrap.security div.inner_wrap div.article {
+div.wrap.security div.article {
 	width: 900px;
 	margin:0px auto;
 	text-align: right;
 	line-height: 1.5;
 }
 
-div.wrap.security div.inner_wrap div.article p {
+div.wrap.security div.article p {
 	margin:0px;
 	position: relative;
 	padding-right: 40px;
 }
 
-div.wrap.security div.inner_wrap div.article p:nth-of-type(odd) {
+div.wrap.security div.article p:nth-of-type(odd) {
 	font-size: 1.3rem;
 	color: #ff7e11;
 }
 
-div.wrap.security div.inner_wrap div.article p:nth-of-type(odd):before {
+div.wrap.security div.article p:nth-of-type(odd):before {
 	width: 30px;
 	height: 30px;
 	content: '';
@@ -399,13 +392,13 @@ div.wrap.security div.inner_wrap div.article p:nth-of-type(odd):before {
 	background-size: 30px 30px;
 }
 
-div.wrap.security div.inner_wrap div.article p:nth-of-type(even) {
+div.wrap.security div.article p:nth-of-type(even) {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 	border-bottom:1px solid black;
 }
 
-div.wrap.security div.inner_wrap div.article p:last-child {
+div.wrap.security div.article p:last-child {
 	border: none;
 }
 
