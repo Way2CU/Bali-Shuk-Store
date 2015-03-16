@@ -16,6 +16,7 @@ define('_TIMEZONE', 'America/New_York');
 define('DEBUG', 1);
 // define('SQL_DEBUG', 1);
 
+define('SIZE_DEFINITION', 4);
 // default session options
 $session_type = Session::TYPE_BROWSER;
 
