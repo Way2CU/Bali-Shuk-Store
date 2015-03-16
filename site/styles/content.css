@@ -448,6 +448,7 @@ div.cart ul li {
 	padding: 10px;
 
 	position: relative;
+	overflow: hidden;
 
 	transition: all 0.5s;
 }
@@ -470,10 +471,6 @@ div.cart ul li:after {
 	background-color: #e8dcc5;
 
 	transition: all 0.5s;
-}
-
-div.cart ul li.hidden:after {
-	opacity: 0;
 }
 
 div.cart ul li:first-of-type:after {
