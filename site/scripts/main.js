@@ -115,6 +115,9 @@ Site.DialogSystem = function() {
 		self.sign_up.label_password = $('<label>');
 		self.sign_up.input_password = $('<input>');
 
+		self.sign_up.label_repeat_password = $('<label>');
+		self.sign_up.input_repeat_password = $('<input>');
+
 		// configure elements
 		self.sign_up.input_username
 				.attr('name', 'username')
@@ -127,6 +130,11 @@ Site.DialogSystem = function() {
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleSignUpKeyPress);
 
+		self.sign_up.input_repeat_password
+				.attr('name', 'repeat_password')
+				.on('focusin', self._handleFocusIn)
+				.on('keyup', self._handleSignUpKeyPress);
+
 		// pack sign up dialog
 		self.sign_up.message.appendTo(self.sign_up.content);
 
@@ -136,6 +144,10 @@ Site.DialogSystem = function() {
 
 		self.sign_up.label_password
 				.append(self.sign_up.input_password)
+				.appendTo(self.sign_up.content);
+
+		self.sign_up.label_repeat_password
+				.append(self.sign_up.input_repeat_password)
 				.appendTo(self.sign_up.content);
 
 		self.sign_up.dialog.setContent(self.sign_up.content);
@@ -295,7 +307,8 @@ Site.DialogSystem = function() {
 		var constants = [
 				'login', 'login_dialog_title', 'login_dialog_message', 'label_email', 'label_password',
 				'label_password_recovery', 'recovery_dialog_title', 'recovery_dialog_message', 'submit',
-				'label_captcha', 'captcha_message', 'signup_dialog_title', 'sign_up', 'signup_dialog_message'
+				'label_captcha', 'captcha_message', 'signup_dialog_title', 'sign_up', 'signup_dialog_message',
+				'label_repeat_password'
 			];
 		language_handler.getTextArrayAsync(null, constants, self._handleStringsLoaded);
 
@@ -417,6 +430,7 @@ Site.DialogSystem = function() {
 
 			input_username.attr('placeholder', data['label_email']);
 			input_password.attr('placeholder', data['label_password']);
+			input_repeat_password.attr('placeholder', data['label_repeat_password']);
 		}
 	};
 
