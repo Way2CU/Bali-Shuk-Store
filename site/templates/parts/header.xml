@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<header>
+	<header
+		class="$section == 'home' ? 'home' : false"
+		cms:optional="class"
+		>
 		<a
 			href="url_Make()"
 			class="logo"
