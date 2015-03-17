@@ -10,8 +10,8 @@
 		<constant name="label_increase_amount">+</constant>
 		<constant name="label_decrease_amount">-</constant>
 		<constant name="currency">₪</constant>
-		<constant name="label_per_kilo">Per kilogram</constant>
-		<constant name="label_per_unit">Per unit</constant>
+		<constant name="label_per_kilo">מחיר לק"ג</constant>
+		<constant name="label_per_unit">מחיר ליח'</constant>
 
 		<!-- Menu constants -->
 		<constant name="menu_home">עמוד הבית</constant>
@@ -19,6 +19,9 @@
 		<constant name="menu_help">עזרה</constant>
 		<constant name="menu_login">היכנס</constant>
 		<constant name="menu_sign_up">הרשם</constant>
+		<constant name="menu_terms_use">תנאי שימוש</constant>
+		<constant name="menu_security_settings">הגדרות אבטחה</constant>
+		<constant name="menu_faq">FAQ</constant>
 
 		<constant name="placeholder_search">הכנס מילה לחיפוש</constant>
 		<constant name="label_search">חפש</constant>
@@ -26,28 +29,26 @@
 
 		<!--Dialogs-->
 		<constant name="login_dialog_title">היכנס</constant>
-		<constant name="login_dialog_message">הזן כתובת מיית וסיסמה</constant>
+		<constant name="login_dialog_message">הזן כתובת מייל וסיסמה</constant>
 		<constant name="recovery_dialog_title">איפוס סיסמה</constant>
 		<constant name="recovery_dialog_message">אנא הזן כתובת מייל ו captcha</constant>
 		<constant name="captcha_message">Captcha image (הקלק לריענון)</constant>
 		<constant name="signup_dialog_title">הרשם</constant>
 		<constant name="signup_dialog_message">הזן את כתובת המייל</constant>
-		<constant name="login">הכנס</constant>
-		<constant name="sign_up">הירשם</constant>
-		<constant name="label_password_recovery">שכחת את הסיסמא?</constant>
+		<constant name="login">היכנס</constant>
+		<constant name="sign_up">הרשם</constant>
+		<constant name="label_password_recovery">שכחת את הסיסמה?</constant>
 		<constant name="label_username">כתובת מייל:</constant>
 		<constant name="label_password">סיסנה</constant>
+		<constant name="label_repeat_password">Repeat password</constant>
 		<constant name="label_email">כתובת מייל</constant>
 		<constant name="label_captcha">Captcha</constant>
 		<constant name="captcha_message">Captcha image (click to refresh)</constant>
 
 		<!-- Footer -->
 		<constant name="safe_turn">קניה בטוחה</constant>
-		<constant name="terms_use">תנאי שימוש</constant>
-		<constant name="security_settings">הגדרות אבטחה</constant>
-		<constant name="faq">FAQ</constant>
 		<constant name="payment_methods_security">שיטות תשלום ואבטחה</constant>
-		<constant name="copyright_text">עוצב ופותח ע"י חברת </constant>
+		<constant name="copyright_text">Copyright&amp;nbsp;&amp;copy; 2015. by&amp;nbsp;</constant>
 		<constant name="way2cu">Way2CU</constant>
 		<constant name="recommended_title">המומלצים שלנו</constant>
 
