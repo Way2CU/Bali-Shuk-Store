@@ -14,10 +14,15 @@
 
 header {
 	position: relative;
-	min-height: 450px;
+	min-height: 250px;
 
 	background: url(../images/header-background.jpg);
 	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
+header.home {
+	min-height: 450px;
 	background-position: center top;
 }
 
@@ -45,6 +50,11 @@ header div.wrap:after {
  */
 header a.logo {
 	position: absolute;
+	top: 10px;
+	left: calc((100vw - 1200px) / 2);
+}
+
+header.home a.logo {
 	top: 50%;
 	left: 50%;
 	margin-left: -225px;
@@ -52,10 +62,15 @@ header a.logo {
 }
 
 header a.logo img {
-	width: 450px;
-	height: 225px;
+	width: 200px;
+	height: 100px;
 	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+}
+
+header.home a.logo img {
+	width: 450px;
+	height: 225px;
 }
 
 /**
@@ -167,7 +182,7 @@ nav#main ul li {
 }
 
 nav#main ul li.user {
-	padding-right: 100px;
+	padding-right: 60px;
 }
 
 nav#main a {
