@@ -84,6 +84,9 @@ div.shopping div.item {
 	width: 230px;
 
 	margin: 10px;
+	padding-top: 1.6em;
+
+	position: relative;
 
 	border: 2px solid #f4eee2;
 	border-radius: 5px;
@@ -91,9 +94,16 @@ div.shopping div.item {
 }
 
 div.shopping div.item > h5 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 10px);
+
 	margin: 0px;
-	padding: 10px;
+	padding: 5px;
+
 	text-align: center;
+	text-shadow: white 0px 0px 3px;
 	font-weight: normal;
 }
 
@@ -416,6 +426,7 @@ div.cart {
 	border: 2px solid #f4eee2;
 	border-radius: 10px;
 	background-color: white;
+	-webkit-transform: translateZ(0);
 }
 
 div.cart.floating {
@@ -431,7 +442,7 @@ div.cart h3 {
 
 div.cart ul {
 	display: block;
-	min-width: 420px;
+	min-width: 455px;
 	margin: 0px;
 	padding: 0px;
 
@@ -507,7 +518,7 @@ div.cart ul li span.name {
 }
 
 div.cart ul li span.price {
-	width: 50px;
+	width: 100px;
 }
 
 div.cart ul li span.price:before {
