@@ -433,6 +433,18 @@ div.cart.floating {
 	position: fixed;
 }
 
+div.cart section.container {
+	height: 350px;
+	overflow: hidden;
+}
+
+div.cart div.scrollbar_thumb {
+	width: 7px;
+	margin-left: 2px;
+	border-radius: 2px;
+	background-color: #33485d;
+}
+
 div.cart h3 {
 	margin: 0px;
 	padding: 10px;
@@ -443,6 +455,7 @@ div.cart h3 {
 div.cart ul {
 	display: block;
 	min-width: 455px;
+	min-height: 350px;
 	margin: 0px;
 	padding: 0px;
 
@@ -452,11 +465,24 @@ div.cart ul {
 	list-style-image: none;
 }
 
+div.cart ul:empty:after {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	width: 200px;
+	margin-left: -100px;
+
+	content: attr(data-message-empty);
+	color: #E8DCC5;
+	font-size: 2em;
+	text-align: center;
+}
+
 div.cart ul li {
 	display: block;
 	min-width: 400px;
 	max-height: 100px;
-	padding: 10px;
+	padding: 1px 10px;
 
 	position: relative;
 	overflow: hidden;
@@ -497,7 +523,7 @@ div.cart ul li img {
 	height: 100px;
 	vertical-align: middle;
 
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 div.cart ul li span {

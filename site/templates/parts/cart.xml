@@ -7,7 +7,12 @@
 		cms:eval="data-size-definition"
 		>
 		<h3><cms:text constant="title_cart"/></h3>
-		<ul/>
+		<section class="container">
+			<ul
+				data-message-empty="label_empty_cart"
+				cms:constant="data-message-empty"
+				/>
+		</section>
 
 		<div>
 			<div class="total_count">

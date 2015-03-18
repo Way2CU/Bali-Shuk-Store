@@ -41,13 +41,15 @@ footer div.right_container {
 	width: 422px;
 	min-height: 237px;
 	padding-right: 20px;
-	top: -1px;
+	top: -5px;
 	right: 20px;
 
-	background-image: url(../images/ribbon.svg),url(../images/ribbon-shadow.png);
+	background-image: url(../images/ribbon.svg);
 	background-repeat: no-repeat;
-	background-position: center top, 20px;
-	background-size: 400px 209px, 422px 237px;
+	background-position: center top;
+	background-size: 400px 209px;
+	filter: drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.6));
+	-webkit-filter: drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.6));
 
 	text-align: center;
 }

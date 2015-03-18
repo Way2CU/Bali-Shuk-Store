@@ -849,6 +849,9 @@ Site.on_load = function() {
 		.ui.add_item_list($('div.cart ul'))
 		.add_item_view(Site.ItemView);
 
+	// create scrollbar for shopping cart
+	Site.scrollbar = new Scrollbar('section.container', 'ul', true);
+
 	// connect increase and decrease controls
 	$('div.item div.controls a.alter').on('click', function(event) {
 		var control = $(this);

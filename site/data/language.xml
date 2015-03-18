@@ -12,6 +12,7 @@
 		<constant name="currency">₪</constant>
 		<constant name="label_per_kilo">מחיר לק"ג</constant>
 		<constant name="label_per_unit">מחיר ליח'</constant>
+		<constant name="label_empty_cart">Shopping cart is empty.</constant>
 
 		<!-- Menu constants -->
 		<constant name="menu_home">עמוד הבית</constant>
