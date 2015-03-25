@@ -1,7 +1,7 @@
 {
     "asked_questions": "תשובות לשאלות נפוצות",
     "captcha_message": "Captcha image (הקלקו לריענון)",
-    "copyright_text": "Copyright&nbsp;&copy; 2015. by&nbsp;",
+    "copyright_text": "Designed and developed by <a href=\"http://way2cu.com\" target=\"_blank\">Way2CU</a>.<br>Copyright &copy; 2015. by בא לי שוק - חנות ירקות. All rights reserved.",
     "currency": "₪",
     "label_captcha": "Captcha",
     "label_decrease_amount": "-",
@@ -42,5 +42,6 @@
     "signup_dialog_title": "הירשם",
     "site_title": "בא לי שוק - חנות ירקות",
     "title_cart": "עגלת קניות",
+    "title_search": "Search results: ",
     "way2cu": "Way2CU"
 }
