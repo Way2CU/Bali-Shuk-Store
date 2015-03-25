@@ -65,7 +65,7 @@ function FAQ() {
 		// expand current
 		question.addClass('expanded');
 		answer.slideDown();
-		
+
 		// save current index
 		self.current = index;
 	};

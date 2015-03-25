@@ -60,6 +60,7 @@ div.banner_container img {
 
 div.shopping {
 	display: block;
+	min-height: 500px;
 	width: calc(100vw - 550px);
 
 	margin-right: auto;
@@ -471,8 +472,13 @@ div.cart ul:empty:after {
 	left: 50%;
 	width: 200px;
 	margin-left: -100px;
+	padding-top: 170px;
 
 	content: attr(data-message-empty);
+	background-image: url(../images/cart.png);
+	background-position: center top;
+	background-repeat: no-repeat;
+
 	color: #E8DCC5;
 	font-size: 2em;
 	text-align: center;
@@ -535,6 +541,11 @@ div.cart ul li span {
 
 div.cart ul li span.count {
 	width: 50px;
+}
+
+div.cart ul li span.count:after {
+	display: block;
+	content: attr(data-size);
 }
 
 div.cart ul li span.name {

@@ -1,9 +1,9 @@
 /**
  * Main JavaScript
- * Site Name
+ * Vegetable Shop
  *
  * Copyright (c) 2015. by Way2CU, http://way2cu.com
- * Authors:
+ * Authors: Mladen Mijatov
  */
 
 // create or use existing site scope
@@ -731,6 +731,7 @@ Site.ItemView = function(item) {
 	self.item = item;
 	self.cart = item.cart;
 	self.label = null;
+	self.units = null;
 	self.container = null;
 	self.label_count = null;
 	self.label_name = null;
@@ -769,12 +770,16 @@ Site.ItemView = function(item) {
 	 * Handle item count change.
 	 */
 	self.handle_change = function() {
-		// update in site count label
+		// get elements on the page to update
 		if (self.label == null) {
-			var cid = self.item.get_cid();
-			self.label = $('div.item[data-cid="'+cid+'"] div.controls span');
+			var container = $('div.item[data-uid="' + self.item.uid + '"]');
+			self.label = container.find('div.controls span');
+			self.units = container.find('form.units');
 		}
+
+		// set count and unit
 		self.label.html(self.item.count);
+		self.units.find('input[value="' + self.item.properties.size + '"]').prop('checked', true);
 
 		// set matching label
 		var unit_definition = $('div.cart').data('size-definition');
@@ -785,7 +790,9 @@ Site.ItemView = function(item) {
 
 		// update shopping cart elements
 		self.label_name.text(self.item.name[language_handler.current_language]);
-		self.label_count.text(self.item.count);
+		self.label_count
+				.attr('data-size', self.item.properties.size)
+				.text(self.item.count);
 		self.label_price
 				.attr('data-label', price_label)
 				.attr('data-currency', language_handler.getText(null, 'currency'))
@@ -831,6 +838,38 @@ Site.ItemView = function(item) {
 }
 
 /**
+ * Function which handles altering item amount on page.
+ *
+ * @param object event
+ */
+Site.alter_item_count = function(event) {
+	var control = $(this);
+	var item_container = control.closest('div.item');
+	var difference = control.hasClass('increase') ? 1 : -1;
+	var measurement = item_container.find('form.units :checked').val();
+	var uid = item_container.data('uid');
+
+	// get item with specified unique id
+	var item = Site.cart.get_item_by_uid(uid);
+
+	if (item == null && difference > 0) {
+		// create new item
+		Site.cart.add_item_by_uid(uid, {'size': measurement});
+
+	} else {
+		if (item.properties.size == measurement) {
+			// update item count
+			item.alter_count(difference);
+
+		} else if (difference > 0) {
+			// item has different measurement, remove old and add new
+			item.remove();
+			Site.cart.add_item_by_uid(uid, {'size': measurement});
+		}
+	}
+};
+
+/**
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
@@ -853,13 +892,7 @@ Site.on_load = function() {
 	Site.scrollbar = new Scrollbar('section.container', 'ul', true);
 
 	// connect increase and decrease controls
-	$('div.item div.controls a.alter').on('click', function(event) {
-		var control = $(this);
-		var item = control.closest('div.item');
-		var difference = control.hasClass('increase') ? 1 : -1;
-
-		Site.cart.alter_item_count_by_cid(item.data('cid'), difference);
-	});
+	$('div.item div.controls a.alter').on('click', Site.alter_item_count);
 
 	// cache variables
 	Site.header_height = $('header').height();

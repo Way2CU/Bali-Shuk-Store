@@ -3,8 +3,8 @@
 <document>
 	<div
 		class="item"
-		data-cid="$params['cid']"
-		cms:eval="data-cid"
+		data-uid="$params['uid']"
+		cms:eval="data-uid"
 		>
 		<h5><cms:var param="name" multilanguage="yes"/></h5>
 
