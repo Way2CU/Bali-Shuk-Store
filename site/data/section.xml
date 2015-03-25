@@ -4,6 +4,9 @@
 	<section name="home">
 		<language name="all" file="home.xml" />
 	</section>
+	<section name="search">
+		<language name="all" file="search.xml"/>
+	</section>
 	<section name="contact">
 		<language name="all" file="contact.xml" />
 	</section>
