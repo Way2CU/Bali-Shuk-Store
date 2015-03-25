@@ -21,6 +21,10 @@ define('SIZE_DEFINITION', 4);
 // default session options
 $session_type = Session::TYPE_BROWSER;
 
+// language configuration
+$available_languages = array('he');
+$default_language = 'he';
+
 // database
 $db_use = true;
 $db_type = DatabaseType::MYSQL;
