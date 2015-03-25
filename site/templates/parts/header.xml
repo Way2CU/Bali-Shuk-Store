@@ -25,11 +25,13 @@
 				method="GET"
 				cms:eval="action"
 				>
-				<label>
+				<label cms:skip_cache="1">
 					<input
 						type="search"
 						name="query"
 						placeholder="placeholder_search"
+						value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+						cms:optional="value"
 						cms:constant="placeholder"
 						/>
 				</label>
