@@ -36,13 +36,12 @@ footer nav a:hover {
 	text-decoration: underline;
 }
 
-footer div.right_container {
+footer div.payment_methods {
 	position: absolute;
-	width: 422px;
-	min-height: 237px;
-	padding-right: 20px;
 	top: -5px;
-	right: 20px;
+	right: 100px;
+	width: 400px;
+	min-height: 210px;
 
 	background-image: url(../images/ribbon.svg);
 	background-repeat: no-repeat;
@@ -54,30 +53,42 @@ footer div.right_container {
 	text-align: center;
 }
 
-footer div.right_container img {
-	margin: 8px 12px;
-	vertical-align: middle;
-}
-
-footer div.right_container span:nth-of-type(1) {
-	display: block;
-	font-size: 1.3rem;
+footer div.payment_methods h4 {
 	margin: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 }
 
-footer div.right_container span:last-child {
-	background-image: url(../images/ssl.png);
+footer div.payment_methods figure {
+	display: inline-block;
+	width: 90px;
+	height: 60px;
+
+	margin: 0px;
+	padding: 0px;
+
+	background-image: url(../images/payment-icons.png);
 	background-repeat: no-repeat;
-	background-position: right 10px center;
-	background-size: auto 35px;
-	padding: 15px 10px;
-	background-color: #ebeff0;
-	border:1px solid #7e8b8c;
-	width: 140px;
-	text-align: left;
-	font-size: 1.2rem;
+	background-position: 0px 0px;
+}
+
+footer div.payment_methods figure.diners {
+	width: 180px;
+}
+
+footer div.payment_methods figure.master {
+	background-position-x: -180px;
+}
+
+footer div.payment_methods figure.visa {
+	background-position-x: -270px;
+}
+
+footer div.payment_methods figure.amex {
+	background-position-x: -360px;
+}
+
+footer div.payment_methods figure.safe {
+	background-position-x: -450px;
 }
 
 footer div.copyright {
@@ -86,7 +97,7 @@ footer div.copyright {
 	left: 20px;
 
 	padding: 20px 0px;
-	padding-left: 50px;
+	padding-left: 55px;
 
 	background-image: url(../images/waycu-black.svg);
 	background-repeat: no-repeat;
@@ -94,16 +105,17 @@ footer div.copyright {
 	background-size: 50px 50px;
 
 	color: white;
-	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 0.9rem;
 	direction: ltr;
 }
 
 footer div.copyright a {
 	color: white;
-	text-decoration: none;
+	color: rgba(255, 255, 255, 0.5);
 	transition:0.3s all;
 }
 
 footer div.copyright a:hover {
-	color: #7e8b8c;
+	color: white;
 }

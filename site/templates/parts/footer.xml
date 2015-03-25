@@ -35,39 +35,17 @@
 			</a>
 		</nav>
 
-		<div class="right_container">
-			<span><cms:text constant="payment_methods_security"/></span>
-			<img
-				src="_BASEURL.'/site/images/visa.svg'"
-				alt="visa"
-				cms:eval="src"
-				/>
-			<img
-				src="_BASEURL.'/site/images/master-card.svg'"
-				alt="master-card"
-				cms:eval="src"
-				/>
-			<img
-				src="_BASEURL.'/site/images/diners-club.svg'"
-				alt="diners-club"
-				cms:eval="src"
-				/>
-			<img
-				src="_BASEURL.'/site/images/american-express.svg'"
-				alt="american-express"
-				cms:eval="src"
-				/>
-			<span>
-				<cms:text constant="safe_turn"/>
-			</span>
+		<div class="payment_methods">
+			<h4><cms:text constant="payment_methods_security"/></h4>
+			<figure class="diners"/>
+			<figure class="master"/>
+			<figure class="visa"/>
+			<figure class="amex"/>
+			<figure class="safe"/>
 		</div>
 
 		<div class="copyright">
 			<cms:text constant="copyright_text"/>
-			<a href="http://www.way2cu.com">
-				<cms:text constant="way2cu"/>
-			</a>
-			<cms:raw text="."/>
 		</div>
 	</footer>
 </document>
