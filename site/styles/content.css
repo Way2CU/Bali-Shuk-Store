@@ -58,7 +58,10 @@ div.banner_container img {
 	padding: 30px 0px;
 }
 
-div.shopping {
+/**
+ * Shop items
+ */
+div#items {
 	display: block;
 	min-height: 500px;
 	width: calc(100vw - 550px);
@@ -67,7 +70,7 @@ div.shopping {
 	padding-bottom: 50px;
 }
 
-div.shopping h3 {
+div#items h3 {
 	padding:10px;
 
 	border-radius: 0px 10px 10px 0px;
@@ -79,7 +82,7 @@ div.shopping h3 {
 	text-align: center;
 }
 
-div.shopping div.item {
+div#items div.item {
 	display: inline-block;
 	vertical-align: top;
 	width: 230px;
@@ -94,7 +97,7 @@ div.shopping div.item {
 	background-color: white;
 }
 
-div.shopping div.item > h5 {
+div#items div.item > h5 {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -108,13 +111,13 @@ div.shopping div.item > h5 {
 	font-weight: normal;
 }
 
-div.shopping div.item div.image {
+div#items div.item div.image {
 	height: 170px;
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
-div.shopping div.item div.controls a {
+div#items div.item div.controls a {
 	display: inline-block;
 	vertical-align: top;
 	width: 2em;
@@ -129,15 +132,15 @@ div.shopping div.item div.controls a {
 	text-decoration: none;
 }
 
-div.shopping div.item div.controls a:first-of-type {
+div#items div.item div.controls a:first-of-type {
 	border-radius: 0px 0px 5px 0px;
 }
 
-div.shopping div.item div.controls a:last-of-type {
+div#items div.item div.controls a:last-of-type {
 	border-radius: 0px 0px 0px 5px;
 }
 
-div.shopping div.item div.controls span {
+div#items div.item div.controls span {
 	display: inline-block;
 	vertical-align: top;
 	width: calc(100% - 4em - 20px);
@@ -151,7 +154,7 @@ div.shopping div.item div.controls span {
 	text-align: center;
 }
 
-div.shopping div.item div.price {
+div#items div.item div.price {
 	padding-top: 10px;
 	padding-bottom: 5px;
 
@@ -161,7 +164,7 @@ div.shopping div.item div.price {
 	text-align: center;
 }
 
-div.shopping div.item form.units {
+div#items div.item form.units {
 	padding-top: 5px;
 	padding-bottom: 10px;
 
@@ -171,20 +174,20 @@ div.shopping div.item form.units {
 	text-align: center;
 }
 
-div.shopping div.item form.units label {
+div#items div.item form.units label {
 	display: inline-block;
 	padding: 0px 10px;
 }
 
-div.shopping div.item form.units label input {
+div#items div.item form.units label input {
 	display: none;
 }
 
-div.shopping div.item form.units label span:before {
+div#items div.item form.units label span:before {
 	display: inline-block;
 	width: 10px;
 	height: 10px;
-	content: ''; 
+	content: '';
 	position: relative;
 	top: 2px;
 
@@ -198,15 +201,16 @@ div.shopping div.item form.units label span:before {
 	transition: background-color 0.3s;
 }
 
-div.shopping div.item form.units label input:checked + span:before {
+div#items div.item form.units label input:checked + span:before {
 	background-color: #656565;
 }
 
-div.wrap > h1:nth-of-type(1) {
-	margin: 0px auto;
-	padding: 30px 0px;
+/**
+ * Wraps
+ */
+div.wrap > h1 {
 	color: #3397da;
-	font-size: 3.8rem;
+	font-size: 3rem;
 	text-align: center;
 }
 
@@ -252,9 +256,12 @@ div.wrap.contact div.one_half div.article div span {
 }
 
 div.wrap.contact div.one_half:nth-of-type(2) {
-	background-color: white;
-	padding-bottom: 30px;
 	margin-bottom: 30px;
+	padding-bottom: 30px;
+
+	border: 2px solid #f4eee2;
+	border-radius: 10px;
+	background-color: white;
 }
 
 div.wrap.contact div.one_half:nth-of-type(2) > span:nth-of-type(1) {
@@ -603,6 +610,21 @@ div.cart > div button:active {
 div.cart div.total_count {
 	margin-bottom: 10px;
 	text-align: right;
+}
+
+/**
+ * Checkout
+ */
+div#checkout_container {
+	min-height: 600px;
+}
+
+div#checkout_container div.page {
+	display: none;
+}
+
+div#checkout_container div.page.visible {
+	display: block;
 }
 
 /**
