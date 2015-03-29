@@ -20,7 +20,7 @@
 			<cms:template file="parts/cart.xml"/>
 
 			<!-- Shopping items -->
-			<div class="shopping">
+			<div id="items">
 				<h3><cms:text constant="recommended_title"/></h3>
 				<cms:module
 					name="shop"

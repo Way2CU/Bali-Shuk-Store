@@ -41,7 +41,7 @@
 			<cms:template file="parts/cart.xml"/>
 
 			<!-- Shopping items -->
-			<div class="shopping">
+			<div id="items">
 				<cms:if condition="isset($_REQUEST['sub'])">
 					<h3>
 						<cms:module
