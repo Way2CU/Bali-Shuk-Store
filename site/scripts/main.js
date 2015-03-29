@@ -127,11 +127,13 @@ Site.DialogSystem = function() {
 
 		self.sign_up.input_password
 				.attr('name', 'password')
+				.attr('type', 'password')
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleSignUpKeyPress);
 
 		self.sign_up.input_repeat_password
 				.attr('name', 'repeat_password')
+				.attr('type', 'password')
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleSignUpKeyPress);
 
@@ -317,9 +319,6 @@ Site.DialogSystem = function() {
 		$('a.logout').click(self._handleLogout);
 		$('a.sign-up').click(self._showSignUpDialog);
 		$('form.sign-up input').on('focusin', self._handleFocusIn);
-
-		// store redirect url
-		self.sign_up.redirect_url = $('form[data-target-url]').data('target-url');
 	}
 
 	/**
@@ -463,10 +462,6 @@ Site.DialogSystem = function() {
 		// prevent default link behavior
 		event.preventDefault();
 
-		// get redirect url
-		var link = $(this);
-		self.login.redirect_url = link.data('redirect-url');
-
 		// show dialog
 		self.login.dialog.show();
 
@@ -546,6 +541,12 @@ Site.DialogSystem = function() {
 			bail = true;
 		}
 
+		if (self.sign_up.input_password.val() != self.sign_up.input_repeat_password.val()) {
+			self.sign_up.input_password.addClass('invalid');
+			self.sign_up.input_repeat_password.addClass('invalid');
+			bail = true;
+		}
+
 		// exit as some fields are missing
 		if (bail)
 			return;
@@ -615,8 +616,8 @@ Site.DialogSystem = function() {
 	 */
 	self._handleSignupSuccess = function(data) {
 		if (!data.error) {
-			// successfully created new user account, redirect
-			window.location = self.sign_up.redirect_url;
+			// successfully created new user account, reload
+			window.location.reload();
 
 		} else {
 			// there was a problem creating new user
@@ -669,7 +670,7 @@ Site.DialogSystem = function() {
 	self._handleLoginSuccess = function(data) {
 		if (data.logged_in) {
 			// redirect on successful login
-			window.location = self.login.redirect_url;
+			window.location.reload();
 
 		} else {
 			// hide login dialog
