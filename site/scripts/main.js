@@ -876,30 +876,33 @@ Site.on_load = function() {
 	// create dialog system
 	Site.dialog_system = new Site.DialogSystem();
 
-	// preload language constants
-	var constants = ['label_per_unit', 'label_per_kilo', 'currency'];
-	language_handler.getTextArrayAsync(null, constants, function(){});
+	if ($('div.cart').length > 0) {
+		// preload language constants
+		var constants = ['label_per_unit', 'label_per_kilo', 'currency'];
+		language_handler.getTextArrayAsync(null, constants, function(){});
 
-	// create shopping cart
-	Site.cart = new Caracal.Shop.Cart();
-	Site.cart
-		.ui.connect_checkout_button($('div.cart button[name=checkout]'))
-		.ui.add_total_count_label($('div.cart div.total_count span'))
-		.ui.add_item_list($('div.cart ul'))
-		.add_item_view(Site.ItemView);
+		// create shopping cart
+		Site.cart = new Caracal.Shop.Cart();
+		Site.cart
+			.set_checkout_url('/checkout')
+			.ui.connect_checkout_button($('div.cart button[name=checkout]'))
+			.ui.add_total_count_label($('div.cart div.total_count span'))
+			.ui.add_item_list($('div.cart ul'))
+			.add_item_view(Site.ItemView);
 
-	// create scrollbar for shopping cart
-	Site.scrollbar = new Scrollbar('section.container', 'ul', true);
+		// create scrollbar for shopping cart
+		Site.scrollbar = new Scrollbar('section.container', 'ul', true);
 
-	// connect increase and decrease controls
-	$('div.item div.controls a.alter').on('click', Site.alter_item_count);
+		// connect increase and decrease controls
+		$('div.item div.controls a.alter').on('click', Site.alter_item_count);
 
-	// cache variables
-	Site.header_height = $('header').height();
-	Site.cart_container = $('div.cart');
+		// cache variables
+		Site.header_height = $('header').height();
+		Site.cart_container = $('div.cart');
 
-	// handle page scrolling to update cart position
-	$(window).on('scroll', Site.handle_scroll);
+		// handle page scrolling to update cart position
+		$(window).on('scroll', Site.handle_scroll);
+	}
 };
 
 
