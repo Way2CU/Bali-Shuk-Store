@@ -10,32 +10,31 @@
 	<section name="contact">
 		<language name="all" file="contact.xml" />
 	</section>
-	<section name="terms_use">
-		<language name="all" file="terms_use.xml" />
-	</section>
-	<section name="help">
-		<language name="all" file="help.xml" />
-	</section>
-	<section name="faq">
-		<language name="all" file="faq.xml" />
-	</section>
-	<section name="security">
-		<language name="all" file="security.xml" />
-	</section>
 	<section name="category">
 		<language name="all" file="category.xml"/>
 	</section>
+	<section name="checkout">
+		<language name="all" file="checkout.xml"/>
+	</section>
 	<section name="vegetables">
-			<language name="all">
-				<action name="_default" file="vegetables.xml"/>
-				<action name="sprouts_mushrooms" file="sprouts_mushrooms.xml"/>
-				<action name="vegetable_herbs" file="vegetable_herbs.xml"/>
-			</language>
-		</section>
-		<section name="deli">
-			<language name="all">
-				<action name="_default" file="deli.xml"/>
-				<action name="dried_fruit" file="dried_fruit.xml"/>
-			</language>
-		</section>
+		<language name="all">
+			<action name="_default" file="vegetables.xml"/>
+			<action name="sprouts_mushrooms" file="sprouts_mushrooms.xml"/>
+			<action name="vegetable_herbs" file="vegetable_herbs.xml"/>
+		</language>
+	</section>
+	<section name="deli">
+		<language name="all">
+			<action name="_default" file="deli.xml"/>
+			<action name="dried_fruit" file="dried_fruit.xml"/>
+		</language>
+	</section>
+	<section name="help">
+		<language name="all">
+			<action name="_default" file="help.xml"/>
+			<action name="faq" file="faq.xml"/>
+			<action name="security" file="security.xml"/>
+			<action name="terms-of-use" file="terms.xml"/>
+		</language>
+	</section>
 </document>
