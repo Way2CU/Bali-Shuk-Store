@@ -1,0 +1,22 @@
+<svg height="0" xmlns="http://www.w3.org/2000/svg">
+<filter id="header-shadow">
+<feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+<feOffset dx="0" dy="3" result="offsetblur"/>
+<feFlood flood-color="rgba(0,0,0,0.6)"/>
+<feComposite in2="offsetblur" operator="in"/>
+<feMerge>
+<feMergeNode/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+<filter id="footer-shadow">
+<feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+<feOffset dx="0" dy="9" result="offsetblur"/>
+<feFlood flood-color="rgba(0,0,0,0.6)"/>
+<feComposite in2="offsetblur" operator="in"/>
+<feMerge>
+<feMergeNode/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
+</svg>
