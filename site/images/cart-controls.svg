@@ -1,0 +1,14 @@
+<svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-minus" viewBox="0 0 3991 1024">
+<path class="path1" d="M0 1024v-1024h3990.772v1024h-3990.772z"></path>
+</symbol>
+<symbol id="icon-plus" viewBox="0 0 1024 1024">
+<path class="path1" d="M383.56 1024v-380.678h-383.56v-262.75h383.56v-380.572h255.707v380.572h384.627v262.75h-384.52v380.678h-255.813z"></path>
+</symbol>
+<symbol id="icon-trash" viewBox="0 0 1024 1024">
+<path class="path1" d="M897.164 1024l-897.154-897.154 126.837-126.837 897.154 897.154-126.837 126.837z"></path>
+<path class="path2" d="M126.865 1024l-126.837-126.837 897.154-897.154 126.837 126.837-897.154 897.154z"></path>
+</symbol>
+</defs>
+</svg>
