@@ -4,19 +4,19 @@
 	<footer>
 		<nav>
 			<a
-				href="url_Make('', 'terms_use')"
+				href="url_Make('terms-of-use', 'help')"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_terms_use"/>
 			</a>
 			<a
-				href="url_Make('', 'security')"
+				href="url_Make('security', 'help')"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_security_settings"/>
 			</a>
 			<a
-				href="url_Make('', 'faq')"
+				href="url_Make('faq', 'help')"
 				cms:eval="href"
 				>
 				<cms:text constant="menu_faq"/>
