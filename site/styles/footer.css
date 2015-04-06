@@ -38,7 +38,7 @@ footer nav a:hover {
 
 footer div.payment_methods {
 	position: absolute;
-	top: -5px;
+	top: -3px;
 	right: 100px;
 	width: 400px;
 	min-height: 210px;
@@ -47,6 +47,8 @@ footer div.payment_methods {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: 400px 209px;
+
+	filter: url(../images/effects.svg#footer-shadow);
 	filter: drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.6));
 	-webkit-filter: drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.6));
 
@@ -76,19 +78,19 @@ footer div.payment_methods figure.diners {
 }
 
 footer div.payment_methods figure.master {
-	background-position-x: -180px;
+	background-position: -180px 0px;
 }
 
 footer div.payment_methods figure.visa {
-	background-position-x: -270px;
+	background-position: -270px 0px;
 }
 
 footer div.payment_methods figure.amex {
-	background-position-x: -360px;
+	background-position: -360px 0px;
 }
 
 footer div.payment_methods figure.safe {
-	background-position-x: -450px;
+	background-position: -450px 0px;
 }
 
 footer div.copyright {
