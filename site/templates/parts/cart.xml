@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
+	<cms:svg file="cart-controls.svg"/>
 	<div
 		class="cart"
 		data-size-definition="SIZE_DEFINITION"
