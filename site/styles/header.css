@@ -34,15 +34,40 @@ header div.wrap {
 
 header div.wrap:after {
 	position: absolute;
-	width: 143px;
-	height: 209px;
+	width: 113px;
+	height: 175px;
 	right: calc(((100vw - 900px) / 2) - 150px);
 	top: 0px;
 	content: '';
 
-	background-image: url(../images/ticket.png);
+	background-image: url(../images/ribbon-green.png);
 	background-repeat: no-repeat;
 	background-position: right center;
+
+	filter: url(../images/effects.svg#header-shadow);
+	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+}
+
+header div.wrap:before {
+	position: absolute;
+	width: 113px;
+	height: 175px;
+	left: calc(((100vw - 900px) / 2) - 107px);
+	top: 0px;
+	content: '';
+
+	background-image: url(../images/ribbon-blue.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+
+	filter: url(../images/effects.svg#header-shadow);
+	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+}
+
+header.home div.wrap:before {
+	content: none;
 }
 
 /**
@@ -50,8 +75,9 @@ header div.wrap:after {
  */
 header a.logo {
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	left: calc((100vw - 1200px) / 2);
+	z-index: 1;
 }
 
 header.home a.logo {
@@ -64,6 +90,8 @@ header.home a.logo {
 header a.logo img {
 	width: 200px;
 	height: 100px;
+
+	filter: url(../images/effects.svg#header-shadow);
 	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 }
