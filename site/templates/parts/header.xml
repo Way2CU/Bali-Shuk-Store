@@ -5,6 +5,16 @@
 		class="$section == 'home' ? 'home' : false"
 		cms:optional="class"
 		>
+
+		<!-- Save user timer -->
+		<cms:guest>
+			<cms:module
+				name="backend"
+				action="save_unpriviledged_user_timer"
+				/>
+		</cms:guest>
+
+		<!-- Logo -->
 		<a
 			href="url_Make()"
 			class="logo"
@@ -76,7 +86,7 @@
 
 					<cms:guest>
 						<li class="user">
-							<span><cms:text constant="label_welcome"/></span>
+							<span><cms:text constant="label_welcome_guest"/></span>
 							<a
 								href="javascript: void(0);"
 								class="login"
@@ -91,6 +101,25 @@
 							</a>
 						</li>
 					</cms:guest>
+					<cms:user>
+						<li class="user">
+							<span>
+								<cms:text constant="label_welcome"/>
+								<a
+									href="url_Make('control-panel', 'user')"
+									cms:eval="href"
+									>
+									<cms:var name="$_SESSION['fullname']"/>
+								</a>
+							</span>
+							<a
+								href="javascript: void(0);"
+								class="logout"
+								>
+								<cms:text constant="menu_logout"/>
+							</a>
+						</li>
+					</cms:user>
 				</ul>
 			</nav>
 		</div>
