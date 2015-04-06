@@ -16,6 +16,17 @@
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
 			<cms:template file="parts/header.xml"/>
 
+			<!--
+				 Verify user account when clicking on URL in email in following format:
+				 http://domain.com/user/verify-account/username/<email>/code/<code>
+			-->
+			<cms:if section="user" action="verify-account">
+				<cms:module
+					name="backend"
+					action="verify_account"
+					/>
+			</cms:if>
+
 			<!-- Shopping cart -->
 			<cms:template file="parts/cart.xml"/>
 
