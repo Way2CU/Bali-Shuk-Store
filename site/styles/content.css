@@ -130,6 +130,13 @@ div#items div.item div.controls a {
 	color: white;
 	text-align: center;
 	text-decoration: none;
+	line-height: 0%;
+}
+
+div#items div.item div.controls a svg {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
 }
 
 div#items div.item div.controls a:first-of-type {
@@ -152,6 +159,7 @@ div#items div.item div.controls span {
 
 	color: #7e8b8c;
 	text-align: center;
+	line-height: 100%;
 }
 
 div#items div.item div.price {
@@ -495,7 +503,7 @@ div.cart ul li {
 	display: block;
 	min-width: 400px;
 	max-height: 100px;
-	padding: 1px 10px;
+	padding: 0px 10px;
 
 	position: relative;
 	overflow: hidden;
@@ -512,10 +520,10 @@ div.cart ul li.hidden {
 div.cart ul li:after {
 	position: absolute;
 	height: 1px;
-	width: 60%;
+	width: 80%;
 	content: '';
 
-	left: 20%;
+	left: 10%;
 	top: 0px;
 
 	background-color: #e8dcc5;
@@ -535,8 +543,6 @@ div.cart ul li img {
 	width: 100px;
 	height: 100px;
 	vertical-align: middle;
-
-	border-radius: 5px;
 }
 
 div.cart ul li span {
@@ -555,10 +561,40 @@ div.cart ul li span.count:after {
 	content: attr(data-size);
 }
 
-div.cart ul li span.name {
+div.cart ul li div.name {
+	display: inline-block;
 	width: 150px;
+	padding: 5px;
 	padding-right: 10px;
+	vertical-align: middle;
 	text-align: right;
+}
+
+div.cart ul li div.name div {
+	padding-bottom: 3px;
+}
+
+div.cart ul li div.name a {
+	display: inline-block;
+	margin-left: 2px;
+
+	border-radius: 3px;
+	background-color: #ECF0F1;
+
+	transition: all 0.3s;
+	cursor: pointer;
+	line-height: 0%;
+}
+
+div.cart ul li div.name a:hover {
+	background-color: #7A9900;
+	color: white;
+}
+
+div.cart ul li div.name a svg {
+	width: 0.5em;
+	height: 0.5em;
+	fill: currentColor;
 }
 
 div.cart ul li span.price {
@@ -628,6 +664,87 @@ div#checkout_container div.page.visible {
 }
 
 /**
+ * Password recovery form
+ */
+form.recovery {
+	display: block;
+	padding: 20px;
+	margin-bottom: 50px;
+
+	border: 2px solid #f4eee2;
+	border-radius: 10px;
+	background-color: white;
+}
+
+form.recovery label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+form.recovery label span {
+	display: block;
+	margin-bottom: 2px;
+}
+
+form.recovery label input {
+	min-width: 300px;
+	padding: 5px;
+}
+
+form.recovery hr {
+	display: block;
+	margin: 0px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+
+	border: 0px;
+	border-top: 1px solid #095965;
+	opacity: 0.3;
+}
+
+form.recovery button {
+	display: inline-block;
+	position: relative;
+	padding: 10px 30px;
+
+	border: 0px;
+	border-radius: 4px;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+	background-color: transparent;
+
+	color: white;
+
+	cursor: pointer;
+	z-index: 0;
+}
+
+form.recovery button:after {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	content: '';
+
+	border-radius: 4px;
+	background-image: linear-gradient(180deg, rgba(10, 90, 102, 1) 0%, rgba(10, 90, 102, 1) 100%);
+
+	transition: 0.3s all;
+	opacity: 0;
+	z-index: -1;
+}
+
+
+form.recovery button:focus:after,
+form.recovery button:hover:after {
+	opacity: 1;
+}
+
+form.recovery button:active:after {
+	background-image: linear-gradient(0deg, rgba(10, 90, 102, 1) 0%, rgba(0, 59, 67, 1) 100%);
+}
+
+/**
  * Dialogs
  */
 div.dialog,
@@ -639,8 +756,7 @@ div.dialog.error {
 	transform: translateY(-200px);
 
 	border-radius: 10px;
-	background-color: white;
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: #f8f5ee;
 	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 
 	transition: all 0.5s;
@@ -664,9 +780,26 @@ div.dialog div.title {
 	text-align: center;
 }
 
+div.dialog.error div.title {
+	background-color: #FF3400;
+	background-image: linear-gradient(0deg, rgba(255, 64, 0, 1) 0%, rgba(255, 111, 63, 1) 100%);
+}
+
 div.dialog div.inner_content {
 	padding: 10px;
 	text-align: center;
+}
+
+div.dialog hr {
+	display: block;
+	width: 50%;
+	margin: 0px auto;
+	margin-top: 20px;
+	padding-bottom: 20px;
+
+	border: 0px;
+	border-top: 1px solid #095965;
+	opacity: 0.3;
 }
 
 div.dialog label {
@@ -680,10 +813,14 @@ div.dialog label input {
 
 	border: 1px solid #909090;
 	border-radius: 3px;
-	box-shadow: inset 0px -3px 3px rgba(120, 120, 120, 0.2);
+	box-shadow: inset 2px 3px 3px rgba(120, 120, 120, 0.3);
 
 	color: #909090;
 	transition: all 0.3s;
+}
+
+div.dialog label input.ltr {
+	direction: ltr;
 }
 
 div.dialog label input:focus {
