@@ -74,7 +74,7 @@ Site.handle_scroll = function(event) {
 Site.DialogSystem = function() {
 	var self = this;
 
-	self.error = {};
+	self.message = {};
 	self.sign_up = {};
 	self.login = {};
 	self.recovery = {};
@@ -84,15 +84,15 @@ Site.DialogSystem = function() {
 	 */
 	self._init = function() {
 		// create error reporting dialog
-		self.error.dialog = new Dialog();
-		self.error.dialog.setSize(400, 'auto');
-		self.error.dialog.setScroll(false);
-		self.error.dialog.setClearOnClose(false);
-		self.error.dialog.setError(true);
-		self.error.dialog.addClass('login error');
+		self.message.content = $('<div>');
+		self.message.dialog = new Dialog();
+		self.message.dialog
+				.setSize(400, 'auto')
+				.setScroll(false)
+				.setClearOnClose(false)
+				.setContent(self.message.content)
+				.addClass('login');
 
-		self.error.content = $('<div>');
-		self.error.dialog.setContent(self.error.content);
 
 		// get sign up forms
 		self.sign_up.forms = $('form.sign-up');
@@ -109,6 +109,9 @@ Site.DialogSystem = function() {
 		self.sign_up.content = $('<form>');
 		self.sign_up.message = $('<p>');
 
+		self.sign_up.label_name = $('<label>');
+		self.sign_up.input_name = $('<input>');
+
 		self.sign_up.label_username = $('<label>');
 		self.sign_up.input_username = $('<input>');
 
@@ -120,7 +123,15 @@ Site.DialogSystem = function() {
 
 		// configure elements
 		self.sign_up.input_username
+				.attr('name', 'fullname')
+				.attr('type', 'text')
+				.attr('maxlength', 50)
+				.on('focusin', self._handleFocusIn)
+				.on('keyup', self._handleSignUpKeyPress);
+
+		self.sign_up.input_username
 				.attr('name', 'username')
+				.attr('type', 'email')
 				.attr('maxlength', 50)
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleSignUpKeyPress);
@@ -140,9 +151,15 @@ Site.DialogSystem = function() {
 		// pack sign up dialog
 		self.sign_up.message.appendTo(self.sign_up.content);
 
+		self.sign_up.label_name
+				.append(self.sign_up.input_name)
+				.appendTo(self.sign_up.content);
+
 		self.sign_up.label_username
 				.append(self.sign_up.input_username)
 				.appendTo(self.sign_up.content);
+
+		self.sign_up.content.append('<hr>');
 
 		self.sign_up.label_password
 				.append(self.sign_up.input_password)
@@ -266,6 +283,8 @@ Site.DialogSystem = function() {
 		self.recovery.image_captcha = $('<img>');
 
 		self.recovery.input_email
+				.attr('name', 'email')
+				.attr('type', 'text')
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleRecoveryKeyPress);
 
@@ -275,11 +294,13 @@ Site.DialogSystem = function() {
 		self.recovery.input_captcha
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleRecoveryKeyPress)
+				.addClass('ltr')
 				.attr('maxlength', 4);
 
 		self.login.input_captcha
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleLoginKeyPress)
+				.addClass('ltr')
 				.attr('maxlength', 4);
 
 		self.recovery.image_captcha
@@ -310,7 +331,7 @@ Site.DialogSystem = function() {
 				'login', 'login_dialog_title', 'login_dialog_message', 'label_email', 'label_password',
 				'label_password_recovery', 'recovery_dialog_title', 'recovery_dialog_message', 'submit',
 				'label_captcha', 'captcha_message', 'signup_dialog_title', 'sign_up', 'signup_dialog_message',
-				'label_repeat_password'
+				'label_repeat_password', 'label_name'
 			];
 		language_handler.getTextArrayAsync(null, constants, self._handleStringsLoaded);
 
@@ -427,6 +448,7 @@ Site.DialogSystem = function() {
 			message.html(data['signup_dialog_message']);
 			signup_button.html(data['sign_up']);
 
+			input_name.attr('placeholder', data['label_name']);
 			input_username.attr('placeholder', data['label_email']);
 			input_password.attr('placeholder', data['label_password']);
 			input_repeat_password.attr('placeholder', data['label_repeat_password']);
@@ -441,14 +463,11 @@ Site.DialogSystem = function() {
 	self._handleLogout = function(event) {
 		event.preventDefault();
 
-		var link = $(this);
-		var url = link.attr('href');
-
 		// perform logout
 		new Communicator('backend')
 				.on_success(function(data) {
 					if (!data.error)
-						window.location = url;
+						window.location.reload();
 				})
 				.get('json_logout');
 	};
@@ -616,14 +635,26 @@ Site.DialogSystem = function() {
 	 */
 	self._handleSignupSuccess = function(data) {
 		if (!data.error) {
+			// hide signup dialog
+			self.sign_up.dialog.hide();
+
 			// successfully created new user account, reload
-			window.location.reload();
+			self.message.dialog
+					.setError(false)
+					.setTitle(language_handler.getText(null, 'signup_dialog_title'));
+			self.message.content.html(language_handler.getText(null, 'signup_completed_message'));
+			self.message.dialog.show();
 
 		} else {
+			// hide signup dialog
+			self.sign_up.dialog.hide();
+
 			// there was a problem creating new user
-			self.error.dialog.setTitle(language_handler.getText(null, 'signup_dialog_title'));
-			self.error.content.html(data.message);
-			self.error.dialog.show();
+			self.message.dialog
+					.setError(true)
+					.setTitle(language_handler.getText(null, 'signup_dialog_title'));
+			self.message.content.html(data.message);
+			self.message.dialog.show();
 		}
 	};
 
@@ -635,9 +666,15 @@ Site.DialogSystem = function() {
 	 * @param string description
 	 */
 	self._handleSignupError = function(xhr, status_code, description) {
-		self.error.dialog.setTitle(language_handler.getText(null, 'signup_dialog_title'));
-		self.error.content.html(description);
-		self.error.dialog.show();
+		// hide signup dialog
+		self.sign_up.dialog.hide();
+
+		// show error message
+		self.message.dialog
+				.setError(true)
+				.setTitle(language_handler.getText(null, 'signup_dialog_title'));
+		self.message.content.html(description);
+		self.message.dialog.show();
 	};
 
 	/**
@@ -669,17 +706,30 @@ Site.DialogSystem = function() {
 	 */
 	self._handleLoginSuccess = function(data) {
 		if (data.logged_in) {
+			// hide login dialog
+			self.login.dialog.hide();
+
 			// redirect on successful login
-			window.location.reload();
+			self.message.content.html(data.message);
+			self.message.dialog
+					.setError(false)
+					.setTitle(language_handler.getText(null, 'signup_dialog_title'))
+					.setCloseCallback(function() {
+						window.location.reload();
+						this.clearCloseCallback();
+					});
+			self.message.dialog.show();
 
 		} else {
 			// hide login dialog
 			self.login.dialog.hide();
 
 			// show error message
-			self.error.dialog.setTitle(language_handler.getText(null, 'login_dialog_title'));
-			self.error.content.html(data.message);
-			self.error.dialog.show();
+			self.message.dialog
+					.setError(true)
+					.setTitle(language_handler.getText(null, 'login_dialog_title'));
+			self.message.content.html(data.message);
+			self.message.dialog.show();
 
 			// show captcha if required
 			if (data.show_captcha)
@@ -700,9 +750,11 @@ Site.DialogSystem = function() {
 		self.login.dialog.hide();
 
 		// show error dialog
-		self.error.dialog.setTitle(language_handler.getText(null, 'login_dialog_title'));
-		self.error.content.html(description);
-		self.error.dialog.show();
+		self.message.dialog
+				.setError(true)
+				.setTitle(language_handler.getText(null, 'login_dialog_title'));
+		self.message.content.html(description);
+		self.message.dialog.show();
 	};
 
 	/**
@@ -713,6 +765,68 @@ Site.DialogSystem = function() {
 	self._handleRecoverClick = function(event) {
 		// prevent default control behavior
 		event.preventDefault();
+
+		// prepare data
+		var data = {
+				username: self.recovery.input_email.val(),
+				email: self.recovery.input_email.val(),
+				captcha: self.recovery.input_captcha.val()
+			};
+
+		// create communicator
+		new Communicator('backend')
+				.on_success(self._handleRecoverSuccess)
+				.on_error(self._handleRecoverError)
+				.get('password_recovery', data);
+	};
+
+	/**
+	 * Handle response from server for password recovery.
+	 *
+	 * @param object data
+	 */
+	self._handleRecoverSuccess = function(data) {
+		if (!data.error) {
+			// hide recovery dialog
+			self.recovery.dialog.hide();
+
+			// successfully created new user account, reload
+			self.message.dialog
+					.setError(false)
+					.setTitle(language_handler.getText(null, 'recovery_dialog_title'));
+			self.message.content.html(language_handler.getText(null, 'recovery_completed_message'));
+			self.message.dialog.show();
+
+		} else {
+			// hide recovery dialog
+			self.recovery.dialog.hide();
+
+			// there was a problem creating new user
+			self.message.dialog
+					.setError(true)
+					.setTitle(language_handler.getText(null, 'recovery_dialog_title'));
+			self.message.content.html(data.message);
+			self.message.dialog.show();
+		}
+	};
+
+	/**
+	 * Handle error in communication with server.
+	 *
+	 * @param object xhr
+	 * @param string transfer_status
+	 * @param string description
+	 */
+	self._handleRecoverError = function(xhr, transfer_status, description) {
+		// hide login dialog
+		self.recovery.dialog.hide();
+
+		// show error dialog
+		self.message.dialog
+				.setError(true)
+				.setTitle(language_handler.getText(null, 'recovery_dialog_title'));
+		self.message.content.html(description);
+		self.message.dialog.show();
 	};
 
 	// finalize object
@@ -738,6 +852,7 @@ Site.ItemView = function(item) {
 	self.label_name = null;
 	self.label_price = null;
 	self.image = null;
+	self.controls = {};
 
 	/**
 	 * Complete object initialization.
@@ -760,11 +875,33 @@ Site.ItemView = function(item) {
 
 		self.image = $('<img>').appendTo(self.container);
 
-		self.label_name = $('<span>').appendTo(self.container);
-		self.label_name.addClass('name');
+		self.controls.container = $('<div>').appendTo(self.container);
+		self.label_name = $('<div>').appendTo(self.controls.container);
 
 		self.label_price = $('<span>').appendTo(self.container);
 		self.label_price.addClass('price');
+
+		// create controls
+		self.controls.increase = $('<a>').appendTo(self.controls.container);
+		self.controls.decrease = $('<a>').appendTo(self.controls.container);
+		self.controls.remove = $('<a>').appendTo(self.controls.container);
+
+		// configure controls
+		self.controls.container.addClass('name');
+		self.controls.increase
+				.html('<svg><use xlink:href="site/images/cart-controls.svg#icon-plus"/></svg>')
+				.addClass('alter increase')
+				.data('direction', 1)
+				.on('click', self.controls.handle_alter);
+		self.controls.decrease
+				.html('<svg><use xlink:href="site/images/cart-controls.svg#icon-minus"/></svg>')
+				.addClass('alter decrease')
+				.data('direction', -1)
+				.on('click', self.controls.handle_alter);
+		self.controls.remove
+				.html('<svg><use xlink:href="site/images/cart-controls.svg#icon-trash"/></svg>')
+				.addClass('remove')
+				.on('click', self.controls.handle_remove);
 	};
 
 	/**
@@ -834,6 +971,32 @@ Site.ItemView = function(item) {
 		self.container.remove();
 	};
 
+	/**
+	 * Handle increasing or decreasing item count.
+	 *
+	 * @param object event
+	 */
+	self.controls.handle_alter = function(event) {
+		var item = $(this);
+		var direction = item.data('direction');
+
+		// prevent default button behavior
+		event.preventDefault();
+
+		// alter item count
+		self.item.alter_count(direction);
+	};
+
+	/**
+	 * Handle clicking on remove button.
+	 *
+	 * @param object event
+	 */
+	self.controls.handle_remove = function(event) {
+		event.preventDefault();
+		self.item.remove();
+	};
+
 	// finalize object
 	self._init();
 }
@@ -879,7 +1042,10 @@ Site.on_load = function() {
 
 	if ($('div.cart').length > 0) {
 		// preload language constants
-		var constants = ['label_per_unit', 'label_per_kilo', 'currency'];
+		var constants = [
+				'label_per_unit', 'label_per_kilo', 'currency', 'signup_completed_message',
+				'recovery_completed_message'
+			];
 		language_handler.getTextArrayAsync(null, constants, function(){});
 
 		// create shopping cart
