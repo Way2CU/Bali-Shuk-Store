@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<span
+		data-currency="currency"
+		cms:constant="data-currency"
+		>
+		<cms:var param="price"/>
+	</span>
+</document>

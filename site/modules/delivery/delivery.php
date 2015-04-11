@@ -26,6 +26,12 @@ class delivery extends Module {
 		if (class_exists('backend')) {
 			$backend = backend::getInstance();
 		}
+
+		// register delivery method
+		if (class_exists('shop')) {
+			require_once('units/method.php');
+			Simple_DeliveryMethod::getInstance($this);
+		}
 	}
 
 	/**
@@ -83,5 +89,18 @@ class delivery extends Module {
 	 * @param array $children
 	 */
 	private function show_price($tag_params, $children) {
+		$shop = shop::getInstance();
+		$template = $this->loadTemplate($tag_params, 'price.xml');
+
+		// prepare parameters
+		$params = array(
+				'price'		=> 10,
+				'currency'	=> $shop->getDefaultCurrency()
+			);
+
+		// parse template
+		$template->restoreXML();
+		$template->setLocalParams($params);
+		$template->parse();
 	}
 }
