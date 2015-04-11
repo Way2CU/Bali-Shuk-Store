@@ -644,8 +644,17 @@ div.cart > div button:active {
 }
 
 div.cart div.total_count {
+	margin-bottom: 5px;
+	text-align: right;
+}
+
+div.cart div.delivery {
 	margin-bottom: 10px;
 	text-align: right;
+}
+
+div.cart div.delivery span:after {
+	content: ' ' attr(data-currency);
 }
 
 /**
