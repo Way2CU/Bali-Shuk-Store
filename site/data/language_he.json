@@ -21,6 +21,7 @@
     "label_welcome_guest": "שלום אורח",
     "label_welcome": "שלום ",
     "label_name": "Name",
+    "label_delivery": "Delivery:",
     "login": "היכנס",
     "login_dialog_message": "הזן כתובת מייל וסיסמה",
     "login_dialog_title": "היכנס",
