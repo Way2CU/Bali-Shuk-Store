@@ -21,6 +21,14 @@
 				<cms:raw text="&amp;nbsp;"/>
 				<span/>
 			</div>
+			<div class="delivery">
+				<cms:text constant="label_delivery"/>
+				<cms:raw text="&amp;nbsp;"/>
+				<cms:module
+					name="delivery"
+					action="show_price"
+					/>
+			</div>
 
 			<button type="button" name="checkout">
 				<cms:text constant="checkout" module="shop"/>
