@@ -80,9 +80,9 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 	 *
 	 * Example of result array:
 	 *		$result = array(
-	 *					array('Normal', 19.95, 'USD', 1364040000, 1365040000),
-	 *					array('Express', 33.23, 'USD', 1363040000, 1364040000),
-	 *					array('Express', 8.00, 'USD', false, false)
+	 *					'normal' => array('Normal', 19.95, 'USD', 1364040000, 1365040000),
+	 *					'express' => array('Express', 33.23, 'USD', 1363040000, 1364040000),
+	 *					'express_no_estimate' => array('Express', 8.00, 'USD', false, false)
 	 *				);
 	 *
 	 * @param array $items
@@ -94,7 +94,7 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 	 */
 	public function getDeliveryTypes($items, $shipper, $recipient, $transaction_id, $preferred_currency) {
 		$result = array();
-		$result[] = array('Regular', 10, 'NIS', false, false);
+		$result['regular'] = array('Regular', 10, 'NIS', null, null);
 
 		return $result;
 	}
