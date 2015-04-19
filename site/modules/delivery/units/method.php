@@ -94,7 +94,10 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 	 */
 	public function getDeliveryTypes($items, $shipper, $recipient, $transaction_id, $preferred_currency) {
 		$result = array();
-		$result['regular'] = array('Regular', 10, 'NIS', null, null);
+		$result['regular'] = array(
+							$this->parent->getLanguageConstant('delivery_regular'),
+							10, 'NIS', null, null
+						);
 
 		return $result;
 	}
