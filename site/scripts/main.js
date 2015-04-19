@@ -93,7 +93,6 @@ Site.DialogSystem = function() {
 				.setContent(self.message.content)
 				.addClass('login');
 
-
 		// get sign up forms
 		self.sign_up.forms = $('form.sign-up');
 		self.sign_up.forms.submit(self._handleSignupSubmit);
@@ -710,7 +709,7 @@ Site.DialogSystem = function() {
 			self.login.dialog.hide();
 
 			// redirect on successful login
-			self.message.content.html(data.message);
+			self.message.content.html(language_handler.getText(null, 'login_successful'));
 			self.message.dialog
 					.setError(false)
 					.setTitle(language_handler.getText(null, 'signup_dialog_title'))
@@ -729,6 +728,12 @@ Site.DialogSystem = function() {
 					.setError(true)
 					.setTitle(language_handler.getText(null, 'login_dialog_title'));
 			self.message.content.html(data.message);
+			self.message.dialog.setCloseCallback(function() {
+						setTimeout(function() {
+							self.login.dialog.show();
+							this.clearCloseCallback();
+						}, 100);
+					});
 			self.message.dialog.show();
 
 			// show captcha if required
@@ -1044,7 +1049,7 @@ Site.on_load = function() {
 		// preload language constants
 		var constants = [
 				'label_per_unit', 'label_per_kilo', 'currency', 'signup_completed_message',
-				'recovery_completed_message'
+				'recovery_completed_message', 'login_successful'
 			];
 		language_handler.getTextArrayAsync(null, constants, function(){});
 
