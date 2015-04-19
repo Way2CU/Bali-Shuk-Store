@@ -331,12 +331,19 @@ div.wrap.contact div.one_half:nth-of-type(2) form div.controls button:hover {
 	border-color: #bbc2cb;;
 }
 
-div.wrap.terms div.article,
-div.wrap.help div.article {
-	padding-bottom: 30px;
-	text-align: right;
+/**
+ * Terms and conditions
+ */
+div.terms article {
+	max-width: 800px;
+	padding: 10px calc((100vw - 800px) / 2);
 }
 
+div.terms article h1 {
+	color: #3397da;
+	font-size: 3rem;
+	text-align: center;
+}
 
 div#faq dl {
 	margin-top: 20px;
@@ -670,6 +677,10 @@ div#checkout_container div.page {
 
 div#checkout_container div.page.visible {
 	display: block;
+}
+
+div#shipping_information label:nth-last-of-type(-n + 2) {
+	display: none;
 }
 
 /**
