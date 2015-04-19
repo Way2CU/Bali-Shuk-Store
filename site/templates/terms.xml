@@ -4,24 +4,26 @@
 	<cms:var name="_DOCTYPE"/>
 	<html lang="$language" cms:eval="lang">
 		<head>
-			<title><cms:text constant="site_title"/></title>
+			<title>
+				<cms:text constant="site_title"/>
+				<cms:raw text=" - "/>
+				<cms:text constant="menu_terms_use"/>
+			</title>
 			<cms:collection include="dialog"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
 			<cms:template file="parts/header.xml"/>
+
 			<div class="wrap terms">
-				<div class="inner_wrap">
-					<h1><cms:text constant="terms_use"/></h1>
-					<cms:module
-						name="articles"
-						action="show"
-						text_id="terms"
-						template="parts/article_no_h1.xml"
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="terms"
 					/>
-				</div>
 			</div>
+
 			<cms:template file="parts/footer.xml"/>
 		</body>
 	</html>
