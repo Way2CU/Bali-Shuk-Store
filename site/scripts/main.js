@@ -121,10 +121,10 @@ Site.DialogSystem = function() {
 		self.sign_up.input_repeat_password = $('<input>');
 
 		// configure elements
-		self.sign_up.input_username
+		self.sign_up.input_name
 				.attr('name', 'fullname')
 				.attr('type', 'text')
-				.attr('maxlength', 50)
+				.attr('maxlength', 100)
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleSignUpKeyPress);
 
@@ -616,7 +616,6 @@ Site.DialogSystem = function() {
 	self._performSignUp = function(data) {
 		// fill in remaining data
 		data.agreed = 1;
-		data.fullname = '';
 		data.email = data.username;
 		data.show_result = 1;
 
