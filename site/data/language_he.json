@@ -22,6 +22,7 @@
     "label_welcome": "שלום ",
     "label_name": "שם",
     "label_delivery": "משלוח:",
+    "label_agree_to_terms": "Agree to <a href=\"/help/terms-of-use\" target=\"_blank\">terms of use</a>.",
     "login": "היכנס",
     "login_dialog_message": "הזן כתובת מייל וסיסמה",
     "login_dialog_title": "היכנס",

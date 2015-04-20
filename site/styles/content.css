@@ -827,7 +827,7 @@ div.dialog label {
 	margin-bottom: 10px;
 }
 
-div.dialog label input {
+div.dialog label input:not([type=checkbox]) {
 	min-width: 80%;
 	padding: 10px;
 
@@ -846,6 +846,31 @@ div.dialog label input.ltr {
 div.dialog label input:focus {
 	border-color: #095965;
 	color: #095965;
+}
+
+div.dialog label input[type=checkbox] {
+	display: none;
+}
+
+div.dialog label input[type=checkbox] + span:before {
+	display: inline-block;
+	content: '';
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+
+	border: 1px solid #909090;
+	border-radius: 3px;
+	background-image: url(../images/checkbox.png);
+	background-size: 16px 32px;
+	background-position: left top;
+	box-shadow: inset 2px 3px 3px rgba(120, 120, 120, 0.3);
+
+	transition: all 0.3s;
+}
+
+div.dialog label input[type=checkbox]:checked + span:before {
+	background-position: left -16px;
 }
 
 div.dialog div.captcha input {

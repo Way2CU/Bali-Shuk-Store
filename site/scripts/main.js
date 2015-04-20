@@ -120,6 +120,10 @@ Site.DialogSystem = function() {
 		self.sign_up.label_repeat_password = $('<label>');
 		self.sign_up.input_repeat_password = $('<input>');
 
+		self.sign_up.label_terms_agree = $('<label>');
+		self.sign_up.input_terms_agree = $('<input>');
+		self.sign_up.span_terms_agree = $('<span>');
+
 		// configure elements
 		self.sign_up.input_name
 				.attr('name', 'fullname')
@@ -147,6 +151,10 @@ Site.DialogSystem = function() {
 				.on('focusin', self._handleFocusIn)
 				.on('keyup', self._handleSignUpKeyPress);
 
+		self.sign_up.input_terms_agree
+				.attr('name', 'agree')
+				.attr('type', 'checkbox');
+
 		// pack sign up dialog
 		self.sign_up.message.appendTo(self.sign_up.content);
 
@@ -166,6 +174,13 @@ Site.DialogSystem = function() {
 
 		self.sign_up.label_repeat_password
 				.append(self.sign_up.input_repeat_password)
+				.appendTo(self.sign_up.content);
+
+		self.sign_up.content.append('<hr>');
+
+		self.sign_up.label_terms_agree
+				.append(self.sign_up.input_terms_agree)
+				.append(self.sign_up.span_terms_agree)
 				.appendTo(self.sign_up.content);
 
 		self.sign_up.dialog.setContent(self.sign_up.content);
@@ -330,7 +345,7 @@ Site.DialogSystem = function() {
 				'login', 'login_dialog_title', 'login_dialog_message', 'label_email', 'label_password',
 				'label_password_recovery', 'recovery_dialog_title', 'recovery_dialog_message', 'submit',
 				'label_captcha', 'captcha_message', 'signup_dialog_title', 'sign_up', 'signup_dialog_message',
-				'label_repeat_password', 'label_name'
+				'label_repeat_password', 'label_name', 'label_agree_to_terms'
 			];
 		language_handler.getTextArrayAsync(null, constants, self._handleStringsLoaded);
 
@@ -451,6 +466,7 @@ Site.DialogSystem = function() {
 			input_username.attr('placeholder', data['label_email']);
 			input_password.attr('placeholder', data['label_password']);
 			input_repeat_password.attr('placeholder', data['label_repeat_password']);
+			span_terms_agree.html(data['label_agree_to_terms']);
 		}
 	};
 
