@@ -152,7 +152,7 @@ Site.DialogSystem = function() {
 				.on('keyup', self._handleSignUpKeyPress);
 
 		self.sign_up.input_terms_agree
-				.attr('name', 'agree')
+				.attr('name', 'agreed')
 				.attr('type', 'checkbox');
 
 		// pack sign up dialog
@@ -630,8 +630,11 @@ Site.DialogSystem = function() {
 	 * @param object data
 	 */
 	self._performSignUp = function(data) {
+		// make sure user agrees
+		if (data.agreed != 1)
+			return;
+
 		// fill in remaining data
-		data.agreed = 1;
 		data.email = data.username;
 		data.show_result = 1;
 
