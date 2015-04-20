@@ -848,6 +848,14 @@ div.dialog label input:focus {
 	color: #095965;
 }
 
+div.dialog label input.invalid:not([type=checkbox]),
+div.dialog label input.invalid[type=checkbox] + span:before {
+	border-color: red;
+	box-shadow:
+		inset 0px 0px 3px red,
+		inset 2px 3px 3px rgba(120, 120, 120, 0.3);
+}
+
 div.dialog label input[type=checkbox] {
 	display: none;
 }

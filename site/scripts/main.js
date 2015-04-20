@@ -93,10 +93,6 @@ Site.DialogSystem = function() {
 				.setContent(self.message.content)
 				.addClass('login');
 
-		// get sign up forms
-		self.sign_up.forms = $('form.sign-up');
-		self.sign_up.forms.submit(self._handleSignupSubmit);
-
 		// create sign up dialog
 		self.sign_up.dialog = new Dialog();
 		self.sign_up.dialog.setSize(400, 'auto');
@@ -153,7 +149,8 @@ Site.DialogSystem = function() {
 
 		self.sign_up.input_terms_agree
 				.attr('name', 'agreed')
-				.attr('type', 'checkbox');
+				.attr('type', 'checkbox')
+				.on('click', self._handleAgreeClick);
 
 		// pack sign up dialog
 		self.sign_up.message.appendTo(self.sign_up.content);
@@ -430,6 +427,16 @@ Site.DialogSystem = function() {
 	};
 
 	/**
+	 * Handle clicking on agree to terms.
+	 *
+	 * @param object event
+	 */
+	self._handleAgreeClick = function(event) {
+		var item = $(this);
+		item.removeClass('invalid');
+	};
+
+	/**
 	 * Handle loading language constants from server.
 	 *
 	 * @param object data
@@ -563,64 +570,40 @@ Site.DialogSystem = function() {
 		// prevent form from submitting
 		event.preventDefault();
 
-		// check if all fields are entered properly
-		var bail = false;
-		if (self.sign_up.input_username.val() == '') {
-			self.sign_up.input_username.addClass('invalid');
-			bail = true;
-		}
+		// check if all the fields are valid
+		if (self.sign_up.input_name.val() == '')
+			self.sign_up.input_name.addClass('invalid');
 
-		if (self.sign_up.input_password.val() == '') {
+		if (self.sign_up.input_username.val() == '')
+			self.sign_up.input_username.addClass('invalid');
+
+		if (self.sign_up.input_password.val() == '')
 			self.sign_up.input_password.addClass('invalid');
-			bail = true;
-		}
 
 		if (self.sign_up.input_password.val() != self.sign_up.input_repeat_password.val()) {
 			self.sign_up.input_password.addClass('invalid');
 			self.sign_up.input_repeat_password.addClass('invalid');
-			bail = true;
 		}
 
-		// exit as some fields are missing
-		if (bail)
-			return;
-
-		// collect data
-		var data = {
-			username: self.sign_up.input_username.val(),
-			password: self.sign_up.input_password.val()
-		};
-
-		// sign up user
-		self._performSignUp(data);
-	};
-
-	/**
-	 * Handle submission of sign up forms.
-	 *
-	 * @param object event
-	 */
-	self._handleSignupSubmit = function(event) {
-		// prevent form from submitting
-		event.preventDefault();
+		if (!self.sign_up.input_terms_agree.is(':checked'))
+			self.sign_up.input_terms_agree.addClass('invalid');
 
 		// cache objects
-		var form = $(this);
-		var fields = form.find('input');
+		var fields = self.sign_up.content.find('input');
 
 		// collect data
 		var data = {};
 		fields.each(function(index) {
 			var field = $(this);
 			var name = field.attr('name');
-			data[name] = field.val();
 
-			if (data[name] == '')
-				field.addClass('invalid');
+			if (field.attr('type') != 'checkbox')
+				data[name] = field.val(); else
+				data[name] = field.is(':checked') ? 1 : 0;
 		});
 
 		// submit data
-		if (field.filter('.invalid').length == 0)
+		if (fields.filter('.invalid').length == 0)
 			self._performSignUp(data);
 	};
 
