@@ -16,9 +16,11 @@ define('_TIMEZONE', '{{ timezone }}');
 define('DEBUG', 1);
 // define('SQL_DEBUG', 1);
 
-// site language configuration
-$available_languages = array('en');
-$default_language = 'en';
+define('SIZE_DEFINITION', 4);
+
+// language configuration
+$available_languages = array('he');
+$default_language = 'he';
 
 // default session options
 $session_type = Session::TYPE_BROWSER;
