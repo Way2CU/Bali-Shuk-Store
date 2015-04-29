@@ -1,11 +1,11 @@
 ---
 site:
-  domain: sample.com
+  domain: bali-shuk.co.il
   make_alias: false
   root: httpdocs
-  username: "sample"
+  username: bali_shuk
   caracal_branch: develop
-  # ip_address: 0.0.0.0
+  ip_address: 74.208.172.190
   # owner: Some Person
   # plan: Unlimited
 
