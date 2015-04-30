@@ -689,7 +689,8 @@ Site.DialogSystem = function() {
 		// prepare data
 		var data = {
 				username: self.login.input_username.val(),
-				password: self.login.input_password.val()
+				password: self.login.input_password.val(),
+				captcha: self.login.input_captcha.val()
 			};
 
 		// create communicator
