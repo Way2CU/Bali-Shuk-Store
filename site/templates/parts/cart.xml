@@ -33,6 +33,11 @@
 			<button type="button" name="checkout">
 				<cms:text constant="checkout" module="shop"/>
 			</button>
+			<cms:user>
+				<button type="button" name="history">
+					<cms:text constant="history"/>
+				</button>
+			</cms:user>
 		</div>
 	</div>
 </document>

@@ -2,7 +2,7 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<header
-		class="$section == 'home' ? 'home' : false"
+		class="($section != 'home' or $_SESSION['logged']) ? false : 'home'"
 		cms:optional="class"
 		>
 
