@@ -21,6 +21,7 @@
 			<action name="_default" file="user.xml"/>
 			<action name="verify-account" file="home.xml"/>
 			<action name="password-recovery" file="recover_password.xml"/>
+			<action name="previous-purchases" file="history.xml"/>
 		</language>
 	</section>
 	<section name="help">

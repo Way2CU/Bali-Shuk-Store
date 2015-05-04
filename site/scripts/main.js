@@ -69,6 +69,22 @@ Site.handle_scroll = function(event) {
 };
 
 /**
+ * Handle clicking on previous purchases button.
+ *
+ * @param object event
+ */
+Site.handle_history_click = function(event) {
+	// prevent default button behavior
+	event.preventDefault();
+
+	// redirect browser
+	var button = $(this);
+	var destination = button.data('destination');
+
+	window.location.href = destination;
+};
+
+/**
  * Dialog system for user management.
  */
 Site.DialogSystem = function() {
@@ -1072,7 +1088,11 @@ Site.on_load = function() {
 	// create dialog system
 	Site.dialog_system = new Site.DialogSystem();
 
-	if ($('div.cart').length > 0) {
+	// cache variables
+	Site.cart_container = $('div.cart');
+	Site.header_height = $('header').height();
+
+	if (Site.cart_container.length > 0) {
 		// preload language constants
 		var constants = [
 				'label_per_unit', 'label_per_kilo', 'currency', 'signup_completed_message',
@@ -1084,9 +1104,9 @@ Site.on_load = function() {
 		Site.cart = new Caracal.Shop.Cart();
 		Site.cart
 			.set_checkout_url('/checkout')
-			.ui.connect_checkout_button($('div.cart button[name=checkout]'))
-			.ui.add_total_count_label($('div.cart div.total_count span'))
-			.ui.add_item_list($('div.cart ul'))
+			.ui.connect_checkout_button(Site.cart_container.find('button[name=checkout]'))
+			.ui.add_total_count_label(Site.cart_container.find('div.total_count span'))
+			.ui.add_item_list(Site.cart_container.find('ul'))
 			.add_item_view(Site.ItemView);
 
 		// create scrollbar for shopping cart
@@ -1095,9 +1115,8 @@ Site.on_load = function() {
 		// connect increase and decrease controls
 		$('div.item div.controls a.alter').on('click', Site.alter_item_count);
 
-		// cache variables
-		Site.header_height = $('header').height();
-		Site.cart_container = $('div.cart');
+		// handle clicking on previous purchases button
+		Site.cart_container.find('button[name=history]').on('click', Site.handle_history_click);
 
 		// handle page scrolling to update cart position
 		$(window).on('scroll', Site.handle_scroll);

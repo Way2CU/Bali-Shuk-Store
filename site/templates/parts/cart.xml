@@ -34,7 +34,12 @@
 				<cms:text constant="checkout" module="shop"/>
 			</button>
 			<cms:user>
-				<button type="button" name="history">
+				<button
+					type="button"
+					name="history"
+					data-destination="url_Make('previous-purchases', 'user')"
+					cms:eval="data-destination"
+					>
 					<cms:text constant="history"/>
 				</button>
 			</cms:user>
