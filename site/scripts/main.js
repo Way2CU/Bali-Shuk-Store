@@ -52,13 +52,13 @@ Site.is_mobile = function() {
  */
 Site.handle_scroll = function(event) {
 	var page_scroll = $(window).scrollTop();
-	var top_position = Site.header_height - 100;
+	var top_position = Site.header_height;
 
 	if (page_scroll > top_position && !Site.cart_container.hasClass('floating')) {
 		// force cart to float
 		Site.cart_container
 				.addClass('floating')
-				.css('top', 100);
+				.css('top', 0);
 
 	} else if (page_scroll <= top_position && Site.cart_container.hasClass('floating')) {
 		// stop cart from floating
@@ -104,8 +104,11 @@ Site.DialogSystem = function() {
 		self.sign_up.content = $('<form>');
 		self.sign_up.message = $('<p>');
 
-		self.sign_up.label_name = $('<label>');
-		self.sign_up.input_name = $('<input>');
+		self.sign_up.label_first_name = $('<label>');
+		self.sign_up.input_first_name = $('<input>');
+
+		self.sign_up.label_last_name = $('<label>');
+		self.sign_up.input_last_name = $('<input>');
 
 		self.sign_up.label_username = $('<label>');
 		self.sign_up.input_username = $('<input>');
@@ -121,8 +124,15 @@ Site.DialogSystem = function() {
 		self.sign_up.span_terms_agree = $('<span>');
 
 		// configure elements
-		self.sign_up.input_name
-				.attr('name', 'fullname')
+		self.sign_up.input_first_name
+				.attr('name', 'first_name')
+				.attr('type', 'text')
+				.attr('maxlength', 100)
+				.on('focusin', self._handleFocusIn)
+				.on('keyup', self._handleSignUpKeyPress);
+
+		self.sign_up.input_last_name
+				.attr('name', 'last_name')
 				.attr('type', 'text')
 				.attr('maxlength', 100)
 				.on('focusin', self._handleFocusIn)
@@ -155,8 +165,14 @@ Site.DialogSystem = function() {
 		// pack sign up dialog
 		self.sign_up.message.appendTo(self.sign_up.content);
 
-		self.sign_up.label_name
-				.append(self.sign_up.input_name)
+		self.sign_up.label_first_name
+				.addClass('inline')
+				.append(self.sign_up.input_first_name)
+				.appendTo(self.sign_up.content);
+
+		self.sign_up.label_last_name
+				.addClass('inline')
+				.append(self.sign_up.input_last_name)
 				.appendTo(self.sign_up.content);
 
 		self.sign_up.label_username
@@ -342,7 +358,7 @@ Site.DialogSystem = function() {
 				'login', 'login_dialog_title', 'login_dialog_message', 'label_email', 'label_password',
 				'label_password_recovery', 'recovery_dialog_title', 'recovery_dialog_message', 'submit',
 				'label_captcha', 'captcha_message', 'signup_dialog_title', 'sign_up', 'signup_dialog_message',
-				'label_repeat_password', 'label_name', 'label_agree_to_terms'
+				'label_repeat_password', 'label_first_name', 'label_last_name', 'label_agree_to_terms'
 			];
 		language_handler.getTextArrayAsync(null, constants, self._handleStringsLoaded);
 
@@ -469,7 +485,8 @@ Site.DialogSystem = function() {
 			message.html(data['signup_dialog_message']);
 			signup_button.html(data['sign_up']);
 
-			input_name.attr('placeholder', data['label_name']);
+			input_first_name.attr('placeholder', data['label_first_name']);
+			input_last_name.attr('placeholder', data['label_last_name']);
 			input_username.attr('placeholder', data['label_email']);
 			input_password.attr('placeholder', data['label_password']);
 			input_repeat_password.attr('placeholder', data['label_repeat_password']);
@@ -571,8 +588,11 @@ Site.DialogSystem = function() {
 		event.preventDefault();
 
 		// check if all the fields are valid
-		if (self.sign_up.input_name.val() == '')
-			self.sign_up.input_name.addClass('invalid');
+		if (self.sign_up.input_first_name.val() == '')
+			self.sign_up.input_first_name.addClass('invalid');
+
+		if (self.sign_up.input_last_name.val() == '')
+			self.sign_up.input_last_name.addClass('invalid');
 
 		if (self.sign_up.input_username.val() == '')
 			self.sign_up.input_username.addClass('invalid');
@@ -710,7 +730,11 @@ Site.DialogSystem = function() {
 			// hide login dialog
 			self.login.dialog.hide();
 
-			// redirect on successful login
+			// reload page on successful login
+			window.location.reload();
+
+			/**
+			 * Disabled due to client being UX expert.
 			self.message.content.html(language_handler.getText(null, 'login_successful'));
 			self.message.dialog
 					.setError(false)
@@ -720,6 +744,7 @@ Site.DialogSystem = function() {
 						this.clearCloseCallback();
 					});
 			self.message.dialog.show();
+			*/
 
 		} else {
 			// hide login dialog
