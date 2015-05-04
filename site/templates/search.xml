@@ -26,11 +26,12 @@
 			<cms:template file="parts/cart.xml"/>
 
 			<!-- Shopping items -->
-			<div class="shopping" cms:skip_cache="1">
+			<div id="items" cms:skip_cache="1">
 				<h3>
 					<cms:text constant="title_search"/>
 					<cms:var name="fix_chars($_REQUEST['query'])"/>
 				</h3>
+
 				<cms:module
 					name="search"
 					action="show_results"
