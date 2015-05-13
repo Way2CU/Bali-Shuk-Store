@@ -91,6 +91,8 @@ header a.logo img {
 	width: 200px;
 	height: 100px;
 
+	border: 0px;
+
 	filter: url(../images/effects.svg#header-shadow);
 	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
@@ -134,13 +136,13 @@ header form button {
 
 	border: 0px;
 	border-radius: 4px 0px 0px 4px;
+	background-color: #003B43;
 	background-image:
 		url(../images/search.svg),
 		linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
 	background-size: 20px 20px, auto auto;
 	background-repeat: no-repeat, no-repeat;
 	background-position: 10px 10px, left top;
-	background-color: transparent;
 
 	color: white;
 
@@ -157,6 +159,7 @@ header form button:after {
 	content: '';
 
 	border-radius: 4px 0px 0px 4px;
+	background-color: #0A5A66;
 	background-image:
 		url(../images/search.svg),
 		linear-gradient(180deg, rgba(10, 90, 102, 1) 0%, rgba(10, 90, 102, 1) 100%);
@@ -169,6 +172,11 @@ header form button:after {
 	z-index: -1;
 }
 
+
+header form button:focus,
+header form button:hover {
+	background-color: transparent;
+}
 
 header form button:focus:after,
 header form button:hover:after {
@@ -234,8 +242,8 @@ nav#main li.user a.logout {
 
 	border: 0px;
 	border-radius: 4px;
+	background-color: #003B43;
 	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
-	background-color: transparent;
 
 	color: white;
 	z-index: 0;
@@ -251,6 +259,7 @@ nav#main li.user a.logout:after {
 	content: '';
 
 	border-radius: 4px;
+	background-color: #0A5A66;
 	background-image: linear-gradient(0deg, rgba(10, 90, 102, 1) 0%, rgba(10, 90, 102, 1) 100%);
 
 	transition: 0.3s all;
@@ -261,6 +270,13 @@ nav#main li.user a.logout:after {
 nav#main li.user a.login:hover,
 nav#main li.user a.logout:hover {
 	text-decoration: none;
+}
+
+nav#main li.user a.login:hover,
+nav#main li.user a.logout:hover,
+nav#main li.user a.login:focus,
+nav#main li.user a.logout:focus {
+	background-color: transparent;
 }
 
 nav#main li.user a.login:focus:after,
