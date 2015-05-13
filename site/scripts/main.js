@@ -937,17 +937,17 @@ Site.ItemView = function(item) {
 		// configure controls
 		self.controls.container.addClass('name');
 		self.controls.increase
-				.html('<svg><use xlink:href="site/images/cart-controls.svg#icon-plus"/></svg>')
+				.html('<svg><use href="#icon-plus" xlink:href="site/images/cart-controls.svg#icon-plus"/></svg>')
 				.addClass('alter increase')
 				.data('direction', 1)
 				.on('click', self.controls.handle_alter);
 		self.controls.decrease
-				.html('<svg><use xlink:href="site/images/cart-controls.svg#icon-minus"/></svg>')
+				.html('<svg><use href="#icon-minus" xlink:href="site/images/cart-controls.svg#icon-minus"/></svg>')
 				.addClass('alter decrease')
 				.data('direction', -1)
 				.on('click', self.controls.handle_alter);
 		self.controls.remove
-				.html('<svg><use xlink:href="site/images/cart-controls.svg#icon-trash"/></svg>')
+				.html('<svg><use href="#icon-trash" xlink:href="site/images/cart-controls.svg#icon-trash"/></svg>')
 				.addClass('remove')
 				.on('click', self.controls.handle_remove);
 	};
