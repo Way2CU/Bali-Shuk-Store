@@ -10,7 +10,7 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 		$this->name = 'direct';
 
 		if (class_exists('shop'))
-			Shop\Delivery::register_method($this->name, $this);
+			Modules\Shop\Delivery::register_method($this->name, $this);
 	}
 
 	/**
