@@ -34,14 +34,24 @@
 				href="javascript: void(0);"
 				class="alter increase"
 				>
-				<svg><use xlink:href="site/images/cart-controls.svg#icon-plus"/></svg>
+				<svg>
+					<use
+						href="#icon-plus"
+						xlink:href="site/images/cart-controls.svg#icon-plus"
+						/>
+				</svg>
 			</a>
 			<span>0</span>
 			<a
 				href="javascript: void(0);"
 				class="alter decrease"
 				>
-				<svg><use xlink:href="site/images/cart-controls.svg#icon-minus"/></svg>
+				<svg>
+					<use
+						href="#icon-minus"
+						xlink:href="site/images/cart-controls.svg#icon-minus"
+						/>
+				</svg>
 			</a>
 		</div>
 	</div>
