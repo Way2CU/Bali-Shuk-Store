@@ -19,7 +19,7 @@ define('DEBUG', 1);
 define('SIZE_DEFINITION', 4);
 
 // default session options
-$session_type = Session::TYPE_BROWSER;
+$session_type = Session::TYPE_NORMAL;
 
 // language configuration
 $available_languages = array('he');
