@@ -1,0 +1,344 @@
+/**
+ * Mobile Content Style Sheet
+ * Vegetable shop
+ *
+ * Copyright (c) 2015. by Way2CU, http://way2cu.com
+ * Authors: Mladen Mijatov
+ */
+
+/**
+ * Shop items
+ */
+div#items {
+	display: block;
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+div#items h3 {
+	padding: 0.5em;
+
+	background-color: #095965;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+
+	color: white;
+	font-weight: normal;
+	text-align: center;
+}
+
+div#items div.item {
+	display: inline-block;
+	vertical-align: top;
+	width: 170px;
+
+	margin: 5px;
+	margin-bottom: 0px;
+	padding-top: 1.6em;
+
+	position: relative;
+
+	border: 1px solid #f4eee2;
+	border-radius: 5px;
+	background-color: white;
+}
+
+div#items div.item:nth-child(odd) {
+	margin-right: 0px;
+}
+
+div#items div.item > h5 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: calc(100% - 10px);
+
+	margin: 0px;
+	padding: 5px;
+
+	text-align: center;
+	text-shadow: white 0px 0px 3px;
+	font-weight: normal;
+}
+
+div#items div.item div.image {
+	height: 170px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+div#items div.item div.controls a {
+	display: inline-block;
+	vertical-align: top;
+	width: 3em;
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	background-color: #7a9900;
+
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	line-height: 0%;
+}
+
+div#items div.item div.controls a svg {
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+div#items div.item div.controls a:first-of-type {
+	border-radius: 0px 0px 5px 0px;
+}
+
+div#items div.item div.controls a:last-of-type {
+	border-radius: 0px 0px 0px 5px;
+}
+
+div#items div.item div.controls span {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 6em - 20px);
+	min-height: 1em;
+
+	padding: 10px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	color: #7e8b8c;
+	text-align: center;
+	line-height: 100%;
+}
+
+div#items div.item div.price {
+	padding-top: 10px;
+
+	background-color: #e8dcc5;
+
+	color: #33485d;
+	text-align: center;
+}
+
+div#items div.item form.units {
+	background-color: #e8dcc5;
+
+	color: #33485d;
+	text-align: center;
+}
+
+div#items div.item form.units label {
+	display: inline-block;
+	padding: 10px;
+}
+
+div#items div.item form.units label input {
+	display: none;
+}
+
+div#items div.item form.units label span:before {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	content: '';
+	position: relative;
+	top: 2px;
+
+	margin-left: 5px;
+
+	border: 2px solid #e5e5e5;
+	border-radius: 50%;
+	background-color: #e5e5e5;
+	box-shadow: 0px 0px 0px 1px #989898;
+
+	transition: background-color 0.3s;
+}
+
+div#items div.item form.units label input:checked + span:before {
+	background-color: #656565;
+}
+
+/**
+ * Shopping cart
+ */
+div.cart {
+	display: none;
+}
+
+/**
+ * Dialogs
+ */
+div.dialog,
+div.dialog.error {
+	visibility: hidden;
+	opacity: 0;
+	top: 5% !important;
+	left: calc((10vw - 20px) / 2);
+
+	transform: translateY(-200px);
+
+	border-radius: 10px;
+	background-color: #f8f5ee;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
+	transition: all 0.5s;
+}
+
+div.dialog.visible {
+	visibility: visible;
+	opacity: 1;
+
+	margin-left: 0px;
+
+	transform: translateY(0);
+}
+
+div.dialog div.title {
+	border-radius: 10px 10px 0px 0px;
+	background-color: #095965;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+
+	color: white;
+	text-align: center;
+}
+
+div.dialog.error div.title {
+	background-color: #FF3400;
+	background-image: linear-gradient(0deg, rgba(255, 64, 0, 1) 0%, rgba(255, 111, 63, 1) 100%);
+}
+
+div.dialog div.inner_content {
+	padding: 10px;
+	text-align: center;
+}
+
+div.dialog hr {
+	display: block;
+	width: 50%;
+	margin: 0px auto;
+	margin-top: 10px;
+	padding-bottom: 10px;
+
+	border: 0px;
+	border-top: 1px solid #095965;
+	opacity: 0.3;
+}
+
+div.dialog label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+div.dialog label.inline {
+	display: inline-block;
+	width: calc((80% + 12px) / 2);
+}
+
+div.dialog label.inline:first-of-type {
+	margin-left: 10px;
+}
+
+div.dialog label input:not([type=checkbox]) {
+	min-width: 80%;
+	padding: 10px;
+
+	border: 1px solid #909090;
+	border-radius: 3px;
+	box-shadow: inset 2px 3px 3px rgba(120, 120, 120, 0.3);
+
+	color: #909090;
+	transition: all 0.3s;
+}
+
+div.dialog label.inline input {
+	min-width: auto;
+	width: calc(100% - 22px);
+}
+
+div.dialog label input.ltr {
+	direction: ltr;
+}
+
+div.dialog label input:focus {
+	border-color: #095965;
+	color: #095965;
+}
+
+div.dialog label input.invalid:not([type=checkbox]),
+div.dialog label input.invalid[type=checkbox] + span:before {
+	border-color: red;
+	box-shadow:
+		inset 0px 0px 3px red,
+		inset 2px 3px 3px rgba(120, 120, 120, 0.3);
+}
+
+div.dialog label input[type=checkbox] {
+	display: none;
+}
+
+div.dialog label input[type=checkbox] + span:before {
+	display: inline-block;
+	content: '';
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+
+	margin-left: 5px;
+
+	border: 1px solid #909090;
+	border-radius: 3px;
+	background-image: url(../images/checkbox.png);
+	background-size: 16px 32px;
+	background-position: left top;
+	box-shadow: inset 2px 3px 3px rgba(120, 120, 120, 0.3);
+
+	transition: all 0.3s;
+}
+
+div.dialog label input[type=checkbox]:checked + span:before {
+	background-position: left -16px;
+}
+
+div.dialog div.captcha input {
+	width: calc(100% - 214px);
+	min-width: 30%;
+	margin-left: 10px;
+}
+
+div.dialog div.captcha img {
+	vertical-align: bottom;
+
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+}
+
+div.dialog input.invalid {
+	box-shadow: inset 0px 0px 4px 0px red;
+	border-color: red;
+}
+
+div.dialog div.inner_content {
+	padding-bottom: 0px;
+}
+
+div.dialog div.inner_content a {
+	color: #3397DA;
+	text-decoration: none;
+}
+
+div.dialog div.inner_content a:hover {
+	text-decoration: underline;
+}
+
+div.dialog div.command_bar {
+	padding: 0.5em;
+}
+
+div.dialog div.command_bar a {
+	padding: 0.7em 1.5em;
+	border-radius: 5px;
+}
+
+div.dialog p {
+	margin-top: 0px;
+}

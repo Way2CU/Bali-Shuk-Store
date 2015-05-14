@@ -289,14 +289,14 @@ nav#main li.user a.logout:hover:after {
 /**
  * Categories menu
  */
-nav#categories {
+nav.categories {
 	position: absolute;
 	z-index: 1001;
 	bottom: 0px;
 	width: 100%;
 }
 
-nav#categories ul {
+nav.categories ul {
 	display: block;
 	margin: 0px;
 	padding: 0px;
@@ -307,29 +307,29 @@ nav#categories ul {
 	list-style-image: none;
 }
 
-nav#categories > ul {
+nav.categories > ul {
 	display: table;
 	table-layout: fixed;
 	width: 100%;
 }
 
-nav#categories > ul li {
+nav.categories > ul li {
 	display: table-cell;
 	position: relative;
 
 	border-right: 1px solid #bcc2c6;
 }
 
-nav#categories li:first-of-type {
+nav.categories li:first-of-type {
 	border-right: 0px;
 }
 
-nav#categories li:last-of-type {
+nav.categories li:last-of-type {
 	border-left: 1px solid #bcc2c6;
 }
 
 
-nav#categories ul li > ul {
+nav.categories ul li > ul {
 	position: absolute;
 	top: 100%;
 	right: 0px;
@@ -346,20 +346,20 @@ nav#categories ul li > ul {
 	transition-delay: 0.3s, 0s, 0s;
 }
 
-nav#categories ul li:hover > ul {
+nav.categories ul li:hover > ul {
 	visibility: visible;
 	opacity: 1;
 	max-height: 100px;
 	transition-delay: 0s;
 }
 
-nav#categories ul li > ul li,
-nav#categories ul li > ul li:last-of-type {
+nav.categories ul li > ul li,
+nav.categories ul li > ul li:last-of-type {
 	display: block;
 	border: 0px;
 }
 
-nav#categories a {
+nav.categories a {
 	display: block;
 	padding: 10px;
 
@@ -373,31 +373,31 @@ nav#categories a {
 	transition: all 0.3s;
 }
 
-nav#categories li a.active,
-nav#categories li a:hover {
+nav.categories li a.active,
+nav.categories li a:hover {
 	border-bottom-color: currentColor;
 }
 
-nav#categories li.vegetables a.active,
-nav#categories li.vegetables a:hover {
+nav.categories li.vegetables a.active,
+nav.categories li.vegetables a:hover {
 	color: #2dcb70;
 }
 
-nav#categories li.fruits a.active,
-nav#categories li.fruits a:hover {
+nav.categories li.fruits a.active,
+nav.categories li.fruits a:hover {
 	color: #e76724;
 }
 
-nav#categories li.deli a.active,
-nav#categories li.deli a:hover {
+nav.categories li.deli a.active,
+nav.categories li.deli a:hover {
 	color: #18adba;
 }
 
-nav#categories li.sale a.active,
-nav#categories li.sale a:hover {
+nav.categories li.sale a.active,
+nav.categories li.sale a:hover {
 	color: #c3922e;
 }
 
-nav#categories ul ul a {
+nav.categories ul ul a {
 	border-bottom-width: 2px;
 }

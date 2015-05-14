@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<form
+		action="url_Make('', 'search')"
+		method="GET"
+		cms:eval="action"
+		>
+		<label cms:skip_cache="1">
+			<input
+				type="search"
+				name="query"
+				placeholder="placeholder_search"
+				value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
+				cms:optional="value"
+				cms:constant="placeholder"
+				/>
+		</label>
+		<button type="submit">
+			<cms:text constant="label_search"/>
+		</button>
+	</form>
+</document>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<nav class="footer">
+		<a
+			href="url_Make('terms-of-use', 'help')"
+			cms:eval="href"
+			>
+			<cms:text constant="menu_terms_use"/>
+		</a>
+		<a
+			href="url_Make('security', 'help')"
+			cms:eval="href"
+			>
+			<cms:text constant="menu_security_settings"/>
+		</a>
+		<a
+			href="url_Make('faq', 'help')"
+			cms:eval="href"
+			>
+			<cms:text constant="menu_faq"/>
+		</a>
+		<a
+			href="url_Make('', 'contact')"
+			cms:eval="href"
+			>
+			<cms:text constant="menu_contact"/>
+		</a>
+		<a
+			href="url_Make('', 'help')"
+			cms:eval="href"
+			>
+			<cms:text constant="menu_help"/>
+		</a>
+	</nav>
+</document>

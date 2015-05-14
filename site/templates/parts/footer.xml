@@ -2,38 +2,9 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<footer>
-		<nav>
-			<a
-				href="url_Make('terms-of-use', 'help')"
-				cms:eval="href"
-				>
-				<cms:text constant="menu_terms_use"/>
-			</a>
-			<a
-				href="url_Make('security', 'help')"
-				cms:eval="href"
-				>
-				<cms:text constant="menu_security_settings"/>
-			</a>
-			<a
-				href="url_Make('faq', 'help')"
-				cms:eval="href"
-				>
-				<cms:text constant="menu_faq"/>
-			</a>
-			<a
-				href="url_Make('', 'contact')"
-				cms:eval="href"
-				>
-				<cms:text constant="menu_contact"/>
-			</a>
-			<a
-				href="url_Make('', 'help')"
-				cms:eval="href"
-				>
-				<cms:text constant="menu_help"/>
-			</a>
-		</nav>
+		<cms:desktop>
+			<cms:template file="parts/footer_menu.xml"/>
+		</cms:desktop>
 
 		<div class="payment_methods">
 			<h4><cms:text constant="payment_methods_security"/></h4>

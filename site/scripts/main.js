@@ -46,11 +46,11 @@ Site.is_mobile = function() {
 };
 
 /**
- * Handle scrolling page.
+ * Handle scrolling page for shopping cart.
  *
  * @param object event
  */
-Site.handle_scroll = function(event) {
+Site.handle_scroll_for_cart = function(event) {
 	var page_scroll = $(window).scrollTop();
 	var top_position = Site.header_height;
 
@@ -65,6 +65,21 @@ Site.handle_scroll = function(event) {
 		Site.cart_container
 				.removeClass('floating')
 				.css('top', 0);
+	}
+};
+
+/**
+ * Handle scrolling for mobile title.
+ *
+ * @param object event
+ */
+Site.handle_scroll_for_title = function(event) {
+	var page_scroll = $(window).scrollTop();
+
+	if (page_scroll > 0 && Site.mobile_title.hasClass('top')) {
+		Site.mobile_title.removeClass('top');
+	} else if (page_scroll == 0 && !Site.mobile_title.hasClass('top')) {
+		Site.mobile_title.addClass('top');
 	}
 };
 
@@ -103,7 +118,7 @@ Site.DialogSystem = function() {
 		self.message.content = $('<div>');
 		self.message.dialog = new Dialog();
 		self.message.dialog
-				.setSize(400, 'auto')
+				.setSize(Site.is_mobile() ? '90vw' : 400, 'auto')
 				.setScroll(false)
 				.setClearOnClose(false)
 				.setContent(self.message.content)
@@ -111,7 +126,7 @@ Site.DialogSystem = function() {
 
 		// create sign up dialog
 		self.sign_up.dialog = new Dialog();
-		self.sign_up.dialog.setSize(400, 'auto');
+		self.sign_up.dialog.setSize(Site.is_mobile() ? '90vw' : 400, 'auto');
 		self.sign_up.dialog.setScroll(false);
 		self.sign_up.dialog.setClearOnClose(false);
 		self.sign_up.dialog.setError(false);
@@ -223,7 +238,7 @@ Site.DialogSystem = function() {
 
 		// prepare dialog
 		self.login.dialog = new Dialog();
-		self.login.dialog.setSize(400, 'auto');
+		self.login.dialog.setSize(Site.is_mobile() ? '90vw' : 400, 'auto');
 		self.login.dialog.setScroll(false);
 		self.login.dialog.setClearOnClose(false);
 		self.login.dialog.setError(false);
@@ -299,7 +314,7 @@ Site.DialogSystem = function() {
 
 		// prepare recovery dialog
 		self.recovery.dialog = new Dialog();
-		self.recovery.dialog.setSize(400, 'auto');
+		self.recovery.dialog.setSize(Site.is_mobile() ? '90vw' : 400, 'auto');
 		self.recovery.dialog.setScroll(false);
 		self.recovery.dialog.setClearOnClose(false);
 		self.recovery.dialog.setError(false);
@@ -1085,6 +1100,15 @@ Site.alter_item_count = function(event) {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
+	// create mobile menu
+	if (Site.is_mobile()) {
+		Site.mobile_menu = new Caracal.MobileMenu();
+		Site.mobile_title = $('.mobile_title');
+
+		// handle page scrolling to update title class
+		$(window).on('scroll', Site.handle_scroll_for_title);
+	}
+
 	// create dialog system
 	Site.dialog_system = new Site.DialogSystem();
 
@@ -1119,10 +1143,10 @@ Site.on_load = function() {
 		Site.cart_container.find('button[name=history]').on('click', Site.handle_history_click);
 
 		// handle page scrolling to update cart position
-		$(window).on('scroll', Site.handle_scroll);
+		if (!Site.is_mobile())
+			$(window).on('scroll', Site.handle_scroll_for_cart);
 	}
 };
-
 
 // connect document `load` event with handler function
 $(Site.on_load);

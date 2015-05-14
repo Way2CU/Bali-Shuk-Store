@@ -1,156 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<header
-		class="($section != 'home' or $_SESSION['logged']) ? false : 'home'"
-		cms:optional="class"
-		>
+	<!-- Save user timer -->
+	<cms:guest>
+		<cms:module
+			name="backend"
+			action="save_unpriviledged_user_timer"
+			/>
+	</cms:guest>
 
-		<!-- Save user timer -->
-		<cms:guest>
-			<cms:module
-				name="backend"
-				action="save_unpriviledged_user_timer"
-				/>
-		</cms:guest>
+	<!-- Mobile header -->
+	<cms:mobile>
+		<!-- Mobile menu controls -->
+		<cms:svg file="mobile-controls.svg"/>
 
-		<!-- Logo -->
-		<a
-			href="url_Make()"
-			class="logo"
-			cms:eval="href"
-			>
-			<img
-				src="_BASEURL.'/site/images/logo.svg'"
-				alt="site_title"
-				cms:eval="src"
-				cms:constant="alt"
-				/>
-		</a>
-
-		<div class="wrap">
-			<!-- Search form -->
-			<form
-				action="url_Make('', 'search')"
-				method="GET"
-				cms:eval="action"
-				>
-				<label cms:skip_cache="1">
-					<input
-						type="search"
-						name="query"
-						placeholder="placeholder_search"
-						value="isset($_REQUEST['query']) ? fix_chars($_REQUEST['query']) : false"
-						cms:optional="value"
-						cms:constant="placeholder"
+		<!-- Mobile title -->
+		<nav class="mobile_title top">
+			<a href="javascript:void(0);" class="cart">
+				<svg>
+					<use
+						href="#icon-cart"
+						xlink:href="site/images/mobile-controls.svg#icon-cart"
 						/>
-				</label>
-				<button type="submit">
-					<cms:text constant="label_search"/>
-				</button>
-			</form>
+				</svg>
+			</a>
+			<cms:template file="parts/logo.xml"/>
+			<a href="javascript:void(0);" class="menu">
+				<svg>
+					<use
+						href="#icon-menu"
+						xlink:href="site/images/mobile-controls.svg#icon-menu"
+						/>
+				</svg>
+			</a>
+		</nav>
 
-			<!-- Main menu -->
-			<nav id="main">
-				<ul>
-					<li>
-						<a
-							href="url_Make()"
-							class="$section == 'home' ? 'active' : false"
-							cms:eval="href"
-							cms:optional="class"
-							>
-							<cms:text constant="menu_home"/>
-						</a>
-					</li>
-					<li>
-						<a
-							href="url_Make('', 'contact')"
-							class="$section == 'contact' ? 'active' : false"
-							cms:eval="href"
-							cms:optional="class"
-							>
-							<cms:text constant="menu_contact"/>
-						</a>
-					</li>
-					<li>
-						<a
-							class="$section == 'help' ? 'active' : false"
-							href="url_Make('', 'help')"
-							cms:eval="href"
-							cms:optional="class"
-							>
-							<cms:text constant="menu_help"/>
-						</a>
-					</li>
-
-					<cms:guest>
-						<li class="user">
-							<span><cms:text constant="label_welcome_guest"/></span>
-							<a
-								href="javascript: void(0);"
-								class="login"
-								>
-								<cms:text constant="menu_login"/>
-							</a>
-							<a
-								href="javascript: void(0);"
-								class="sign-up"
-								>
-								<cms:text constant="menu_sign_up"/>
-							</a>
-						</li>
-					</cms:guest>
-					<cms:user>
-						<li class="user">
-							<span>
-								<cms:text constant="label_welcome"/>
-								<a
-									href="url_Make('control-panel', 'user')"
-									cms:eval="href"
-									>
-									<cms:var name="$_SESSION['fullname']"/>
-								</a>
-							</span>
-							<a
-								href="javascript: void(0);"
-								class="logout"
-								>
-								<cms:text constant="menu_logout"/>
-							</a>
-						</li>
-					</cms:user>
-				</ul>
-			</nav>
+		<!-- Mobile menu -->
+		<div class="mobile_menu">
+			<div class="wrap">
+				<cms:template file="parts/search_bar.xml"/>
+				<cms:template file="parts/main_menu.xml"/>
+			</div>
+			<cms:template file="parts/categories_menu.xml"/>
 		</div>
 
-		<nav id="categories">
-			<ul>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="vegetables"
-					template="parts/category_menu_item_with_children.xml"
-					/>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="fruits"
-					template="parts/category_menu_item.xml"
-					/>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="deli"
-					template="parts/category_menu_item_with_children.xml"
-					/>
-				<cms:module
-					name="shop"
-					action="show_category"
-					text_id="sale"
-					template="parts/category_menu_item.xml"
-					/>
-			</ul>
-		</nav>
-	</header>
+		<header>
+			<cms:template file="parts/logo.xml"/>
+			<cms:template file="parts/simple_categories_menu.xml"/>
+		</header>
+	</cms:mobile>
+
+	<!-- Desktop header -->
+	<cms:desktop>
+		<header
+			class="($section != 'home' or $_SESSION['logged']) ? false : 'home'"
+			cms:optional="class"
+			>
+			<cms:template file="parts/logo.xml"/>
+
+			<div class="wrap">
+				<cms:template file="parts/search_bar.xml"/>
+				<cms:template file="parts/main_menu.xml"/>
+			</div>
+
+			<cms:template file="parts/categories_menu.xml"/>
+		</header>
+	</cms:desktop>
 </document>

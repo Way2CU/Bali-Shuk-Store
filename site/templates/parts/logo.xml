@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<a
+		href="url_Make()"
+		class="logo"
+		cms:eval="href"
+		>
+		<img
+			src="_BASEURL.'/site/images/logo.svg'"
+			alt="site_title"
+			cms:eval="src"
+			cms:constant="alt"
+			/>
+	</a>
+</document>

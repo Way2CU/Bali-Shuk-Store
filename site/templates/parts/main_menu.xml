@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<nav id="main">
+		<ul>
+			<cms:mobile>
+				<cms:guest>
+					<li class="user">
+						<span><cms:text constant="label_welcome_guest"/></span>
+						<a
+							href="javascript: void(0);"
+							class="login"
+							>
+							<cms:text constant="menu_login"/>
+						</a>
+						<a
+							href="javascript: void(0);"
+							class="sign-up"
+							>
+							<cms:text constant="menu_sign_up"/>
+						</a>
+					</li>
+				</cms:guest>
+				<cms:user>
+					<li class="user">
+						<span>
+							<cms:text constant="label_welcome"/>
+							<a
+								href="url_Make('control-panel', 'user')"
+								cms:eval="href"
+								>
+								<cms:var name="$_SESSION['fullname']"/>
+							</a>
+						</span>
+						<a
+							href="javascript: void(0);"
+							class="logout"
+							>
+							<cms:text constant="menu_logout"/>
+						</a>
+					</li>
+				</cms:user>
+			</cms:mobile>
+
+			<li>
+				<a
+					href="url_Make()"
+					class="$section == 'home' ? 'active' : false"
+					cms:eval="href"
+					cms:optional="class"
+					>
+					<cms:text constant="menu_home"/>
+				</a>
+			</li>
+			<li>
+				<a
+					href="url_Make('', 'contact')"
+					class="$section == 'contact' ? 'active' : false"
+					cms:eval="href"
+					cms:optional="class"
+					>
+					<cms:text constant="menu_contact"/>
+				</a>
+			</li>
+			<li>
+				<a
+					class="$section == 'help' ? 'active' : false"
+					href="url_Make('', 'help')"
+					cms:eval="href"
+					cms:optional="class"
+					>
+					<cms:text constant="menu_help"/>
+				</a>
+			</li>
+
+			<cms:desktop>
+				<cms:guest>
+					<li class="user">
+						<span><cms:text constant="label_welcome_guest"/></span>
+						<a
+							href="javascript: void(0);"
+							class="login"
+							>
+							<cms:text constant="menu_login"/>
+						</a>
+						<a
+							href="javascript: void(0);"
+							class="sign-up"
+							>
+							<cms:text constant="menu_sign_up"/>
+						</a>
+					</li>
+				</cms:guest>
+				<cms:user>
+					<li class="user">
+						<span>
+							<cms:text constant="label_welcome"/>
+							<a
+								href="url_Make('control-panel', 'user')"
+								cms:eval="href"
+								>
+								<cms:var name="$_SESSION['fullname']"/>
+							</a>
+						</span>
+						<a
+							href="javascript: void(0);"
+							class="logout"
+							>
+							<cms:text constant="menu_logout"/>
+						</a>
+					</li>
+				</cms:user>
+			</cms:desktop>
+		</ul>
+	</nav>
+</document>

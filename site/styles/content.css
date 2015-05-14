@@ -928,6 +928,6 @@ div.dialog div.inner_content a:hover {
 	text-decoration: underline;
 }
 
-div.dialog div.controls a {
+div.dialog div.command_bar a {
 	border-radius: 5px;
 }
