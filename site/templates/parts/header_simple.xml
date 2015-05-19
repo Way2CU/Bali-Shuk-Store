@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<!-- Save user timer -->
+	<cms:guest>
+		<cms:module
+			name="backend"
+			action="save_unpriviledged_user_timer"
+			/>
+	</cms:guest>
+
+	<!-- Mobile header -->
+	<cms:mobile>
+		<!-- Mobile menu controls -->
+		<cms:svg file="mobile-controls.svg"/>
+
+		<!-- Mobile title -->
+		<nav class="mobile_title top">
+			<a href="javascript:void(0);" class="cart">
+				<svg>
+					<use
+						href="#icon-cart"
+						xlink:href="site/images/mobile-controls.svg#icon-cart"
+						/>
+				</svg>
+			</a>
+			<cms:template file="parts/logo.xml"/>
+			<a href="javascript:void(0);" class="menu">
+				<svg>
+					<use
+						href="#icon-menu"
+						xlink:href="site/images/mobile-controls.svg#icon-menu"
+						/>
+				</svg>
+			</a>
+		</nav>
+
+		<!-- Mobile menu -->
+		<div class="mobile_menu">
+			<div class="wrap">
+				<cms:template file="parts/search_bar.xml"/>
+				<cms:template file="parts/main_menu.xml"/>
+			</div>
+			<cms:template file="parts/categories_menu.xml"/>
+		</div>
+
+		<header>
+			<cms:template file="parts/logo.xml"/>
+		</header>
+	</cms:mobile>
+
+	<!-- Desktop header -->
+	<cms:desktop>
+		<header class="thematic">
+			<cms:template file="parts/logo.xml"/>
+
+			<div class="wrap">
+				<cms:template file="parts/search_bar.xml"/>
+				<cms:template file="parts/main_menu.xml"/>
+			</div>
+		</header>
+	</cms:desktop>
+</document>

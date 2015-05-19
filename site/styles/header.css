@@ -26,9 +26,19 @@ header.home {
 	background-position: center top;
 }
 
+header.thematic {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+
+	min-height: 0px;
+	background-image: none;
+}
+
 header div.wrap {
 	padding: 10px calc((100vw - 900px) / 2);
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.5);
 	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
