@@ -14,7 +14,7 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<cms:template file="parts/header.xml"/>
+			<cms:template file="parts/header_simple.xml"/>
 
 			<div class="wrap terms">
 				<cms:module

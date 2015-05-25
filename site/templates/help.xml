@@ -17,12 +17,10 @@
 			<cms:template file="parts/header.xml"/>
 
 			<div class="wrap terms">
-				<h1><cms:text constant="help"/></h1>
 				<cms:module
 					name="articles"
 					action="show"
 					text_id="help"
-					template="parts/article_no_h1.xml"
 					/>
 			</div>
 

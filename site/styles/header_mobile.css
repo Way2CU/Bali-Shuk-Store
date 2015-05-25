@@ -85,6 +85,10 @@ nav.mobile_title a.menu svg {
 	width: calc(5vh * 1.0693359375);
 }
 
+nav.mobile_title a.menu svg.user {
+	width: calc(5vh * 1.53125);
+}
+
 nav.mobile_title a.cart svg {
 	width: calc(5vh * 1.2001953125);
 }

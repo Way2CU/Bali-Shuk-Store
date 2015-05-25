@@ -10,6 +10,7 @@
  * Z-Index modification list:
  * 1000 - Shopping cart
  * 1001 - Categories menu
+ * 1002 - Help menu
  */
 
 header {
@@ -63,7 +64,7 @@ header div.wrap:before {
 	position: absolute;
 	width: 113px;
 	height: 175px;
-	left: calc(((100vw - 900px) / 2) - 107px);
+	left: calc(((100vw - 980px) / 2) - 107px);
 	top: 0px;
 	content: '';
 
@@ -86,7 +87,7 @@ header.home div.wrap:before {
 header a.logo {
 	position: absolute;
 	top: 20px;
-	left: calc((100vw - 1200px) / 2);
+	left: calc((100vw - 1280px) / 2);
 	z-index: 1;
 }
 
@@ -294,6 +295,70 @@ nav#main li.user a.login:hover:after,
 nav#main li.user a.logout:focus:after,
 nav#main li.user a.logout:hover:after {
 	opacity: 1;
+}
+
+/**
+ * Drop down menu
+ */
+nav#main li.help {
+	position: relative;
+}
+
+nav#main li.help nav {
+	position: absolute;
+	width: 200px;
+	left: 0px;
+	top: 100%;
+	margin-left: calc(-100px + (100% / 2));
+	padding: 1px;
+
+	border-radius: 4px;
+	background-color: white;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+
+	visibility: hidden;
+	opacity: 0;
+	z-index: 1002;
+
+	transition: opacity 0.3s;
+}
+
+nav#main li.help nav:before {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	top: -10px;
+	left: calc(50% - 5px);
+	content: '';
+
+	border: 5px solid transparent;
+	border-bottom-color: white;
+}
+
+nav#main li.help:hover nav {
+	visibility: visible;
+	opacity: 1;
+}
+
+nav#main li.help nav a {
+	display: block;
+	padding: 0.5em;
+}
+
+nav#main li.help nav a:hover {
+	background-color: #003B43;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+
+	color: white;
+	text-decoration: none;
+}
+
+nav#main li.help nav a:first-of-type {
+	border-radius: 4px 4px 0px 0px;
+}
+
+nav#main li.help nav a:last-of-type {
+	border-radius: 0px 0px 4px 4px;
 }
 
 /**

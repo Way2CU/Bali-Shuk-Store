@@ -15,11 +15,11 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<cms:template file="parts/header.xml"/>
+			<cms:template file="parts/header_simple.xml"/>
 
 			<div class="wrap faq">
-				<h1><cms:text constant="asked_questions"/></h1>
 				<div id="faq">
+					<h1><cms:text constant="menu_faq"/></h1>
 					<dl>
 						<cms:module
 							name="faq"

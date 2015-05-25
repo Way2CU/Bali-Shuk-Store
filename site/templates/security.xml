@@ -14,15 +14,13 @@
 		</head>
 
 		<body class="$language_rtl ? 'rtl' : 'ltr'" cms:eval="class">
-			<cms:template file="parts/header.xml"/>
+			<cms:template file="parts/header_simple.xml"/>
 
 			<div class="wrap security">
-				<h1><cms:text constant="security_settings"/></h1>
 				<cms:module
 					name="articles"
 					action="show"
 					text_id="security"
-					template="parts/article_no_h1.xml"
 					/>
 			</div>
 
