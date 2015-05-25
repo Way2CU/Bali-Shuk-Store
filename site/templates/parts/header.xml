@@ -25,13 +25,23 @@
 				</svg>
 			</a>
 			<cms:template file="parts/logo.xml"/>
-			<a href="javascript:void(0);" class="menu">
-				<svg>
-					<use
-						href="#icon-menu"
-						xlink:href="site/images/mobile-controls.svg#icon-menu"
-						/>
-				</svg>
+			<a href="javascript:void(0);" class="menu" cms:skip_cache="1">
+				<cms:guest>
+					<svg>
+						<use
+							href="#icon-menu"
+							xlink:href="site/images/mobile-controls.svg#icon-menu"
+							/>
+					</svg>
+				</cms:guest>
+				<cms:user>
+					<svg class="user">
+						<use
+							href="#icon-menu-user"
+							xlink:href="site/images/mobile-controls.svg#icon-menu-user"
+							/>
+					</svg>
+				</cms:user>
 			</a>
 		</nav>
 
@@ -55,6 +65,7 @@
 		<header
 			class="($section != 'home' or $_SESSION['logged']) ? false : 'home'"
 			cms:optional="class"
+			cms:skip_cache="1"
 			>
 			<cms:template file="parts/logo.xml"/>
 
