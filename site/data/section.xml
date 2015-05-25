@@ -30,6 +30,8 @@
 			<action name="faq" file="faq.xml"/>
 			<action name="security" file="security.xml"/>
 			<action name="terms-of-use" file="terms.xml"/>
+			<action name="about-us" file="about.xml"/>
+			<action name="delivery-areas" file="delivery_areas.xml"/>
 		</language>
 	</section>
 </document>
