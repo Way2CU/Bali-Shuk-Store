@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<span><cms:var param="name"/></span>
+	<ul>
+		<li><cms:var param="street"/></li>
+		<cms:if condition="!empty($params['street2'])">
+			<li><cms:var param="street2"/></li>
+		</cms:if>
+		<li>
+			<cms:var param="zip"/>
+			<cms:raw text="&amp;nbsp;"/>
+			<cms:var param="city"/>
+		</li>
+		<cms:if condition="!empty($params['state'])">
+			<li><cms:var param="state"/></li>
+		</cms:if>
+		<li><cms:var param="country"/></li>
+	</ul>
+</document>
