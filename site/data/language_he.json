@@ -37,6 +37,8 @@
     "menu_security_settings": "הגדרות אבטחה",
     "menu_sign_up": "הרשמה",
     "menu_terms_use": "תנאי שימוש",
+    "menu_about_us": "עלינו",
+    "menu_delivery_areas": "אזורי משלוח",
     "more_information_fill_form": "למידע נוסף מלאו פרטים ונחזור אליכם בהקדם:",
     "payment_methods_security": "שיטות תשלום ואבטחה",
     "placeholder_search": "הכנס מילה לחיפוש",
@@ -48,6 +50,9 @@
     "send": "שלח טופס",
     "sign_up": "הירשם",
     "history": "רכישות עבר",
+    "add_selected": "הוספת מוצרים לסל",
+    "show_items": "הצג מוצרים",
+    "hide_items": "החבא מוצרים",
     "signup_dialog_message": "מלאו את הפרטים הבאים ומייל אישור ישלח אליכם",
     "signup_dialog_title": "הירשם",
     "signup_completed_message": "הודעת אימות חשבון נשלחה למייל המבוקש. אנא התאזרו בסבלנות, לעתים לוקח כמה דקות עד לקבלת המייל.",
@@ -59,5 +64,10 @@
     "way2cu": "Way2CU",
     "tooltip_increase": "הוסף כמות",
     "tooltip_decrease": "החסר כמות",
-    "tooltip_remove": "הסר פריט מעגלת הקניות"
+    "tooltip_remove": "הסר פריט מעגלת הקניות",
+	"column_date": "תאריך:",
+	"column_total": "סה\"כ:",
+	"column_delivery": "משלוח:",
+	"column_id": "מזהה עיסקה:",
+	"column_status": "סטטוס:"
 }
