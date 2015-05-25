@@ -21,16 +21,16 @@
 			<cms:text constant="menu_faq"/>
 		</a>
 		<a
-			href="url_Make('', 'contact')"
+			href="url_Make('delivery-areas', 'help')"
 			cms:eval="href"
 			>
-			<cms:text constant="menu_contact"/>
+			<cms:text constant="menu_delivery_areas"/>
 		</a>
 		<a
-			href="url_Make('', 'help')"
+			href="url_Make('about-us', 'help')"
 			cms:eval="href"
 			>
-			<cms:text constant="menu_help"/>
+			<cms:text constant="menu_about_us"/>
 		</a>
 	</nav>
 </document>

@@ -62,7 +62,7 @@
 					<cms:text constant="menu_contact"/>
 				</a>
 			</li>
-			<li>
+			<li class="help">
 				<a
 					class="$section == 'help' ? 'active' : false"
 					href="url_Make('', 'help')"
@@ -71,6 +71,7 @@
 					>
 					<cms:text constant="menu_help"/>
 				</a>
+				<cms:template file="parts/footer_menu.xml"/>
 			</li>
 
 			<cms:desktop>
