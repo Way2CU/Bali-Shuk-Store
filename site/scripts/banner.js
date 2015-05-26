@@ -17,6 +17,8 @@ Site.Banner = function() {
 	self.button = null;
 	self.image = null;
 	self.destination_url = null;
+	self.timeout_id = null;
+	self.timeout = 5000;
 	self.handlers = {};
 
 	/**
@@ -51,7 +53,12 @@ Site.Banner = function() {
 	 */
 	self.handlers.button_click = function(event) {
 		event.preventDefault();
+
+		// show banner
 		self.container.toggleClass('visible');
+
+		// avoid automatic showing later
+		sessionStorage.setItem('banner-displayed', true);
 	};
 
 	/**
@@ -64,6 +71,42 @@ Site.Banner = function() {
 
 		if (self.destination_url != null)
 			window.location.href = self.destination_url;
+	};
+
+	/**
+	 * Handle image loading.
+	 *
+	 * @param object event
+	 */
+	self.handlers.image_load = function(event) {
+		// return if banner was already displayed
+		if (sessionStorage.getItem('banner-displayed'))
+			return;
+
+		// show banner
+		self.container.addClass('visible');
+		self.timeout_id = setTimeout(self.handlers.timeout, self.timeout);
+
+		// avoid automatic showing later
+		sessionStorage.setItem('banner-displayed', true);
+	};
+
+	/**
+	 * Disable timeout when mouse enters banner.
+	 *
+	 * @param object event
+	 */
+	self.handlers.mouse_enter = function(event) {
+		if (self.timeout_id != null)
+			clearTimeout(self.timeout_id);
+	};
+
+	/**
+	 * Hide banner after a while.
+	 */
+	self.handlers.timeout = function() {
+		self.container.removeClass('visible');
+		self.timeout_id = null;
 	};
 
 	/**
@@ -80,7 +123,8 @@ Site.Banner = function() {
 					.attr('src', data.item.image)
 					.attr('alt', data.item.text)
 					.appendTo(self.container)
-					.on('click', self.handlers.image_click);
+					.on('click', self.handlers.image_click)
+					.on('load', self.handlers.image_load);
 
 		} else {
 			// problem loading link, remove banner from the page

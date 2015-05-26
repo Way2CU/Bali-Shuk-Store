@@ -986,7 +986,7 @@ div.cart > div button {
 	padding-right: 20px;
 
 	border: 1px solid rgba(10, 90, 102, 1);
-	border-radius: 9px;
+	border-radius: 5px;
 	background-color: #095965;
 	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
 
@@ -1286,16 +1286,16 @@ div.dialog div.command_bar a {
 div.banner {
 	position: fixed;
 	top: 100px;
-	right: -620px;
+	left: -620px;
 	width: 600px;
 	min-height: 220px;
 
 	padding: 10px;
 
-	border-radius: 5px 0px 0px 5px;
+	border-radius: 0px 5px 5px 0px;
 	background-color: white;
 
-	transition: right 1s;
+	transition: left 1s;
 	filter: url(../images/effects.svg#header-shadow);
 	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
 	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
@@ -1304,12 +1304,12 @@ div.banner {
 }
 
 div.banner.visible {
-	right: 0px;
+	left: 0px;
 }
 
 div.banner a {
 	position: absolute;
-	left: -62px;
+	right: -62px;
 	top: 10px;
 	width: 62px;
 	height: 220px;
