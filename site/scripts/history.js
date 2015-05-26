@@ -27,6 +27,7 @@ Site.PreviousPurchases = function(transaction_container) {
 		// get objects
 		self.container = transaction_container;
 		self.items_container = self.container.find('div.items');
+		self.items = self.items_container.find('div.item');
 		self.link_toggle_items = self.container.find('div.controls a.show_items');
 		self.link_add_items = self.container.find('div.controls a.add_items');
 
@@ -54,6 +55,8 @@ Site.PreviousPurchases = function(transaction_container) {
 	 */
 	self.handlers.add_items_click = function(event) {
 		event.preventDefault();
+
+		console.log(self.items);
 	};
 
 	// finalize object

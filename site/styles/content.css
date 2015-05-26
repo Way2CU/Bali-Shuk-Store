@@ -140,16 +140,31 @@ div#transactions table td.popup ul li span {
 	min-width: 100px;
 }
 
-div#transactions div.controls {
+div#transactions div.transaction div.items {
+	display: none;
+	margin-top: 10px;
+	padding: 10px;
+
+	border: 2px solid #f4eee2;
+	border-radius: 0px 0px 5px 5px;
+	background-color: #f8f5ee;
+
+	overflow: hidden;
+}
+
+div#transactions div.transaction div.items.visible {
+	display: block;
+}
+
+div#transactions div.transaction > div.controls {
 	padding-top: 10px;
 	text-align: left;
 }
 
-div#transactions div.controls a {
+div#transactions div.transaction > div.controls a {
 	display: inline-block;
 	padding: 10px 20px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-right: 10px;
 	position: relative;
 
 	border: 0px;
@@ -164,17 +179,35 @@ div#transactions div.controls a {
 	text-decoration: none;
 }
 
-div#transactions div.controls a:hover {
+div#transactions div.transaction > div.controls a:hover {
 	background-color: #0A5A66;
 	background-image: none;
 }
 
-div#transactions div.controls a.show_items:before {
+div#transactions div.transaction > div.controls a.show_items:after {
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	content: '';
+
+	margin-right: 5px;
+
+	border: 5px solid transparent;
+	border-left-color: white;
+
+	transition: transform 0.5s;
+}
+
+div#transactions div.transaction > div.controls a.show_items.active:after {
+	transform: rotate(90deg);
+}
+
+div#transactions div.transaction > div.controls a.show_items:before {
 	display: inline-block;
 	content: attr(data-show);
 }
 
-div#transactions div.controls a.show_items.active:before {
+div#transactions div.transaction > div.controls a.show_items.active:before {
 	content: attr(data-hide);
 }
 
@@ -202,6 +235,7 @@ div#items h3 {
 	text-align: center;
 }
 
+div.items div.item,
 div#items div.item {
 	display: inline-block;
 	vertical-align: top;
@@ -217,6 +251,7 @@ div#items div.item {
 	background-color: white;
 }
 
+div.items div.item > h5,
 div#items div.item > h5 {
 	position: absolute;
 	top: 0px;
@@ -231,12 +266,14 @@ div#items div.item > h5 {
 	font-weight: normal;
 }
 
+div.items div.item div.image,
 div#items div.item div.image {
 	height: 170px;
 	background-repeat: no-repeat;
 	background-position: center center;
 }
 
+div.items div.item div.controls a,
 div#items div.item div.controls a {
 	display: inline-block;
 	vertical-align: top;
@@ -253,20 +290,24 @@ div#items div.item div.controls a {
 	line-height: 0%;
 }
 
+div.items div.item div.controls a svg,
 div#items div.item div.controls a svg {
 	width: 1em;
 	height: 1em;
 	fill: currentColor;
 }
 
+div.items div.item div.controls a:first-of-type,
 div#items div.item div.controls a:first-of-type {
 	border-radius: 0px 0px 5px 0px;
 }
 
+div.items div.item div.controls a:last-of-type,
 div#items div.item div.controls a:last-of-type {
 	border-radius: 0px 0px 0px 5px;
 }
 
+div.items div.item div.controls span,
 div#items div.item div.controls span {
 	display: inline-block;
 	vertical-align: top;
@@ -282,6 +323,7 @@ div#items div.item div.controls span {
 	line-height: 100%;
 }
 
+div.items div.item div.price,
 div#items div.item div.price {
 	padding-top: 10px;
 	padding-bottom: 5px;
@@ -292,6 +334,7 @@ div#items div.item div.price {
 	text-align: center;
 }
 
+div.items div.item form.units,
 div#items div.item form.units {
 	padding-top: 5px;
 	padding-bottom: 10px;
@@ -302,15 +345,18 @@ div#items div.item form.units {
 	text-align: center;
 }
 
+div.items div.item form.units label,
 div#items div.item form.units label {
 	display: inline-block;
 	padding: 0px 10px;
 }
 
+div.items div.item form.units label input,
 div#items div.item form.units label input {
 	display: none;
 }
 
+div.items div.item form.units label span:before,
 div#items div.item form.units label span:before {
 	display: inline-block;
 	width: 10px;
@@ -329,6 +375,7 @@ div#items div.item form.units label span:before {
 	transition: background-color 0.3s;
 }
 
+div.items div.item form.units label input:checked + span:before,
 div#items div.item form.units label input:checked + span:before {
 	background-color: #656565;
 }

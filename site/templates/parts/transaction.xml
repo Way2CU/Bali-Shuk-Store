@@ -61,9 +61,9 @@
 		</div>
 
 		<div class="items">
-			<cms:items
+			<cms:item_list
 				transaction="$params['id']"
-				template="parts/transaction_item.xml"
+				template="parts/shop_item.xml"
 				cms:eval="transaction"
 				/>
 		</div>
