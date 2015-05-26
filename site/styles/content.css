@@ -10,6 +10,7 @@
  * Z-Index modification list:
  * 1000 - Shopping cart, transaction popups
  * 1001 - Categories menu
+ * 1002 - Banner
  */
 
 @charset: 'utf8';
@@ -1277,4 +1278,47 @@ div.dialog div.inner_content a:hover {
 
 div.dialog div.command_bar a {
 	border-radius: 5px;
+}
+
+/**
+ * Banner
+ */
+div.banner {
+	position: fixed;
+	top: 100px;
+	right: -620px;
+	width: 600px;
+	min-height: 220px;
+
+	padding: 10px;
+
+	border-radius: 5px 0px 0px 5px;
+	background-color: white;
+
+	transition: right 1s;
+	filter: url(../images/effects.svg#header-shadow);
+	filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+	-webkit-filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.6));
+	transform: translateZ(0);
+	z-index: 1002;
+}
+
+div.banner.visible {
+	right: 0px;
+}
+
+div.banner a {
+	position: absolute;
+	left: -62px;
+	top: 10px;
+	width: 62px;
+	height: 220px;
+
+	background-image: url(../images/side-ribbon.svg);
+	background-repeat: no-repeat;
+	background-size: 62px 220px;
+}
+
+div.banner img {
+	cursor: pointer;
 }
