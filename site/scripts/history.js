@@ -54,9 +54,12 @@ Site.PreviousPurchases = function(transaction_container) {
 	 * @param object event
 	 */
 	self.handlers.add_items_click = function(event) {
+		// prevent default link behavior
 		event.preventDefault();
 
-		console.log(self.items);
+		// restore transaction
+		var uid = self.container.data('uid');
+		Site.cart.add_items_from_transaction(uid);
 	};
 
 	// finalize object
