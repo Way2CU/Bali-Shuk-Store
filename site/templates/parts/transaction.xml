@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<div class="transaction">
+	<div
+		class="transaction"
+		data-uid="$params['uid']"
+		cms:eval="data-uid"
+		>
 		<table>
 			<!-- Labels -->
 			<tr>
