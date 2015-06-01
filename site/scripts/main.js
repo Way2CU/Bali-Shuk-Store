@@ -1064,6 +1064,76 @@ Site.ItemView = function(item) {
 	self._init();
 }
 
+
+/**
+ * Mobile version of shopping cart.
+ */
+Site.MobileCart = function() {
+	var self = this;
+
+	self.container = null;
+	self.title_button = null;
+	self.count = null;
+	self.handlers = {};
+
+	/**
+	 * Complete object initialization.
+	 */
+	self._init = function() {
+		self.container = $('div.cart');
+		self.title_button = $('.mobile_title a.cart');
+
+		// create cart count
+		self.count = $('<span>');
+		self.count.appendTo(self.title_button);
+		Site.cart.ui.add_total_count_label(self.count);
+
+		// connect events
+		self.title_button.on('click', self.handlers.title_click);
+		Site.cart.events.connect('totals-updated', self.handlers.count_change);
+	};
+
+	/**
+	 * Show cart.
+	 */
+	self.show = function() {
+		Site.mobile_menu.hide_menu();
+		self.container.addClass('visible');
+	};
+
+	/**
+	 * Hide cart.
+	 */
+	self.hide = function() {
+		self.container.removeClass('visible');
+	};
+
+	/**
+	 * Handle clicking/tapping on mobile title icon.
+	 *
+	 * @param object event
+	 */
+	self.handlers.title_click = function(event) {
+		if (self.container.hasClass('visible'))
+			self.hide(); else
+			self.show();
+	};
+
+	/**
+	 * Handle changing item count.
+	 *
+	 * @param object cart
+	 */
+	self.handlers.count_change = function(cart, count, cost, weight) {
+		if (count > 0)
+			self.count.addClass('has_items'); else
+			self.count.removeClass('has_items');
+	};
+
+	// finalize object
+	self._init();
+}
+
 /**
  * Function which handles altering item amount on page.
  *
@@ -1133,8 +1203,14 @@ Site.on_load = function() {
 			.ui.add_item_list(Site.cart_container.find('ul'))
 			.add_item_view(Site.ItemView);
 
-		// create scrollbar for shopping cart
-		Site.scrollbar = new Scrollbar('section.container', 'ul', true);
+		if (Site.is_mobile()) {
+			// create mobile version of cart
+			Site.mobile_cart = Site.MobileCart();
+
+		} else {
+			// create scrollbar for shopping cart
+			Site.scrollbar = new Scrollbar('section.container', 'ul', true);
+		}
 
 		// connect increase and decrease controls
 		$('div.item div.controls a.alter').on('click', Site.alter_item_count);
