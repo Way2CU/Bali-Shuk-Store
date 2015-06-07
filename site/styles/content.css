@@ -963,7 +963,7 @@ div.cart ul li span.count:after {
 	content: attr(data-size);
 }
 
-div.cart ul li div.name {
+div.cart ul li div.controls {
 	display: inline-block;
 	width: 150px;
 	padding: 5px;
@@ -972,11 +972,11 @@ div.cart ul li div.name {
 	text-align: right;
 }
 
-div.cart ul li div.name div {
+div.cart ul li div.controls div {
 	padding-bottom: 3px;
 }
 
-div.cart ul li div.name a {
+div.cart ul li div.controls a {
 	display: inline-block;
 	margin-left: 2px;
 
@@ -988,12 +988,12 @@ div.cart ul li div.name a {
 	line-height: 0%;
 }
 
-div.cart ul li div.name a:hover {
+div.cart ul li div.controls a:hover {
 	background-color: #7A9900;
 	color: white;
 }
 
-div.cart ul li div.name a svg {
+div.cart ul li div.controls a svg {
 	width: 0.5em;
 	height: 0.5em;
 	fill: currentColor;
