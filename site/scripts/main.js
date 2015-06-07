@@ -932,25 +932,19 @@ Site.ItemView = function(item) {
 		// force reflow of this item
 		self.container[0].offsetHeight;
 
-		// create labels
-		self.label_count = $('<span>').appendTo(self.container);
+		// create user interface
+		if (Site.is_mobile())
+			self._create_mobile_ui(); else
+			self._create_desktop_ui();
+
+		// configure container
+		self.controls.container.addClass('controls');
+
+		// configure labels
 		self.label_count.addClass('count');
-
-		self.image = $('<img>').appendTo(self.container);
-
-		self.controls.container = $('<div>').appendTo(self.container);
-		self.label_name = $('<div>').appendTo(self.controls.container);
-
-		self.label_price = $('<span>').appendTo(self.container);
 		self.label_price.addClass('price');
 
-		// create controls
-		self.controls.increase = $('<a>').appendTo(self.controls.container);
-		self.controls.decrease = $('<a>').appendTo(self.controls.container);
-		self.controls.remove = $('<a>').appendTo(self.controls.container);
-
 		// configure controls
-		self.controls.container.addClass('name');
 		self.controls.increase
 				.html('<svg><use href="#icon-plus" xlink:href="site/images/cart-controls.svg#icon-plus"/></svg>')
 				.addClass('alter increase')
@@ -965,6 +959,42 @@ Site.ItemView = function(item) {
 				.html('<svg><use href="#icon-trash" xlink:href="site/images/cart-controls.svg#icon-trash"/></svg>')
 				.addClass('remove')
 				.on('click', self.controls.handle_remove);
+	};
+
+	/**
+	 * Create layout for mobile version of the site.
+	 */
+	self._create_mobile_ui = function() {
+		self.controls.container = $('<div>').appendTo(self.container);
+		self.image = $('<img>').appendTo(self.container);
+
+		var name_container = $('<div>').appendTo(self.container);
+		name_container.addClass('name');
+
+		self.label_name = $('<div>').appendTo(name_container);
+		self.label_price = $('<span>').appendTo(name_container);
+		self.label_count = $('<span>').appendTo(self.container);
+
+		// create controls
+		self.controls.increase = $('<a>').appendTo(self.controls.container);
+		self.controls.decrease = $('<a>').appendTo(self.controls.container);
+		self.controls.remove = $('<a>').appendTo(self.controls.container);
+	};
+
+	/**
+	 * Create layout for desktop version of the site.
+	 */
+	self._create_desktop_ui = function() {
+		self.label_count = $('<span>').appendTo(self.container);
+		self.image = $('<img>').appendTo(self.container);
+		self.controls.container = $('<div>').appendTo(self.container);
+		self.label_name = $('<div>').appendTo(self.controls.container);
+		self.label_price = $('<span>').appendTo(self.container);
+
+		// create controls
+		self.controls.increase = $('<a>').appendTo(self.controls.container);
+		self.controls.decrease = $('<a>').appendTo(self.controls.container);
+		self.controls.remove = $('<a>').appendTo(self.controls.container);
 	};
 
 	/**
