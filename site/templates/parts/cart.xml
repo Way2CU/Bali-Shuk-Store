@@ -33,6 +33,14 @@
 					/>
 			</div>
 
+			<!-- Special message article -->
+			<cms:module
+				name="articles"
+				action="show"
+				text_id="cart_message"
+				template="parts/article_no_h1.xml"
+			/>
+
 			<button type="button" name="checkout">
 				<cms:text constant="checkout" module="shop"/>
 			</button>
