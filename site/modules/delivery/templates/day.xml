@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<label class="checkbox inline">
+		<input
+			type="checkbox"
+			name="$params['name']"
+			checked="$params['checked'] ? 'checked' : false"
+			cms:eval="name"
+			cms:optional="checked"
+			/>
+		<span><cms:var param="label"/></span>
+	</label>
+</document>

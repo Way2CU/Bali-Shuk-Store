@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/template.dtd">
+<document>
+	<cms:if condition="$params['checked']">
+		<span><cms:var param="label"/></span>
+	</cms:if>
+</document>

@@ -2,6 +2,7 @@
 
 class Simple_DeliveryMethod extends DeliveryMethod {
 	private static $_instance;
+	private $days_to_show = 7;
 
 	protected function __construct($parent) {
 		parent::__construct($parent);
@@ -93,11 +94,73 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 	 * @return array
 	 */
 	public function getDeliveryTypes($items, $shipper, $recipient, $transaction_id, $preferred_currency) {
+		$shop = shop::getInstance();
+		$manager = IntervalManager::getInstance();
+		$time_manager = IntervalTimeManager::getInstance();
+		$days = array();
 		$result = array();
-		$result['regular'] = array(
-							$this->parent->getLanguageConstant('delivery_regular'),
-							10, 'NIS', null, null
-						);
+
+		// load all delivery intervals
+		$intervals = $manager->getItems($manager->getFieldNames(), array());
+
+		if (count($intervals) == 0)
+			return $result;
+
+		foreach ($intervals as $interval) {
+			// get hours
+			$times = $time_manager->getItems(
+					$time_manager->getFieldNames(),
+					array('interval' => $interval->id)
+				);
+
+			// make sure there are hours defined in this interval
+			if (count($times) == 0)
+				continue;
+
+			// collect delivery hours
+			for ($i = 0; $i < 7; $i++)
+				if ($interval->days[$i] == '1') {
+					if (!isset($days[$i]))
+						$days[$i] = array();
+
+					foreach ($times as $time)
+						$days[$i][] = $time;
+				}
+		}
+
+		// calculate shipping dates for specified number of days
+		$today = mktime(0, 0, 0);
+		$date_format = $this->parent->getLanguageConstant('format_date_short');
+		$time_format = $this->parent->getLanguageConstant('format_time_short');
+		$currency = $shop->getDefaultCurrency();
+
+		for ($i = 0; $i < $this->days_to_show; $i++) {
+			$current_date = $today + ($i * (24 * 60 * 60));
+			$day_of_week = (int) date('N', $current_date) - 1;
+
+			trigger_error($day_of_week);
+
+			// skip day if there are no deliveries
+			if (!isset($days[$day_of_week]))
+				continue;
+
+			// add intervals
+			foreach ($days[$day_of_week] as $time) {
+				$start = strtotime($time->start, $current_date);
+				$end = strtotime($time->end, $current_date);
+
+				// skip past intervals
+				if (time() > $start)
+					continue;
+
+				// add new delivery date
+				$key = date($date_format.' '.$time_format, $start);
+				$result[$key] = array(
+						$this->parent->getLanguageConstant('delivery_regular'),
+						$time->amount, $currency, $start, $end
+					);
+			}
+		}
 
 		return $result;
 	}

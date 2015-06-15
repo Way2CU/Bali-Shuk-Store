@@ -1,0 +1,65 @@
+/**
+ * Backend Style Sheet
+ * Delivery Options
+ *
+ * Copyright (c) 2015. by Way2CU, http://way2cu.com
+ * Authors: Mladen Mijatov
+ */
+
+div#delivery_intervals_add fieldset.days label.checkbox,
+div#delivery_intervals_change fieldset.days label.checkbox {
+	display: inline-block;
+	min-width: 90px;
+	margin-right: 20px;
+}
+
+body.rtl div#delivery_intervals_add fieldset.days label.checkbox,
+body.rtl div#delivery_intervals_change fieldset.days label.checkbox {
+	margin-right: 0px;
+	margin-left: 20px;
+}
+
+div#delivery_intervals_add fieldset div.controls button,
+div#delivery_intervals_change fieldset div.controls button {
+	position: relative;
+	margin: 0px;
+	padding-left: 25px;
+}
+
+body.rtl div#delivery_intervals_add fieldset div.controls button,
+body.rtl div#delivery_intervals_change fieldset div.controls button {
+	padding-left: 15px;
+	padding-right: 25px;
+}
+
+div#delivery_intervals_add fieldset div.controls button:before,
+div#delivery_intervals_change fieldset div.controls button:before {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	left: 7px;
+	top: 50%;
+	content: '';
+
+	margin-top: -5px;
+
+	border: 5px solid transparent;
+	border-right-color: currentColor;
+}
+
+body.rtl div#delivery_intervals_add fieldset div.controls button:before,
+body.rtl div#delivery_intervals_change fieldset div.controls button:before {
+	left: auto;
+	right: 7px;
+
+	border-color: transparent;
+	border-left-color: currentColor;
+}
+
+div#delivery_intervals div.scrollable_list div.list_content div.list_item span.column span:after {
+	content: ', ';
+}
+
+div#delivery_intervals div.scrollable_list div.list_content div.list_item span.column span:last-of-type:after {
+	content: none;
+}

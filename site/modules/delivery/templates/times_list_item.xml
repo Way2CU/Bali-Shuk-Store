@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/template.dtd">
+<document>
+	<div class="list_item">
+		<span class="column" style="width: 70px;">
+			<cms:var param="start"/>
+		</span>
+		<span class="column" style="width: 70px;">
+			<cms:var param="end"/>
+		</span>
+		<span class="column" style="width: 70px;">
+			<cms:var param="price"/>
+		</span>
+		<span class="column">
+			<a href="javascript: Caracal.Shop.ManualDelivery.delete_time(this);">
+				<cms:text constant="delete"/>
+			</a>
+			<input
+				type="hidden"
+				name="start[]"
+				value="$params['start']"
+				cms:eval="value"
+				/>
+			<input
+				type="hidden"
+				name="end[]"
+				value="$params['end']"
+				cms:eval="value"
+				/>
+			<input
+				type="hidden"
+				name="price[]"
+				value="$params['price']"
+				cms:eval="value"
+				/>
+		</span>
+	</div>
+</document>

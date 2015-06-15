@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/template.dtd">
+<document>
+	<div>
+		<cms:var param="start"/>
+		<cms:raw text=" - "/>
+		<cms:var param="end"/>
+	</div>
+</document>

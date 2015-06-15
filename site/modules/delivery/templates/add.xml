@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../../units/schema/template.dtd">
+<document>
+	<form action="$params['form_action']" cms:eval="action" method="POST">
+		<fieldset class="days">
+			<legend><cms:text constant="label_days" module="delivery"/></legend>
+			<cms:days/>
+		</fieldset>
+
+		<fieldset>
+			<legend><cms:text constant="label_intervals" module="delivery"/></legend>
+
+			<!-- List of hours and prices -->
+			<div class="scrollable_list box left" style="width: 330px;">
+				<div class="list_header">
+					<span class="column" style="width: 70px;">
+						<cms:text module="delivery" constant="column_start"/>
+					</span>
+					<span class="column" style="width: 70px;">
+						<cms:text module="delivery" constant="column_end"/>
+					</span>
+					<span class="column" style="width: 70px;">
+						<cms:text module="delivery" constant="column_price"/>
+					</span>
+					<span class="column">
+						<cms:text constant="column_options"/>
+					</span>
+				</div>
+				<div class="list_content" style="height: 200px"/>
+			</div>
+
+			<!-- Interface for adding new time -->
+			<div class="box right" style="width: 100px;">
+				<label>
+					<span><cms:text constant="label_start" module="delivery"/></span>
+					<input
+						class="start"
+						type="time"
+						style="width: 100px;"
+						/>
+				</label>
+				<label>
+					<span><cms:text constant="label_end" module="delivery"/></span>
+					<input
+						class="end"
+						type="time"
+						style="width: 100px;"
+						/>
+				</label>
+				<label>
+					<span><cms:text constant="label_price" module="delivery"/></span>
+					<input
+						class="price"
+						type="number"
+						style="width: 100px;"
+						/>
+				</label>
+				<div class="controls">
+					<button
+						type="button"
+						name="add_time"
+						onclick="javascript: Caracal.Shop.ManualDelivery.add_time(this)"
+						>
+						<cms:text constant="add_time" module="delivery"/>
+					</button>
+				</div>
+			</div>
+		</fieldset>
+
+		<label class="checkbox">
+			<input
+				name="enabled"
+				type="checkbox"
+				checked="checked"
+				/>
+			<span><cms:text constant="label_enabled" module="delivery"/></span>
+		</label>
+
+		<div class="button_bar">
+			<button type="submit"><cms:text constant="save"/></button>
+			<button type="reset"><cms:text constant="reset"/></button>
+			<button type="button" onclick="$params['cancel_action']" cms:eval="onclick">
+				<cms:text constant="cancel"/>
+			</button>
+		</div>
+	</form>
+</document>
