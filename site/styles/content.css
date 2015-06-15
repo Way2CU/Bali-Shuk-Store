@@ -706,7 +706,7 @@ div#faq dl dd:last-of-type {
  */
 div.wrap.about {
 	min-height: 800px;
-	padding: 0px calc((100vw - 550px) / 2);
+	padding: 0px calc((100vw - 530px) / 2);
 	padding-top: 200px;
 
 	background-image:
@@ -716,6 +716,8 @@ div.wrap.about {
 		linear-gradient(180deg, #9DE300 1056px, #4EA913 100%);
 	background-position: center 626px, center calc(100% - 170px), top center;
 	background-repeat: no-repeat;
+
+	text-align: center;
 }
 
 div.wrap.about h1 {
