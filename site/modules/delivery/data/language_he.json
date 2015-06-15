@@ -12,7 +12,7 @@
 	"delivery_method_title": "Fixed delivery",
 	"delivery_regular": "משלוח רגיל",
 	"add_time": "הוסף מועד",
-	"label_days": "Applicable days",
+	"label_days": "ימי משלוח",
 	"label_intervals": "מועדי משלוח",
 	"label_start": "מועד התחלה:",
 	"label_end": "מועד סיום:",
@@ -26,6 +26,6 @@
 	"label_6": "שבת",
 	"label_7": "ראשון",
 	"message_interval_saved": "מועד חדש נשמר.",
-	"message_interval_delete": "Are you sure? אתה עומד למחוק את המועד ואת השעות שלו, האם אתה בטוח?",
+	"message_interval_delete": "אתה עומד למחוק את המועד ואת השעות שלו, האם אתה בטוח?",
 	"message_interval_deleted": "המועד הנבחר הוסר!"
 }
