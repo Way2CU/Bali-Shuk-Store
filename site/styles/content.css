@@ -803,8 +803,10 @@ div.wrap.areas > div > img:nth-child(2) {
 
 /**
  * Terms and conditions
+ * Security information
  */
-div.wrap.terms {
+div.wrap.terms,
+div.wrap.security {
 	min-height: 900px;
 	padding: 10px calc((100vw - 900px) / 2);
 	padding-top: 100px;
@@ -817,14 +819,16 @@ div.wrap.terms {
 	background-repeat: no-repeat;
 }
 
-div.terms article {
+div.terms article,
+div.security article {
 	padding: 20px;
 	border-radius: 10px;
 	background-color: white;
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
-div.terms article h1 {
+div.terms article h1,
+div.security article h1 {
 	margin-top: 0px;
 
 	color: #3397da;
