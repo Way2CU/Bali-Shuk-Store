@@ -19,4 +19,14 @@
 <feMergeNode in="SourceGraphic"/>
 </feMerge>
 </filter>
+<filter id="menu-shadow">
+<feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+<feOffset dx="0" dy="1" result="offsetblur"/>
+<feFlood flood-color="rgba(0,0,0,0.6)"/>
+<feComposite in2="offsetblur" operator="in"/>
+<feMerge>
+<feMergeNode/>
+<feMergeNode in="SourceGraphic"/>
+</feMerge>
+</filter>
 </svg>
