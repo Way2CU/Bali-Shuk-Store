@@ -13,7 +13,7 @@
 				name="shop"
 				action="show_category"
 				text_id="fruits"
-				template="parts/category_menu_item.xml"
+				template="parts/category_menu_item_with_children.xml"
 				/>
 			<cms:module
 				name="shop"
