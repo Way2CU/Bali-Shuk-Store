@@ -138,8 +138,6 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 			$current_date = $today + ($i * (24 * 60 * 60));
 			$day_of_week = (int) date('N', $current_date) - 1;
 
-			trigger_error($day_of_week);
-
 			// skip day if there are no deliveries
 			if (!isset($days[$day_of_week]))
 				continue;
@@ -156,7 +154,7 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 				// add new delivery date
 				$key = date($date_format.' '.$time_format, $start);
 				$result[$key] = array(
-						$this->parent->getLanguageConstant('delivery_regular'),
+						$this->parent->getLanguageConstant('label_'.$day_of_week),
 						$time->amount, $currency, $start, $end
 					);
 			}
