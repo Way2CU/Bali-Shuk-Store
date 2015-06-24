@@ -566,3 +566,378 @@ div.dialog div.command_bar a {
 div.dialog p {
 	margin-top: 0px;
 }
+
+/**
+ * Contact form
+ */
+div.wrap > h1 {
+	margin: 0px;
+	padding-bottom: 20px;
+
+	color: white;
+	text-align: center;
+}
+
+div.wrap.contact,
+div.wrap.recovery {
+	padding: 10px;
+	padding-bottom: 30px;
+
+	background-image: linear-gradient(180deg, #9DE300 0%, #4EA913 100%);
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+div.wrap.contact div.box > span {
+	display: block;
+	padding: 20px;
+	position: relative;
+
+	border-radius: 10px 10px 0px 0px;
+	background-color: white;
+}
+
+div.wrap.contact form {
+	padding: 20px;
+
+	border-radius: 0px 0px 10px 10px;
+	background-color: white;
+}
+
+div.wrap.contact article p,
+div.wrap.recovery article p {
+	position: relative;
+	margin: 0px;
+	margin-bottom: 10px;
+	padding: 5px;
+	padding-right: calc(1rem + 1.5em + 30px);
+
+	border-radius: 10px;
+	background-color: white;
+
+	font-size: 1.3em;
+	line-height: 100%;
+}
+
+div.wrap.contact article p:before,
+div.wrap.recovery article p:before {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	width: calc(1rem + 1.5em + 20px);
+	content: '';
+
+	border-radius: 0px 10px 10px 0px;
+	background-color: #1976bd;
+}
+
+div.wrap.contact article p:after,
+div.wrap.recovery article p:after {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	width: 100px;
+	height: 100px;
+	margin-top: -50px;
+	content: '';
+
+	background-image: url(../images/contact-sprite.svg);
+	background-position: left top;
+	background-size: 500px 100px;
+	background-repeat: no-repeat;
+
+	transform-origin: right center;
+	transform: scale(0.6);
+}
+
+div.wrap.contact article p:nth-of-type(2):after,
+div.wrap.recovery article p:nth-of-type(2):after {
+	background-position: -100px top;
+}
+
+div.wrap.contact article p:nth-of-type(3):after,
+div.wrap.recovery article p:nth-of-type(3):after {
+	background-position: -200px top;
+}
+
+div.wrap.contact article p:nth-of-type(4):after,
+div.wrap.recovery article p:nth-of-type(4):after {
+	background-position: -300px top;
+}
+
+div.wrap.contact article p:nth-of-type(5):after,
+div.wrap.recovery article p:nth-of-type(5):after {
+	background-position: -400px top;
+}
+
+div.wrap.contact article p em,
+div.wrap.recovery article p em {
+	display: block;
+	font-size: 1rem;
+	font-style: normal;
+}
+
+div.wrap.contact form div.overlay {
+	border-radius: 0px 0px 10px 10px;
+	background: white;
+	background: rgba(255, 255, 255, 0.8);
+	background:
+		url(../images/loading.gif),
+		linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 1) 40%,
+		rgba(255, 255, 255, 1) 60%,
+		rgba(255, 255, 255, 0) 100%
+		);
+	background-position: center 40%;
+	background-repeat: no-repeat;
+}
+
+div.wrap.contact form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+div.wrap.contact form span {
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 50px;
+}
+
+div.wrap.contact form input {
+	padding: 10px;
+	border: 1px solid #a0a0a0;
+	border-radius: 4px;
+	box-shadow: inset 0px 0px 2px rgba(100, 100, 100, 0.2);
+
+	transition: all 0.3s;
+}
+
+div.wrap.contact form input:focus {
+	border-color: rgba(0, 59, 67, 1);
+}
+
+div.wrap.contact form div.controls {
+	padding-top: 10px;
+	text-align: center;
+}
+
+div.wrap.contact form button {
+	position: relative;
+	padding: 10px 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+
+	border: 0px;
+	border-radius: 4px;
+	background-color: #003B43;
+	background-image: linear-gradient(0deg, rgba(0, 59, 67, 1) 0%, rgba(10, 90, 102, 1) 100%);
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+	color: white;
+	font-size: 1.2em;
+
+	cursor: pointer;
+	z-index: 0;
+}
+
+div.wrap.contact form button:after {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	content: '';
+
+	border-radius: 4px;
+	background-color: #0A5A66;
+	background-image: linear-gradient(180deg, rgba(10, 90, 102, 1) 0%, rgba(10, 90, 102, 1) 100%);
+	background-size: auto auto;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+	transition: 0.3s all;
+	opacity: 0;
+	z-index: -1;
+}
+
+
+div.wrap.contact form button:focus,
+div.wrap.contact form button:hover {
+	background-color: transparent;
+}
+
+div.wrap.contact form button:focus:after,
+div.wrap.contact form button:hover:after {
+	opacity: 1;
+}
+
+div.wrap.contact form button:active:after {
+	background-image: linear-gradient(0deg, rgba(10, 90, 102, 1) 0%, rgba(0, 59, 67, 1) 100%);
+}
+
+div.wrap.contact form input::-moz-focus-inner,
+div.wrap.contact form button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/**
+ * Terms and conditions
+ * Security information
+ */
+div.wrap.terms,
+div.wrap.security {
+	padding: 10px;
+
+	background-image: linear-gradient(180deg, #9DE300 0%, #4EA913 100%);
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+div.terms article,
+div.security article {
+	padding: 20px;
+	border-radius: 10px;
+	background-color: white;
+}
+
+div.terms article h1,
+div.security article h1 {
+	margin-top: 0px;
+
+	color: #3397da;
+	text-align: center;
+}
+
+div.security article li {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+
+	border-bottom: 1px solid #909090;
+	border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+div.security article li:last-of-type {
+	border: 0px;
+}
+
+div.security article li:first-line {
+	color: orange;
+}
+
+/**
+ * Delivery areas
+ */
+div.wrap.areas {
+	padding: 10px;
+
+	background-image: linear-gradient(180deg, #9DE300 0%, #4EA913 100%);
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+div.wrap.areas article {
+	margin-bottom: 20px;
+	padding: 20px;
+
+	border-radius: 10px;
+	background-color: white;
+}
+
+div.wrap.areas article h1 {
+	margin: 0px;
+	padding-bottom: 20px;
+
+	color: #3397da;
+	text-align: center;
+}
+
+div.wrap.areas article p {
+	margin: 0px;
+	padding-bottom: 10px;
+}
+
+div.wrap.areas > div > img {
+	width: 40vw;
+	margin-right: 20px;
+}
+
+/**
+ * Frequently asked questions
+ */
+div.wrap.faq {
+	padding: 10px;
+	padding-bottom: 30px;
+
+	background-image: linear-gradient(180deg, #9DE300 0%, #4EA913 100%);
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+div#faq {
+	padding: 10px;
+
+	border-radius: 10px;
+	background-color: white;
+}
+
+div#faq h1 {
+	margin: 0px;
+	padding-bottom: 10px;
+
+	color: #3397da;
+	text-align: center;
+}
+
+div#faq dl {
+	display: block;
+	margin: 0px;
+}
+
+div#faq dl dt {
+	padding: 10px;
+
+	border-top: 1px solid #CCCCCC;
+	border-top: 1px solid rgba(200, 200, 200, 0.8);
+
+	font-weight: bold;
+}
+
+div#faq dl dt:before {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.5em;
+	height: 1.5em;
+	content: '';
+	margin-left: 5px;
+	position: relative;
+	top: -2px;
+
+	background-image: url(../images/faq-sprite.svg);
+	background-repeat: no-repeat;
+	background-size: 1.5em 3em;
+	background-position: 0px 0px;
+
+	transition: all 0.5s;
+}
+
+div#faq dl dt.expanded:before {
+	background-position: 0px -1.5em;
+}
+
+div#faq dl dt:first-of-type {
+	border-top-width: 0px;
+}
+
+div#faq dl dd {
+	margin-bottom: 10px;
+}
+
+div#faq dl dd:last-of-type {
+	margin-bottom: 0px;
+}
