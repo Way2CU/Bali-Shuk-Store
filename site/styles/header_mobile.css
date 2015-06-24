@@ -61,6 +61,20 @@ nav.mobile_title a.menu {
 	left: 0px;
 	top: 50%;
 	margin-top: -3.5vh;
+
+}
+
+nav.mobile_title.top a.cart,
+nav.mobile_title.top a.menu {
+	filter: url(../images/effects.svg#menu-shadow);
+	filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.6));
+	-webkit-filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.6));
+}
+
+nav.mobile_title a.cart,
+nav.mobile_title a.menu {
+	filter: none;
+	-webkit-filter: none;
 }
 
 nav.mobile_title a.menu svg,
@@ -154,12 +168,23 @@ header {
 	text-align: center;
 }
 
+header.thematic {
+	min-height: 0px;
+	margin-bottom: 0px;
+	background-image:
+		url(../images/hill.png),
+		url(../images/thematic-background.jpg);
+	background-position: center 100%, top center;
+	background-repeat: no-repeat;
+	background-size: 150vw auto, 150vw;
+}
+
 header a.logo {
 	display: inline-block;
 	position: relative;
 
 	margin-top: 5vw;
-	margin-bottom: 40vw;
+	margin-bottom: 36vw;
 }
 
 header a.logo:before {
