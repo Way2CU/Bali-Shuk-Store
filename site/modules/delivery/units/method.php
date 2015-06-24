@@ -154,7 +154,7 @@ class Simple_DeliveryMethod extends DeliveryMethod {
 				// add new delivery date
 				$key = date($date_format.' '.$time_format, $start);
 				$result[$key] = array(
-						$this->parent->getLanguageConstant('label_'.$day_of_week),
+						$this->parent->getLanguageConstant('label_'.($day_of_week + 1)),
 						$time->amount, $currency, $start, $end
 					);
 			}
