@@ -44,7 +44,7 @@
 			<cms:template file="parts/categories_menu.xml"/>
 		</div>
 
-		<header>
+		<header class="thematic">
 			<cms:template file="parts/logo.xml"/>
 		</header>
 	</cms:mobile>
