@@ -251,8 +251,8 @@ div#items div.item {
 	background-color: white;
 }
 
-div.items div.item.new:after,
-div#items div.item.new:after {
+div.items div.item.new div.image:after,
+div#items div.item.new div.image:after {
 	position: absolute;
 	content: '';
 	width: 50px;
@@ -266,8 +266,8 @@ div#items div.item.new:after {
 	background-position: -60px 0px;
 }
 
-div.items div.item.recommended:after,
-div#items div.item.recommended:after {
+div.items div.item.recommended div.image:after,
+div#items div.item.recommended div.image:after {
 	position: absolute;
 	content: '';
 	width: 50px;
@@ -281,8 +281,8 @@ div#items div.item.recommended:after {
 	background-position: 0px 0px;
 }
 
-div.items div.item.discount:after,
-div#items div.item.discount:after {
+div.items div.item.discount div.image:after,
+div#items div.item.discount div.image:after {
 	position: absolute;
 	content: '';
 	width: 50px;
