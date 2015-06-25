@@ -4,7 +4,9 @@
 	<div
 		class="'item'.(!empty($params['description'][$language]) ? ' discount' : '').($params['priority'] &lt;= 1 ? ' recommended' : '').($params['is_new'] ? ' new' : '')"
 		data-uid="$params['uid']"
+		data-tooltip="!empty($params['description'][$language]) ? $params['description'][$language] : false"
 		cms:eval="class,data-uid"
+		cms:optional="data-tooltip"
 		>
 		<h5><cms:var param="name" multilanguage="yes"/></h5>
 
