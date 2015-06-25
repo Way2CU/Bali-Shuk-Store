@@ -2,9 +2,9 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<div
-		class="item"
+		class="'item'.(!empty($params['description'][$language]) ? ' discount' : '').($params['priority'] &lt;= 1 ? ' recommended' : '').($params['timestamp'] &gt;= time() - NEW_AGE ? ' new' : '')"
 		data-uid="$params['uid']"
-		cms:eval="data-uid"
+		cms:eval="class,data-uid"
 		>
 		<h5><cms:var param="name" multilanguage="yes"/></h5>
 
