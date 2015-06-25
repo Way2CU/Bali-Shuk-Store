@@ -43,7 +43,7 @@ Site.Banner = function() {
 		new Communicator('links')
 			.on_success(self.handlers.load_success)
 			.on_error(self.handlers.load_error)
-			.get('json_link', null);
+			.get('json_link', {order_asc: false});
 	};
 
 	/**
