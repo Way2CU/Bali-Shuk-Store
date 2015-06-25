@@ -847,11 +847,12 @@ div.wrap.areas article p {
 div.wrap.areas > div > img {
 	position: absolute;
 	bottom: 50px;
-	left: 13%;
+	left: calc((100% - 1400px) / 2);
 }
 
 div.wrap.areas > div > img:nth-child(2) {
-	left: 70%;
+	left: auto;
+	right: calc((100% - 1400px) / 2);
 }
 
 /**
