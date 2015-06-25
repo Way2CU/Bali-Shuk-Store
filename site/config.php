@@ -17,7 +17,6 @@ define('DEBUG', 1);
 // define('SQL_DEBUG', 1);
 
 define('SIZE_DEFINITION', 4);
-define('NEW_AGE', 7 * 24 * 60 * 60);
 
 // default session options
 $session_type = Session::TYPE_NORMAL;
