@@ -293,7 +293,7 @@ div#items div.item.discount:after {
 	background-image: url(../images/item-ribbons.svg);
 	background-size: 170px 50px;
 	background-repeat: no-repeat;
-	background-position: -110px 0px;
+	background-position: -120px 0px;
 }
 
 div.items div.item > h5,
