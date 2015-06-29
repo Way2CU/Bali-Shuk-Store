@@ -1154,7 +1154,8 @@ div#checkout_container div.page.visible {
 	display: block;
 }
 
-div#shipping_information label:nth-last-of-type(-n + 2) {
+div#shipping_information label:nth-of-type(9),
+div#shipping_information label:nth-of-type(10) {
 	display: none;
 }
 
