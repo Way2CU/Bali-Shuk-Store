@@ -289,6 +289,11 @@ Site.DialogSystem = function() {
 				.attr('action', '/')
 				.attr('method', 'post');
 
+		// load username if previously stored
+		var cached_username = localStorage.getItem('username');
+		if (cached_username)
+			self.login.input_username.val(cached_username);
+
 		// pack elements
 		self.login.content.append(self.login.message);
 		self.login.label_username
@@ -761,6 +766,10 @@ Site.DialogSystem = function() {
 			// hide login dialog
 			self.login.dialog.hide();
 
+			// store username for next time
+			var username = self.login.input_username.val();
+			localStorage.setItem('username', username);
+
 			// reload page on successful login
 			window.location.reload();
 
@@ -789,7 +798,6 @@ Site.DialogSystem = function() {
 			self.message.dialog.setCloseCallback(function() {
 						setTimeout(function() {
 							self.login.dialog.show();
-							this.clearCloseCallback();
 						}, 100);
 					});
 			self.message.dialog.show();
