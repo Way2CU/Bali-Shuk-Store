@@ -1096,6 +1096,7 @@ div.cart ul li a {
 
 div.cart > div {
 	padding: 10px;
+	position: relative;
 
 	border-radius: 0px 0px 10px 10px;
 	background-color: #e8dcc5;
@@ -1139,21 +1140,22 @@ div.cart div.delivery span:after {
 	content: ' ' attr(data-currency);
 }
 
+div.cart article {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 60%;
+}
+
+div.cart article p {
+	margin: 0px;
+	padding-bottom: 0px;
+	font-size: 0.7rem;
+}
+
 /**
  * Checkout
  */
-div#checkout_container {
-	min-height: 600px;
-}
-
-div#checkout_container div.page {
-	display: none;
-}
-
-div#checkout_container div.page.visible {
-	display: block;
-}
-
 div#shipping_information label:nth-of-type(9),
 div#shipping_information label:nth-of-type(10) {
 	display: none;
