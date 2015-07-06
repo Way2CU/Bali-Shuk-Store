@@ -15,6 +15,7 @@
 				action="include_scripts"
 				/>
 			<cms:collection include="dialog"/>
+			<cms:script src="_BASEURL.'/site/scripts/checkout.js'" cms:eval="src"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>
 
