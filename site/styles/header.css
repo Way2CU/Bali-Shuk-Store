@@ -13,6 +13,28 @@
  * 1002 - Help menu
  */
 
+@keyframes sale {
+	from {
+		background-position:
+			10% -20px,
+			30% -50px,
+			70% -30px,
+			60% -60px,
+			90% -80px,
+			45% -15px;
+	}
+
+	to {
+		background-position:
+			10% calc(100% + 60px),
+			30% calc(100% + 30px),
+			70% calc(100% + 50px),
+			60% calc(100% + 20px),
+			90% calc(100% + 15px),
+			45% calc(100% + 65px);
+	}
+}
+
 header {
 	position: relative;
 	min-height: 250px;
@@ -395,6 +417,25 @@ nav.categories > ul li {
 	perspective: 400px;
 
 	border-right: 1px solid #bcc2c6;
+}
+
+nav.categories > ul li.sale {
+	background-image:
+		url(../images/sale-star.png),
+		url(../images/sale-star.png),
+		url(../images/sale-star.png),
+		url(../images/sale-star.png),
+		url(../images/sale-star.png),
+		url(../images/sale-star.png);
+	background-position:
+		10% -20px,
+		30% -50px,
+		70% -30px,
+		60% -60px,
+		90% -80px,
+		45% -15px;
+	background-repeat: no-repeat;
+	animation: sale 3s linear 0s infinite;
 }
 
 nav.categories li:first-of-type {
