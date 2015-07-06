@@ -1,5 +1,5 @@
 {
-	"menu_delivery": "Manual Delivery",
+	"menu_delivery": "העסק מבצע את המשלוח",
 	"title_intervals": "מועדי משלוח",
 	"title_interval_new": "מועדי משלוח - הוסף חדש",
 	"title_interval_change": "מועדי משלוח- שנה",
@@ -9,7 +9,7 @@
 	"column_start": "התחלה",
 	"column_end": "סיום",
 	"column_price": "מחיר",
-	"delivery_method_title": "Fixed delivery",
+	"delivery_method_title": "כותרת שיטת המשלוח",
 	"delivery_regular": "משלוח רגיל",
 	"add_time": "הוסף מועד",
 	"label_days": "ימי משלוח",
