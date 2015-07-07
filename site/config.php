@@ -16,7 +16,7 @@ define('_TIMEZONE', 'Asia/Jerusalem');
 define('DEBUG', 1);
 // define('SQL_DEBUG', 1);
 
-define('SIZE_DEFINITION', 4);
+define('SIZE_DEFINITION', 7);
 
 // default session options
 $session_type = Session::TYPE_NORMAL;
