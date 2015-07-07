@@ -260,8 +260,7 @@ div#items div.item.new div.image:after {
 	top: 2em;
 	left: 1em;
 
-	background-image: url(../images/item-ribbons.svg);
-	background-size: 170px 50px;
+	background-image: url(../images/item-ribbons.png);
 	background-repeat: no-repeat;
 	background-position: -60px 0px;
 }
@@ -275,8 +274,7 @@ div#items div.item.recommended div.image:after {
 	top: 2em;
 	left: 1em;
 
-	background-image: url(../images/item-ribbons.svg);
-	background-size: 170px 50px;
+	background-image: url(../images/item-ribbons.png);
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
 }
@@ -290,8 +288,7 @@ div#items div.item.discount div.image:after {
 	top: 2em;
 	left: 1em;
 
-	background-image: url(../images/item-ribbons.svg);
-	background-size: 170px 50px;
+	background-image: url(../images/item-ribbons.png);
 	background-repeat: no-repeat;
 	background-position: -120px 0px;
 }
