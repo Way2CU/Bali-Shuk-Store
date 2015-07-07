@@ -1024,7 +1024,7 @@ Site.ItemView = function(item) {
 		var unit_definition = $('div.cart').data('size-definition');
 		var price_label = language_handler.getText(null, 'label_per_kilo');
 
-		if (self.item.properties.size_definition == unit_definition)
+		if (self.item.size_definition == unit_definition)
 			price_label = language_handler.getText(null, 'label_per_unit');
 
 		// update shopping cart elements

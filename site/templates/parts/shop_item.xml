@@ -20,6 +20,13 @@
 			<cms:var param="price"/>
 			<cms:raw text="&amp;nbsp;"/>
 			<cms:text constant="currency"/>
+			<cms:raw text="&amp;nbsp;"/>
+			<cms:if condition="$params['size_definition'] == SIZE_DEFINITION">
+				<small><cms:text constant="per_unit"/></small>
+			</cms:if>
+			<cms:if condition="$params['size_definition'] != SIZE_DEFINITION">
+				<small><cms:text constant="per_kilo"/></small>
+			</cms:if>
 		</div>
 
 		<form class="units">
