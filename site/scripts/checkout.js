@@ -7,6 +7,7 @@
  */
 
 var city_list = ['Test', 'Test2'];
+var original_validator = null;
 
 /**
  * Move DOM elements up.
@@ -17,6 +18,20 @@ $.fn.moveUp = function() {
     });
 	return this;
 };
+
+
+/**
+ * Make sure ZIP code is filled in.
+ * @return boolean
+ */
+function validate_shipping_information() {
+	var input_zip = $('div#shipping_information.page input[name=zip]');
+
+	if (input_zip.val() == '')
+		input_zip.val('0');
+
+	return original_validator();
+}
 
 
 $(function() {
@@ -40,4 +55,8 @@ $(function() {
 
 	// move city above address for who knows what reason
 	$('div#shipping_information label').eq(6).moveUp().moveUp().addClass('separator');
+
+	// monkey patch validator to make zip code is optional
+	original_validator = $('div#shipping_information.page').data('validator');
+	$('div#shipping_information.page').data('validator', validate_shipping_information);
 });
