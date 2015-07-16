@@ -84,7 +84,7 @@ nav.mobile_title.visible a.cart svg,
 nav.mobile_title.visible.top a.menu svg,
 nav.mobile_title.visible.top a.cart svg {
 	display: inline-block;
-	height: 5vh;
+	height: 2em;
 
 	transition: fill 0.5s;
 	fill: #33485d;
@@ -96,15 +96,15 @@ nav.mobile_title.top a.cart svg {
 }
 
 nav.mobile_title a.menu svg {
-	width: calc(5vh * 1.0693359375);
+	width: calc(2em * 1.0693359375);
 }
 
 nav.mobile_title a.menu svg.user {
-	width: calc(5vh * 1.53125);
+	width: calc(2em * 1.53125);
 }
 
 nav.mobile_title a.cart svg {
-	width: calc(5vh * 1.2001953125);
+	width: calc(2em * 1.2001953125);
 }
 
 nav.mobile_title a.cart span {
@@ -157,7 +157,7 @@ div.mobile_menu div.wrap {
 header {
 	position: relative;
 
-	margin-bottom: calc(2 * (1.2rem + 28px) + 5vh);
+	margin-bottom: calc(2 * (1.2rem + 28px) + 3rem);
 	background-image:
 		url(../images/header-background-mobile.png),
 		linear-gradient(0deg, #FFFFFF 0%, #B4EBFF 30%, #6CD7FF 65%, #2980B9 100%);
@@ -403,10 +403,13 @@ header nav.categories {
 	display: block;
 	position: absolute;
 	top: 100%;
+	left: 0px;
+	width: 100%;
 }
 
 header nav.categories ul {
 	display: block;
+	width: 100%;
 	margin: 0px;
 	padding: 0px;
 
@@ -427,7 +430,7 @@ header nav.categories > ul {
 
 header nav.categories > ul li {
 	display: inline-block;
-	width: calc((100vw / 2) - 2px);
+	width: calc((100% / 2) - 2px);
 	vertical-align: top;
 	border-right: 1px solid #bcc2c6;
 }

@@ -205,7 +205,7 @@ div#items div.item form.units label input:checked + span:before {
  */
 div.cart {
 	position: fixed;
-	right: calc(-95vw - 4px);
+	right: -100%;
 	top: 15vh;
 	width: 95vw;
 
@@ -213,17 +213,18 @@ div.cart {
 	border-radius: 10px 0px 0px 10px;
 	background-color: white;
 	-webkit-transform: translateZ(0);
+	box-sizing: border-box;
 
 	transition: all 0.5s;
 	z-index: 1000;
 }
 
 div.cart.visible {
-	right: 0vw;
+	right: 0%;
 }
 
 div.cart section.container {
-	height: 60vh;
+	height: 50vh;
 	overflow-y: auto;
 }
 

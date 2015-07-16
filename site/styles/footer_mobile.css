@@ -38,6 +38,8 @@ footer div.payment_methods {
 
 	transform-origin: center top;
 	transform: scale(0.8);
+	-webkit-transform-origin: center top;
+	-webkit-transform: scale(0.8);
 }
 
 footer div.payment_methods h4 {
