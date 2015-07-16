@@ -28,7 +28,9 @@ class delivery extends Module {
 		// register delivery method and create menu items
 		if (class_exists('backend') && class_exists('shop')) {
 			require_once('units/method.php');
+			require_once('units/pickup_method.php');
 			Simple_DeliveryMethod::getInstance($this);
+			Simple_ManualPickupMethod::getInstance($this);
 
 			$backend = backend::getInstance();
 			$method_menu = $backend->getMenu('shop_delivery_methods');
