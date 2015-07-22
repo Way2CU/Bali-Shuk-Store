@@ -435,6 +435,35 @@ header nav.categories > ul li {
 	border-right: 1px solid #bcc2c6;
 }
 
+header nav.categories > ul li.sale {
+	background-image:
+		url(../images/sale-star.png),
+		url(../images/sale-star.png),
+		url(../images/sale-star.png),
+		url(../images/sale-star.png);
+	background-position:
+		10% 10px,
+		50% 0px,
+		60% 30px,
+		90% 16px;
+	background-repeat: no-repeat;
+}
+
+header nav.categories ul li > ul {
+	position: absolute;
+	top: 100%;
+	right: 0px;
+	width: 100%;
+	overflow: hidden;
+
+	visibility: hidden;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+header nav.categories ul li:focus > ul {
+	visibility: visible;
+}
+
 header nav.categories a {
 	display: block;
 	padding: 10px;
