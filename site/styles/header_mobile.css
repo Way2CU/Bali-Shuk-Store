@@ -458,13 +458,28 @@ header nav.categories ul li > ul {
 
 	visibility: hidden;
 	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
 }
 
-header nav.categories ul li:focus > ul {
+header nav.categories ul li > ul li {
+	display: block;
+	width: auto;
+}
+
+header nav.categories ul li > ul li a {
+	border-width: 2px;
+}
+
+header nav.categories ul li input[type=checkbox] {
+	display: none;
+}
+
+header nav.categories ul li input[type=checkbox]:checked + ul {
 	visibility: visible;
 }
 
-header nav.categories a {
+header nav.categories a,
+header nav.categories label {
 	display: block;
 	padding: 10px;
 
@@ -474,23 +489,25 @@ header nav.categories a {
 	font-size: 1.2rem;
 	text-align: center;
 	text-decoration: none;
-
-	transition: all 0.3s;
 }
 
-header nav.categories li a {
+header nav.categories li a,
+header nav.categories li label {
 	border-bottom-color: currentColor;
 }
 
-header nav.categories li.vegetables a {
+header nav.categories li.vegetables a,
+header nav.categories li.vegetables label {
 	color: #2dcb70;
 }
 
-header nav.categories li.fruits a {
+header nav.categories li.fruits a,
+header nav.categories li.fruits label {
 	color: #e76724;
 }
 
-header nav.categories li.deli a {
+header nav.categories li.deli a,
+header nav.categories li.deli label {
 	color: #18adba;
 }
 

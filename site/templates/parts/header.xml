@@ -51,12 +51,11 @@
 				<cms:template file="parts/search_bar.xml"/>
 				<cms:template file="parts/main_menu.xml"/>
 			</div>
-			<cms:template file="parts/categories_menu.xml"/>
 		</div>
 
 		<header>
 			<cms:template file="parts/logo.xml"/>
-			<cms:template file="parts/simple_categories_menu.xml"/>
+			<cms:template file="parts/categories_menu.xml"/>
 		</header>
 	</cms:mobile>
 

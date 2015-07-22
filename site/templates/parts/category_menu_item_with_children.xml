@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<li class="$params['text_id']" cms:eval="class">
-		<a
-			href="url_Make($params['id'], 'category')"
-			class="$action == $params['id'] ? 'active' : false"
-			cms:eval="href"
+	<cms:desktop>
+		<li
+			class="!empty($params['text_id']) ? $params['text_id'] : false"
 			cms:optional="class"
 			>
-			<cms:var param="title" multilanguage="yes"/>
-		</a>
+			<a
+				href="url_Make($params['id'], 'category')"
+				class="$action == $params['id'] ? 'active' : false"
+				cms:eval="href"
+				cms:optional="class"
+				>
+				<cms:var param="title" multilanguage="yes"/>
+			</a>
 
-		<ul>
-			<cms:children
-				parent_id="$params['id']"
-				template="parts/category_menu_item.xml"
-				cms:eval="parent_id"
-				/>
-		</ul>
-	</li>
+			<ul>
+				<cms:children
+					parent_id="$params['id']"
+					template="parts/category_menu_item.xml"
+					cms:eval="parent_id"
+					/>
+			</ul>
+		</li>
+	</cms:desktop>
+
+	<cms:mobile>
+		<li
+			class="!empty($params['text_id']) ? $params['text_id'] : false"
+			cms:optional="class"
+			>
+			<label for="'menu-'.$params['text_id']" cms:eval="for">
+				<cms:var param="title" multilanguage="yes"/>
+			</label>
+			<input type="checkbox" id="'menu-'.$params['text_id']" cms:eval="id"/>
+
+			<ul>
+				<li>
+					<a
+						href="url_Make($params['id'], 'category')"
+						cms:eval="href"
+						>
+						<cms:var param="title" multilanguage="yes"/>
+					</a>
+				</li>
+				<cms:children
+					parent_id="$params['id']"
+					template="parts/category_menu_item.xml"
+					cms:eval="parent_id"
+					/>
+			</ul>
+		</li>
+	</cms:mobile>
 </document>

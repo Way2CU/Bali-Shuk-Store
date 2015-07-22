@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
-	<li class="$params['text_id']" cms:eval="class">
+	<li
+		class="!empty($params['text_id']) ? $params['text_id'] : false"
+		cms:optional="class"
+		>
 		<cms:if condition="$params['parent'] == 0">
 			<a
 				href="url_Make($params['id'], 'category')"
