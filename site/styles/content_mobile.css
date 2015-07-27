@@ -462,8 +462,9 @@ div.dialog.error {
 	visibility: hidden;
 	opacity: 0;
 	top: 5% !important;
-	left: calc((10vw - 20px) / 2);
+	left: 50%;
 
+	margin-left: -160px !important;
 	transform: translateY(-200px);
 
 	border-radius: 10px;
@@ -476,8 +477,6 @@ div.dialog.error {
 div.dialog.visible {
 	visibility: visible;
 	opacity: 1;
-
-	margin-left: 0px;
 
 	transform: translateY(0);
 }
@@ -499,6 +498,11 @@ div.dialog.error div.title {
 div.dialog div.inner_content {
 	padding: 10px;
 	text-align: center;
+}
+
+div.dialog div.inner_content iframe#tranzila_checkout {
+	width: auto;
+	height: 200px;
 }
 
 div.dialog hr {

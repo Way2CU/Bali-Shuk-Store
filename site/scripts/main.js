@@ -118,7 +118,7 @@ Site.DialogSystem = function() {
 		self.message.content = $('<div>');
 		self.message.dialog = new Dialog();
 		self.message.dialog
-				.setSize(Site.is_mobile() ? '90vw' : 400, 'auto')
+				.setSize(Site.is_mobile() ? 300 : 400, 'auto')
 				.setScroll(false)
 				.setClearOnClose(false)
 				.setContent(self.message.content)
@@ -126,7 +126,7 @@ Site.DialogSystem = function() {
 
 		// create sign up dialog
 		self.sign_up.dialog = new Dialog();
-		self.sign_up.dialog.setSize(Site.is_mobile() ? '90vw' : 400, 'auto');
+		self.sign_up.dialog.setSize(Site.is_mobile() ? 300 : 400, 'auto');
 		self.sign_up.dialog.setScroll(false);
 		self.sign_up.dialog.setClearOnClose(false);
 		self.sign_up.dialog.setError(false);
@@ -238,7 +238,7 @@ Site.DialogSystem = function() {
 
 		// prepare dialog
 		self.login.dialog = new Dialog();
-		self.login.dialog.setSize(Site.is_mobile() ? '90vw' : 400, 'auto');
+		self.login.dialog.setSize(Site.is_mobile() ? 300 : 400, 'auto');
 		self.login.dialog.setScroll(false);
 		self.login.dialog.setClearOnClose(false);
 		self.login.dialog.setError(false);
@@ -319,7 +319,7 @@ Site.DialogSystem = function() {
 
 		// prepare recovery dialog
 		self.recovery.dialog = new Dialog();
-		self.recovery.dialog.setSize(Site.is_mobile() ? '90vw' : 400, 'auto');
+		self.recovery.dialog.setSize(Site.is_mobile() ? 300 : 400, 'auto');
 		self.recovery.dialog.setScroll(false);
 		self.recovery.dialog.setClearOnClose(false);
 		self.recovery.dialog.setError(false);
