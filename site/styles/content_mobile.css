@@ -206,8 +206,8 @@ div#items div.item form.units label input:checked + span:before {
 div.cart {
 	position: fixed;
 	right: -100%;
-	top: 15vh;
-	width: 95vw;
+	top: 3.5em;
+	width: 90%;
 
 	border: 2px solid #f4eee2;
 	border-radius: 10px 0px 0px 10px;
@@ -224,7 +224,7 @@ div.cart.visible {
 }
 
 div.cart section.container {
-	height: 50vh;
+	height: 240px;
 	overflow-y: auto;
 }
 
@@ -393,8 +393,6 @@ div.cart > div {
 
 	border-radius: 0px 0px 0px 10px;
 	background-color: #e8dcc5;
-
-	text-align: center;
 }
 
 div.cart > div button {
@@ -437,13 +435,13 @@ div.cart article {
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	width: 60%;
+	width: 50%;
 }
 
 div.cart article p {
 	margin: 0px;
 	padding-bottom: 0px;
-	font-size: 0.7rem;
+	font-size: 0.6rem;
 }
 
 /**

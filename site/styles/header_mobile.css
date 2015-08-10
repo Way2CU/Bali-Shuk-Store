@@ -23,7 +23,7 @@ nav.mobile_title.top {
 nav.mobile_title a {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 1vh 1.5vh;
+	padding: 0.5em;
 
 	line-height: 0px;
 }
@@ -46,22 +46,21 @@ nav.mobile_title.top a.logo {
 }
 
 nav.mobile_title a.logo img {
-	height: 9vh;
+	height: 3em;
 }
 
 nav.mobile_title a.cart {
 	position: absolute;
 	right: 0px;
 	top: 50%;
-	margin-top: -3.5vh;
+	margin-top: -1.5em;
 }
 
 nav.mobile_title a.menu {
 	position: absolute;
 	left: 0px;
 	top: 50%;
-	margin-top: -3.5vh;
-
+	margin-top: -1.5em;
 }
 
 nav.mobile_title.top a.cart,
@@ -308,7 +307,7 @@ div.mobile_menu form button::-moz-focus-inner {
 nav#main {
 	padding: 1em;
 	padding-top: 0px;
-	padding-bottom: 20vh;
+	padding-bottom: 7em;
 }
 
 nav#main ul {
@@ -450,13 +449,13 @@ header nav.categories > ul li.sale {
 }
 
 header nav.categories ul li > ul {
+	display: none;
 	position: absolute;
 	top: 100%;
 	right: 0px;
 	width: 100%;
 	overflow: hidden;
 
-	visibility: hidden;
 	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 	z-index: 1000;
 }
@@ -475,7 +474,7 @@ header nav.categories ul li input[type=checkbox] {
 }
 
 header nav.categories ul li input[type=checkbox]:checked + ul {
-	visibility: visible;
+	display: block;
 }
 
 header nav.categories a,

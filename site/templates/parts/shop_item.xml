@@ -3,8 +3,8 @@
 <document>
 	<div
 		class="'item'.(!empty($params['description'][$language]) ? ' discount' : '').($params['priority'] &lt;= 1 ? ' recommended' : '').($params['is_new'] ? ' new' : '')"
-		data-uid="$params['uid']"
 		data-tooltip="!empty($params['description'][$language]) ? $params['description'][$language] : false"
+		data-uid="$params['uid']"
 		cms:eval="class,data-uid"
 		cms:optional="data-tooltip"
 		>
