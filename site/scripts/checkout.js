@@ -48,6 +48,9 @@ function validate_shipping_information() {
 
 
 $(function() {
+	// make phone number mandatory
+	$('div#shipping_information input[name=phone]').attr('data-required', 1);
+
 	// replace city input field with select
 	var city_input = $('div#input_details input[name=city]');
 
