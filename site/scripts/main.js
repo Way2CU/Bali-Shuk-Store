@@ -268,6 +268,10 @@ Site.DialogSystem = function() {
 		self.login.input_captcha = $('<input>');
 		self.login.image_captcha = $('<img>');
 
+		self.login.label_remember_me = $('<label>');
+		self.login.input_remember_me = $('<input>');
+		self.login.span_remember_me = $('<span>');
+
 		// configure elements
 		self.login.input_username
 				.on('focusin', self._handleFocusIn)
@@ -280,6 +284,10 @@ Site.DialogSystem = function() {
 				.on('keyup', self._handleLoginKeyPress)
 				.attr('name', 'password')
 				.attr('type', 'password');
+
+		self.login.input_remember_me
+				.attr('name', 'lasting')
+				.attr('type', 'checkbox');
 
 		self.login.link_recovery
 				.click(self._showRecoveryDialog)
@@ -308,6 +316,11 @@ Site.DialogSystem = function() {
 				.append(self.login.input_captcha)
 				.append(self.login.image_captcha)
 				.appendTo(self.login.captcha_container);
+
+		self.login.label_remember_me
+				.append(self.login.input_remember_me)
+				.append(self.login.span_remember_me)
+				.appendTo(self.login.content);
 
 		self.login.captcha_container
 				.addClass('captcha')
@@ -394,7 +407,8 @@ Site.DialogSystem = function() {
 				'login', 'login_dialog_title', 'login_dialog_message', 'label_email', 'label_password',
 				'label_password_recovery', 'recovery_dialog_title', 'recovery_dialog_message', 'submit',
 				'label_captcha', 'captcha_message', 'signup_dialog_title', 'sign_up', 'signup_dialog_message',
-				'label_repeat_password', 'label_first_name', 'label_last_name', 'label_agree_to_terms'
+				'label_repeat_password', 'label_first_name', 'label_last_name', 'label_agree_to_terms',
+				'label_remember_me'
 			];
 		language_handler.getTextArrayAsync(null, constants, self._handleStringsLoaded);
 
@@ -504,6 +518,7 @@ Site.DialogSystem = function() {
 			input_captcha.attr('placeholder', data['label_captcha']);
 			link_recovery.html(data['label_password_recovery']);
 			image_captcha.attr('title', data['captcha_message']);
+			span_remember_me.html(data['label_remember_me']);
 		}
 
 		with (self.recovery) {
