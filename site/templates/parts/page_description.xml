@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
+<document>
+	<meta
+		name="description"
+		content="'description_'.$params['text_id']"
+		cms:eval="content"
+		cms:constant="content"
+		/>
+</document>

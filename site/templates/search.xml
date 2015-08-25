@@ -10,7 +10,11 @@
 				<cms:text constant="title_search"/>
 				<cms:var name="fix_chars($_REQUEST['query'])"/>
 			</title>
-
+			<meta
+				name="description"
+				content="description_search"
+				cms:constant="content"
+				/>
 			<cms:module
 				name="shop"
 				action="include_cart_scripts"

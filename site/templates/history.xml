@@ -9,6 +9,11 @@
 				<cms:raw text=" - "/>
 				<cms:text constant="history"/>
 			</title>
+			<meta
+				name="description"
+				content="description_history"
+				cms:constant="content"
+				/>
 			<cms:module
 				name="shop"
 				action="include_cart_scripts"

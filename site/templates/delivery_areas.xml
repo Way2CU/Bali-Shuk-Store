@@ -9,6 +9,11 @@
 				<cms:raw text=" - "/>
 				<cms:text constant="menu_delivery_areas"/>
 			</title>
+			<meta
+				name="description"
+				content="description_delivery_areas"
+				cms:constant="content"
+				/>
 			<cms:collection include="dialog"/>
 			<cms:module name="head_tag" action="print_tag"/>
 		</head>

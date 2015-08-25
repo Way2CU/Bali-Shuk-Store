@@ -5,6 +5,11 @@
 	<html lang="$language" cms:eval="lang">
 		<head>
 			<title><cms:text constant="site_title"/></title>
+			<meta
+				name="description"
+				content="description_home"
+				cms:constant="content"
+				/>
 			<cms:module
 				name="shop"
 				action="include_cart_scripts"

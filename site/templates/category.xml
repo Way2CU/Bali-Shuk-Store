@@ -26,6 +26,27 @@
 				</cms:if>
 			</title>
 
+			<!-- Page description -->
+			<cms:if condition="!isset($_REQUEST['sub'])">
+				<cms:module
+					name="shop"
+					action="show_category"
+					id="$action"
+					template="parts/page_description.xml"
+					cms:eval="id"
+					/>
+			</cms:if>
+			<cms:if condition="isset($_REQUEST['sub'])">
+				<cms:module
+					name="shop"
+					action="show_category"
+					id="$_REQUEST['sub']"
+					template="parts/page_description.xml"
+					cms:eval="id"
+					/>
+			</cms:if>
+
+			<!-- Shopping cart scripts -->
 			<cms:module
 				name="shop"
 				action="include_cart_scripts"

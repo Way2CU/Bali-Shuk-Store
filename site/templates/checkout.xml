@@ -9,7 +9,11 @@
 				<cms:raw text=" - "/>
 				<cms:text constant="checkout"/>
 			</title>
-
+			<meta
+				name="description"
+				content="description_checkout"
+				cms:constant="content"
+				/>
 			<cms:module
 				name="shop"
 				action="include_scripts"
