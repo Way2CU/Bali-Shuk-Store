@@ -1,13 +1,15 @@
 ---
 site:
   domain: bali-shuk.co.il
-  make_alias: false
+  # subdomain: test
+  # alias: domain.com
   root: httpdocs
   username: bali_shuk
   caracal_branch: develop
   ip_address: 74.208.172.190
   # owner: Some Person
   # plan: Unlimited
+  # database_type: 'mysql'
 
 local_site_directory: ../site
 subscription_directory: "{{ plesk_vhost_directory }}/{{ site.domain }}"
