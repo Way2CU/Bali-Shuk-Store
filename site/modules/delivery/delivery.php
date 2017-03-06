@@ -408,7 +408,7 @@ class delivery extends Module {
 		// load template
 		$template = $this->loadTemplate($tag_params, 'list_item.xml');
 		$template->registerTagHandler('cms:days', $this, 'tag_Days');
-		$template->registerTagHandler('cms:times', $this, 'tag_Times'); 
+		$template->registerTagHandler('cms:times', $this, 'tag_Times');
 		// parse template
 		if (count($intervals) > 0)
 			foreach ($intervals as $interval) {

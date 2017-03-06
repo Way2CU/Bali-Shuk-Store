@@ -2,7 +2,7 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<form
-		action="url_Make('', 'search')"
+		action="URL::make(array(), 'search.xml')"
 		method="GET"
 		cms:eval="action"
 		>

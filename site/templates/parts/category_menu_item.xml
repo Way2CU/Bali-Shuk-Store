@@ -7,7 +7,7 @@
 		>
 		<cms:if condition="$params['parent'] == 0">
 			<a
-				href="url_Make($params['id'], 'category')"
+				href="URL::make(array('category' => $params['id']))"
 				class="$action == $params['id'] ? 'active' : false"
 				cms:eval="href"
 				cms:optional="class"
@@ -17,7 +17,7 @@
 		</cms:if>
 		<cms:if condition="$params['parent'] > 0">
 			<a
-				href="url_Make($params['parent'], 'category', array('sub', $params['id']))"
+				href="URL::make(array('category' => $params['parent'], 'sub' => $params['id']))"
 				class="(isset($_REQUEST['sub']) and $_REQUEST['sub'] == $params['id']) ? 'active' : false"
 				cms:eval="href"
 				cms:optional="class"

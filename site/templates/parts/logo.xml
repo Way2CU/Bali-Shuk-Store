@@ -2,7 +2,7 @@
 <!DOCTYPE document SYSTEM "../../units/schema/language.dtd">
 <document>
 	<a
-		href="url_Make()"
+		href="URL::make()"
 		class="logo"
 		cms:eval="href"
 		>

@@ -26,7 +26,7 @@
 						<span>
 							<cms:text constant="label_welcome"/>
 							<a
-								href="url_Make('control-panel', 'user')"
+								href="URL::make(array(), 'history.xml')"
 								cms:eval="href"
 								>
 								<cms:var name="$_SESSION['fullname']"/>
@@ -44,7 +44,7 @@
 
 			<li>
 				<a
-					href="url_Make()"
+					href="URL::make()"
 					class="$section == 'home' ? 'active' : false"
 					cms:eval="href"
 					cms:optional="class"
@@ -54,7 +54,7 @@
 			</li>
 			<li>
 				<a
-					href="url_Make('', 'contact')"
+					href="URL::make(array(), 'contact.xml')"
 					class="$section == 'contact' ? 'active' : false"
 					cms:eval="href"
 					cms:optional="class"
@@ -65,7 +65,7 @@
 			<li class="help">
 				<a
 					class="$section == 'help' ? 'active' : false"
-					href="url_Make('', 'help')"
+					href="URL::make(array(), 'help.xml')"
 					cms:eval="href"
 					cms:optional="class"
 					>
@@ -97,7 +97,7 @@
 						<span>
 							<cms:text constant="label_welcome"/>
 							<a
-								href="url_Make('control-panel', 'user')"
+								href="URL::make(array(), 'history.xml')"
 								cms:eval="href"
 								>
 								<cms:var name="$_SESSION['fullname']"/>

@@ -25,7 +25,7 @@
 
 			<!--
 				 Verify user account when clicking on URL in email in following format:
-				 http://domain.com/user/verify-account/username/<email>/code/<code>
+				 http://domain.com/user/verify-account?username=<email>&code=<code>
 			-->
 			<cms:if section="user" action="verify-account">
 				<cms:module
@@ -47,6 +47,12 @@
 					template="parts/shop_item.xml"
 					/>
 			</div>
+
+			<cms:module
+				name="articles"
+				action="show"
+				text_id="specific"
+				/>
 
 			<cms:template file="parts/footer.xml"/>
 		</body>

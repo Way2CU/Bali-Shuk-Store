@@ -3,31 +3,31 @@
 <document>
 	<nav class="footer">
 		<a
-			href="url_Make('terms-of-use', 'help')"
+			href="URL::make(array(), 'terms.xml')"
 			cms:eval="href"
 			>
 			<cms:text constant="menu_terms_use"/>
 		</a>
 		<a
-			href="url_Make('security', 'help')"
+			href="URL::make(array(), 'security.xml')"
 			cms:eval="href"
 			>
 			<cms:text constant="menu_security_settings"/>
 		</a>
 		<a
-			href="url_Make('faq', 'help')"
+			href="URL::make(array(), 'faq.xml')"
 			cms:eval="href"
 			>
 			<cms:text constant="menu_faq"/>
 		</a>
 		<a
-			href="url_Make('delivery-areas', 'help')"
+			href="URL::make(array(), 'delivery_areas.xml')"
 			cms:eval="href"
 			>
 			<cms:text constant="menu_delivery_areas"/>
 		</a>
 		<a
-			href="url_Make('about-us', 'help')"
+			href="URL::make(array(), 'about.xml')"
 			cms:eval="href"
 			>
 			<cms:text constant="menu_about_us"/>

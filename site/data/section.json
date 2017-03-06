@@ -1,3 +1,18 @@
 {
-	"/": "home.xml"
+	"/": "home.xml",
+	"/search": "search.xml",
+	"/contact": "contact.xml",
+	"/category/{n:category}": "category.xml",
+	"/category/{n:category}/{n:sub}": "category.xml",
+	"/checkout": "checkout.xml",
+	"/user": "user.xml",
+	"/user/verify-account": "home.xml",
+	"/user/password-recovery": "recover_password.xml",
+	"/user/previous-purchases": "history.xml",
+	"/help": "help.xml",
+	"/help/faq": "faq.xml",
+	"/help/security": "security.xml",
+	"/help/terms-of-use": "terms.xml",
+	"/help/about-us": "about.xml",
+	"/help/delivery-areas": "delivery_areas.xml"
 }

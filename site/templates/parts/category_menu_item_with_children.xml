@@ -7,8 +7,8 @@
 			cms:optional="class"
 			>
 			<a
-				href="url_Make($params['id'], 'category')"
-				class="$action == $params['id'] ? 'active' : false"
+				href="URL::make(array('category' => $params['id']))"
+				class="isset($_REQUEST['category']) && $_REQUEST['category'] == $params['id'] ? 'active' : false"
 				cms:eval="href"
 				cms:optional="class"
 				>
@@ -38,7 +38,7 @@
 			<ul>
 				<li>
 					<a
-						href="url_Make($params['id'], 'category')"
+						href="URL::make(array('category' => $params['id']))"
 						cms:eval="href"
 						>
 						<cms:var param="title" multilanguage="yes"/>

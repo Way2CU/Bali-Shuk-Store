@@ -1,12 +1,12 @@
 ---
 site:
-  domain: bali-shuk.co.il
+  domain: yerakot.co.il
   # subdomain: test
   # alias: domain.com
   root: httpdocs
-  username: bali_shuk
-  caracal_branch: develop
-  ip_address: 74.208.172.190
+  username: yerakot
+  caracal_branch: v0.3.x
+  # ip_address: 127.0.0.1
   # owner: Some Person
   # plan: Unlimited
   # database_type: 'mysql'

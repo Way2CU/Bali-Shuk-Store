@@ -48,7 +48,7 @@
 				<button
 					type="button"
 					name="history"
-					data-destination="url_Make('previous-purchases', 'user')"
+					data-destination="URL::make(array(), 'history.xml')"
 					cms:eval="data-destination"
 					>
 					<cms:text constant="history"/>
